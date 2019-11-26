@@ -15,6 +15,9 @@ namespace ProyectoFinal
         public Form1()
         {
             InitializeComponent();
+
+
+            //    Hola
         }
     }
 }
