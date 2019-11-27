@@ -18,9 +18,13 @@ namespace ProyectoFinal.Modelo.Produccion
 
         public enum EtapasProduccion : int
         {
-
-            IdEtapaProduccion = 1,
-            Descripcion = 2
+            Corte = 1,
+            Depilado = 2,
+            Tapado = 3,
+            Grabado = 4,
+            Enlimpieza = 5,
+            Entregado = 6
+            
         }
     }
 }

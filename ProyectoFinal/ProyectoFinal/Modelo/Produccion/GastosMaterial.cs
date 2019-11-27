@@ -21,8 +21,8 @@ namespace ProyectoFinal.Modelo.Produccion
 
         public enum TiposGasto : int {
 
-            IdTipoGasto = 1,
-            Descripcion = 2
+            Consumo = 1,
+            Merma = 2
         }
 
     }

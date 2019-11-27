@@ -17,8 +17,9 @@ namespace ProyectoFinal.Modelo.Produccion
         public enum TiposMateriales : int
         {
 
-            IdTipoMaterial = 1,
-            Descripcion = 2
+            Insumos = 1,
+            Base = 2,
+            Combustible = 3
         }
     }
 }
