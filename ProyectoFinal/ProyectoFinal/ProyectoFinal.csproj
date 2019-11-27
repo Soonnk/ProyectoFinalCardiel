@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos\ConexionSQL.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +57,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs" />
+    <Compile Include="Modelo\Compras\Compra.cs" />
+    <Compile Include="Modelo\Contacto.cs" />
+    <Compile Include="Modelo\Compras\DetalleCompra.cs" />
+    <Compile Include="Modelo\ListaContactos.cs" />
+    <Compile Include="Modelo\Persona.cs" />
+    <Compile Include="Modelo\Compras\Proveedor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
