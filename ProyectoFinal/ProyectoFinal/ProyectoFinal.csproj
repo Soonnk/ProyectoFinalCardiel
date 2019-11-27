@@ -63,6 +63,11 @@
     <Compile Include="Modelo\ListaContactos.cs" />
     <Compile Include="Modelo\Persona.cs" />
     <Compile Include="Modelo\Compras\Proveedor.cs" />
+    <Compile Include="Modelo\Produccion\Design.cs" />
+    <Compile Include="Modelo\Produccion\GastosMaterial.cs" />
+    <Compile Include="Modelo\Produccion\LotesEtapas.cs" />
+    <Compile Include="Modelo\Produccion\LotesProduccion.cs" />
+    <Compile Include="Modelo\Produccion\Materiales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
