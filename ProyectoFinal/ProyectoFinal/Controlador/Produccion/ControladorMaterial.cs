@@ -104,6 +104,9 @@ namespace ProyectoFinal.Controlador.Produccion
                 cmd.Parameters.AddWithValue("@Tipo", m.Tipo);
 
                 cmd.ExecuteNonQuery();
+
+                connection.Close();
+                connection.Dispose();
             }
             catch
             {
@@ -185,6 +188,8 @@ namespace ProyectoFinal.Controlador.Produccion
                         Tipo = (Material.TiposMateriales) reader["Tipo"]
                     };
                 }
+                connection.Close();
+                connection.Dispose();
             }
             catch
             {

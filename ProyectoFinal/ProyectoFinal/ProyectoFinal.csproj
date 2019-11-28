@@ -68,6 +68,7 @@
     <Compile Include="Controlador\Compras\ControladorProveedor.cs" />
     <Compile Include="Controlador\ControladorContacto.cs" />
     <Compile Include="Controlador\Produccion\ControladorMaterial.cs" />
+    <Compile Include="Controlador\Usuarios\ControladorUsuario.cs" />
     <Compile Include="Controlador\Utils.cs" />
     <Compile Include="Controlador\Ventas\ControladorPedido.cs" />
     <Compile Include="Modelo\Compras\Compra.cs" />
