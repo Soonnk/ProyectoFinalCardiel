@@ -77,6 +77,7 @@
     <Compile Include="Modelo\Produccion\LotesEtapas.cs" />
     <Compile Include="Modelo\Produccion\LotesProduccion.cs" />
     <Compile Include="Modelo\Produccion\Materiales.cs" />
+    <Compile Include="Modelo\Usuarios\Usuario.cs" />
     <Compile Include="Modelo\Ventas\Cliente.cs" />
     <Compile Include="Modelo\Ventas\DetallePedido.cs" />
     <Compile Include="Modelo\Ventas\Pedido.cs" />

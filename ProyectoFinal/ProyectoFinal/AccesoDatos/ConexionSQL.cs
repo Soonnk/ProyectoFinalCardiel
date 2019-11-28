@@ -44,9 +44,8 @@ namespace ProyectoFinal.AccesoDatos
 
         #region "mafufadas para el control de Usuarios"
         private bool IsUserLevelSetted = false;
-        //TODO Cambiar Referencias al enum de la clase Usuario
-        private NivelesUsuario nUsuario = NivelesUsuario.Visor;
-        public NivelesUsuario NivelUsuario
+        private Modelo.Usuarios.Usuario.NivelesUsuario nUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Visor;
+        public Modelo.Usuarios.Usuario.NivelesUsuario NivelUsuario
         {
             set {
                 this.nUsuario = value;
@@ -59,13 +58,13 @@ namespace ProyectoFinal.AccesoDatos
             if (IsUserLevelSetted)
             {
                 switch (this.nUsuario){
-                    case NivelesUsuario.Administrador:
+                    case Modelo.Usuarios.Usuario.NivelesUsuario.Administrador:
                         return new DBUser() { Username = "Admin", Password = "Admin" };
-                    case NivelesUsuario.Jefe:
+                    case Modelo.Usuarios.Usuario.NivelesUsuario.Jefe:
                         return new DBUser() { Username = "Jefe", Password = "Jefe" };
-                    case NivelesUsuario.Obrero:
+                    case Modelo.Usuarios.Usuario.NivelesUsuario.Obrero:
                         return new DBUser() { Username = "Obrero", Password = "Obrero" };
-                    case NivelesUsuario.Vendedor:
+                    case Modelo.Usuarios.Usuario.NivelesUsuario.Vendedor:
                         return new DBUser() { Username = "Vendedor", Password = "Vendedor" };
                     default:
                         return new DBUser() { Username = "Visor", Password = "Visor" };
@@ -76,16 +75,7 @@ namespace ProyectoFinal.AccesoDatos
                 throw new Exception("No se ha establecido el nivel de usuario a acceder");
             }
         }
-
-        //TODO Borrar este enum y utilizar el de Usuario
-        public enum NivelesUsuario : int {
-            Administrador=1,
-            Jefe = 2,
-            Obrero = 3,
-            Vendedor = 4,
-            Visor = 5
-        }
-
+        
         private class DBUser
         {
             public string Username { get; set; }

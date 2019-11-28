@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoFinal.Modelo
+namespace ProyectoFinal.Modelo.Ventas
 {
     class Cliente
     {
@@ -15,8 +15,14 @@ namespace ProyectoFinal.Modelo
         public string Calle { get; set; }
         public string Numero { get; set; }
         public string Colonia { get; set; }
-        public RegimenFiscal RegimenFiscal { get; set; }
+        public RegimenesFiscales RegimenFiscal { get; set; }
         public string RFC { get; set; }
-        public Object ListaContactos { get; set; }
+        public ListaContactos ListaContactos { get; set; }
+
+        public enum RegimenesFiscales : int
+        {
+            PersonaMoral = 1,
+            PersonaFisica = 2
+        }
     }
 }

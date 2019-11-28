@@ -24,7 +24,6 @@ namespace ProyectoFinal.Modelo.Produccion
             Grabado = 4,
             Enlimpieza = 5,
             Entregado = 6
-            
         }
     }
 }
