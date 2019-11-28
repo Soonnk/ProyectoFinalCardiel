@@ -183,5 +183,76 @@ namespace ProyectoFinal.Controlador.Compras
                 throw ex;
             }
         }
+
+        public Proveedor GetById(int idProveedor)
+        {
+            Proveedor p = null;
+            SqlConnection connection = null;
+            SqlCommand cmd = null;
+            SqlDataReader reader = null;
+
+            try
+            {
+                connection = GetConnection();
+                cmd = connection.CreateCommand();
+
+                cmd.CommandText = "SELECT * FROM [Compras].[Proveedores] WHERE IdProveedor = @IdProveedor";
+                cmd.Parameters.AddWithValue("@IdProveedor", idProveedor);
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    p = new Proveedor
+                    {
+                        IdProveedor = reader.GetInt32(0),
+                        Nombre = reader.GetString(1),
+                        Telefono = reader.GetString(2),
+                        CorreoElectronico = reader.GetString(3),
+                        Calle = reader.GetString(4),
+                        Numero = reader.GetString(5),
+                        Colonia = reader.GetString(6),
+
+                        Contactos = new Modelo.ListaContactos
+                        {
+                            IdListaContactos = reader.GetInt32(7)
+                        }
+                    };
+
+                    ControladorContacto contContacto = new ControladorContacto();
+
+                    DataTable dt = contContacto.GetAll(p.Contactos.IdListaContactos);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Modelo.Contacto contacto = new Modelo.Contacto()
+                        {
+                            IdContacto = (int)row["IdContacto"],
+                            IdPersona = (int)row["IdPersona"],
+                            Nombre = (string)row["Nombre"],
+                            ApellidoPaterno = (string)row["ApellidoMaterno"],
+                            ApellidoMaterno = (string)row["ApellidoMaterno"],
+                            Telefono = (string)row["Telefono"],
+                            CorreoElectronico = (string)row["CorreoElectronico"],
+                            Calle = (string)row["Calle"],
+                            Numero = (string)row["Numero"],
+                            Colonia = (string)row["Colonia"]
+                        };
+
+                        p.Contactos.Add(contacto);
+                    }
+                }
+                return p;
+            }
+            catch (Exception ex)
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
+                throw;
+            }
+        }
     }
 }
