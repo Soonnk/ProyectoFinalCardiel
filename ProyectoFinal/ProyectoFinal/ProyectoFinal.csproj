@@ -70,6 +70,7 @@
     <Compile Include="Controlador\Produccion\ControladorMaterial.cs" />
     <Compile Include="Controlador\Usuarios\ControladorUsuario.cs" />
     <Compile Include="Controlador\Utils.cs" />
+    <Compile Include="Controlador\Ventas\ControladorCliente.cs" />
     <Compile Include="Controlador\Ventas\ControladorPedido.cs" />
     <Compile Include="Modelo\Compras\Compra.cs" />
     <Compile Include="Modelo\Contacto.cs" />
