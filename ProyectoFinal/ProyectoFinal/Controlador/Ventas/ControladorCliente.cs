@@ -226,15 +226,15 @@ namespace ProyectoFinal.Controlador.Ventas
                     c.Calle = reader.GetString(4);
                     c.Numero = reader.GetString(5);
                     c.Colonia = reader.GetString(6);
-                        if (reader.GetInt32(7) == 1)
+                    if (reader.GetInt32(7) == 1)
                     {
                         c.RegimenFiscal = RegimenesFiscales.PersonaMoral;
-                    }else if(reader.GetInt32(7) == 2)
+                    } else if (reader.GetInt32(7) == 2)
                     {
                         c.RegimenFiscal = RegimenesFiscales.PersonaFisica;
                     }
                     c.RFC = reader.GetString(8);
-
+                
                     c.ListaContactos = new Modelo.ListaContactos
                     {
                         IdListaContactos = reader.GetInt32(9)

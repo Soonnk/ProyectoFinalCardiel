@@ -19,7 +19,7 @@ namespace ProyectoFinal.Controlador.Ventas
             this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
         }
 
-        public void insert(Pedido p, DetallePedido d)
+        public void insert(Pedido p)
         {
             SqlConnection connection = null;
             SqlTransaction transaction = null;
@@ -52,32 +52,40 @@ namespace ProyectoFinal.Controlador.Ventas
                 cmdPedido.Parameters.AddWithValue("@Vendedor", u.IdUsuario);
                 cmdPedido.Parameters.AddWithValue("@FechaPedido", p.FechaPedido);
                 
-                Modelo.Produccion.Material b = new Modelo.Produccion.Material();
-                Modelo.Produccion.Design design = new Modelo.Produccion.Design();
+                foreach(DetallePedido d in p.DetallePedido)
+                {
+                    Modelo.Produccion.Material b = new Modelo.Produccion.Material();
+                    Modelo.Produccion.Design design = new Modelo.Produccion.Design();
 
-                b.IdMaterial = d.Base.IdMaterial;
-                design.IdDesign = d.Design.IdDesign;
+                    b.IdMaterial = d.Base.IdMaterial;
+                    design.IdDesign = d.Design.IdDesign;
 
-                cmdDetallePedido.CommandText = InsertDetallePedido;
-                cmdDetallePedido.Parameters.Clear();
-                cmdDetallePedido.Parameters.AddWithValue("@Pedido", p.IdPedido);
-                cmdDetallePedido.Parameters.AddWithValue("@Base", b.IdMaterial);
-                cmdDetallePedido.Parameters.AddWithValue("@Design", design.IdDesign);
-                cmdDetallePedido.Parameters.AddWithValue("@Cantidad", d.Cantidad);
-                cmdDetallePedido.Parameters.AddWithValue("@Precio", d.Precio);
+                    cmdDetallePedido.CommandText = InsertDetallePedido;
+                    cmdDetallePedido.Parameters.Clear();
+                    cmdDetallePedido.Parameters.AddWithValue("@Pedido", p.IdPedido);
+                    cmdDetallePedido.Parameters.AddWithValue("@Base", b.IdMaterial);
+                    cmdDetallePedido.Parameters.AddWithValue("@Design", design.IdDesign);
+                    cmdDetallePedido.Parameters.AddWithValue("@Cantidad", d.Cantidad);
+                    cmdDetallePedido.Parameters.AddWithValue("@Precio", d.Precio);
+
+                }
 
                 transaction.Commit();
             }
             catch (Exception ex)
             {
                 if (transaction != null) transaction.Rollback();
-                if (connection != null) connection.Close();
 
                 throw ex;
             }
+
+            finally
+            {
+                if (connection != null) connection.Close();
+            }
         }
 
-        public void update(Pedido p, DetallePedido d)
+        public void update(Pedido p)
         {
             SqlConnection connection = null;
             SqlTransaction transaction = null;
@@ -98,13 +106,13 @@ namespace ProyectoFinal.Controlador.Ventas
                     "FechaPedido = @FechaPedido " +
             "WHERE IdPedido = @IdPedido";
 
-                string UpdateDetallePedido = "UPDATE [Ventas].[DetallesPedido] SET " +
-                    "Pedido = @Pedido, " +
-                    "Base = @Base, " +
-                    "Design = @Design, " +
-                    "Cantidad = @Cantidad, " +
-                    "Precio = @Precio " +
-                    "WHERE IdDetalle = @IdDetalle ";
+                //string UpdateDetallePedido = "UPDATE [Ventas].[DetallesPedido] SET " +
+                //    "Pedido = @Pedido, " +
+                //    "Base = @Base, " +
+                //    "Design = @Design, " +
+                //    "Cantidad = @Cantidad, " +
+                //    "Precio = @Precio " +
+                //    "WHERE IdDetalle = @IdDetalle ";
 
                 Cliente c = new Cliente();
                 Usuario u = new Usuario();
@@ -118,23 +126,23 @@ namespace ProyectoFinal.Controlador.Ventas
                 cmdPedido.Parameters.AddWithValue("@Vendedor", u.IdUsuario);
                 cmdPedido.Parameters.AddWithValue("@FechaPedido", p.FechaPedido);
 
-                Modelo.Produccion.Material b = new Modelo.Produccion.Material();
-                Modelo.Produccion.Design design = new Modelo.Produccion.Design();
+                //Modelo.Produccion.Material b = new Modelo.Produccion.Material();
+                //Modelo.Produccion.Design design = new Modelo.Produccion.Design();
 
-                b.IdMaterial = d.Base.IdMaterial;
-                design.IdDesign = d.Design.IdDesign;
+                //b.IdMaterial = d.Base.IdMaterial;
+                //design.IdDesign = d.Design.IdDesign;
 
-                cmdDetallePedido.CommandText = UpdateDetallePedido;
-                cmdDetallePedido.Parameters.Clear();
-                cmdDetallePedido.Parameters.AddWithValue("@IdDetalle", d.IdDetalle);
-                cmdDetallePedido.Parameters.AddWithValue("@Pedido", p.IdPedido);
-                cmdDetallePedido.Parameters.AddWithValue("@Base", b.IdMaterial);
-                cmdDetallePedido.Parameters.AddWithValue("@Design", design.IdDesign);
-                cmdDetallePedido.Parameters.AddWithValue("@Cantidad", d.Cantidad);
-                cmdDetallePedido.Parameters.AddWithValue("@Precio", d.Precio);
+                //cmdDetallePedido.CommandText = UpdateDetallePedido;
+                //cmdDetallePedido.Parameters.Clear();
+                //cmdDetallePedido.Parameters.AddWithValue("@IdDetalle", d.IdDetalle);
+                //cmdDetallePedido.Parameters.AddWithValue("@Pedido", p.IdPedido);
+                //cmdDetallePedido.Parameters.AddWithValue("@Base", b.IdMaterial);
+                //cmdDetallePedido.Parameters.AddWithValue("@Design", design.IdDesign);
+                //cmdDetallePedido.Parameters.AddWithValue("@Cantidad", d.Cantidad);
+                //cmdDetallePedido.Parameters.AddWithValue("@Precio", d.Precio);
 
                 cmdPedido.ExecuteNonQuery();
-                cmdDetallePedido.ExecuteNonQuery();
+                //cmdDetallePedido.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
