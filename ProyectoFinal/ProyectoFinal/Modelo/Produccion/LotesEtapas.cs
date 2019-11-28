@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Produccion
 {
-    class LotesEtapas
+    class LoteEtapa
     {
         public int IdLoteEtapa { get; set; }
-        public Object OrdenadoPor { get; set; }
+        public Usuarios.Usuario OrdenadoPor { get; set; }
         public DateTime FechaOrdemamiento { get; set; }
-        public LotesProduccion Lote { get; set; }
         public EtapasProduccion Etapa { get; set; }
-        public Object AutorizadoPor { get; set; }
+        public Usuarios.Usuario AutorizadoPor { get; set; }
         public DateTime FechaAutorizacion { get; set; }
+        public List<GastosMaterial> GastosMateriales { get; set; }
 
         public enum EtapasProduccion : int
         {
