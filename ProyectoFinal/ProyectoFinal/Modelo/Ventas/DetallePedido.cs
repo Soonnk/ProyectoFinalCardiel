@@ -9,7 +9,7 @@ namespace ProyectoFinal.Modelo
     class DetallePedido
     {
         public int IdDetallePedido { get; set; }
-        public Base Base { get; set; }  //**************
+        public Base Base { get; set; }
         public Design Design { get; set; }
         public Pedido Pedido { get; set; }
         public int Cantidad { get; set; }

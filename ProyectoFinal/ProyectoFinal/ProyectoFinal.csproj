@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos\ConexionSQL.cs" />
+    <Compile Include="Controlador\ControladorPedido.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

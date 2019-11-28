@@ -10,7 +10,7 @@ namespace ProyectoFinal.Modelo
     {
         public int IdPedido { get; set; }
         public Cliente Cliente { get; set; }
-        public Usuario Vendedor { get; set; } //***********
+        public Usuario Vendedor { get; set; }
         public String FechaPedido { get; set; }
     }
 }
