@@ -218,22 +218,26 @@ namespace ProyectoFinal.Controlador.Ventas
                 reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    c = new Cliente
+                    c = new Cliente();
+                    c.IdCliente = reader.GetInt32(0);
+                    c.Nombre = reader.GetString(1);
+                    c.Telefono = reader.GetString(2);
+                    c.CorreoElectronico = reader.GetString(3);
+                    c.Calle = reader.GetString(4);
+                    c.Numero = reader.GetString(5);
+                    c.Colonia = reader.GetString(6);
+                        if (reader.GetInt32(7) == 1)
                     {
-                        IdCliente = reader.GetInt32(0),
-                        Nombre = reader.GetString(1),
-                        Telefono = reader.GetString(2),
-                        CorreoElectronico = reader.GetString(3),
-                        Calle = reader.GetString(4),
-                        Numero = reader.GetString(5),
-                        Colonia = reader.GetString(6),
-                        RegimenFiscal = reader.GetInt32(7),
-                        RFC = reader.GetString(8),
+                        c.RegimenFiscal = RegimenesFiscales.PersonaMoral;
+                    }else if(reader.GetInt32(7) == 2)
+                    {
+                        c.RegimenFiscal = RegimenesFiscales.PersonaFisica;
+                    }
+                    c.RFC = reader.GetString(8);
 
-                        ListaContactos = new Modelo.ListaContactos
-                        {
-                            IdListaContactos = reader.GetInt32(9)
-                        }
+                    c.ListaContactos = new Modelo.ListaContactos
+                    {
+                        IdListaContactos = reader.GetInt32(9)
                     };
 
                     ControladorContacto contContacto = new ControladorContacto();

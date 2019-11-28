@@ -8,7 +8,7 @@ namespace ProyectoFinal.Modelo.Ventas
 {
     class DetallePedido
     {
-        public int IdDetallePedido { get; set; }
+        public int IdDetalle { get; set; }
         public Produccion.Material Base { get; set; }
         public Produccion.Design Design { get; set; }
         public double Cantidad { get; set; }
