@@ -11,7 +11,7 @@ namespace ProyectoFinal.Modelo.Produccion
         public int IdLoteEtapa { get; set; }
         public Object OrdenadoPor { get; set; }
         public DateTime FechaOrdemamiento { get; set; }
-        public LotesProduccion Lote { get; set; }
+        public LoteProduccion Lote { get; set; }
         public EtapasProduccion Etapa { get; set; }
         public Object AutorizadoPor { get; set; }
         public DateTime FechaAutorizacion { get; set; }

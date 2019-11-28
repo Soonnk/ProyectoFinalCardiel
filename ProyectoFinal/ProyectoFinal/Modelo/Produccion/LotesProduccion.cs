@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Produccion
 {
-    class LotesProduccion: List<LotesEtapas>
+    class LoteProduccion: List<LotesEtapas>
     {
         public int IdLoteProduccion { get; set; }
         public Ventas.DetallePedido DetalleAsociado { get; set; }
