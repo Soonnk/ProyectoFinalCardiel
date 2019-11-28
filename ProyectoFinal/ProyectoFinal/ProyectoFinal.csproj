@@ -66,8 +66,8 @@
   <ItemGroup>
     <Compile Include="AccesoDatos\ConexionSQL.cs" />
     <Compile Include="Controlador\Compras\ControladorProveedor.cs" />
-    <Compile Include="Controlador\ControladorPedido.cs" />
     <Compile Include="Controlador\Utils.cs" />
+    <Compile Include="Controlador\Ventas\ControladorPedido.cs" />
     <Compile Include="Modelo\Compras\Compra.cs" />
     <Compile Include="Modelo\Contacto.cs" />
     <Compile Include="Modelo\Compras\DetalleCompra.cs" />
