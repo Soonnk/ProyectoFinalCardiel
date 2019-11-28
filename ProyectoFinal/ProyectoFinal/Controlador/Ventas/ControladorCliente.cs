@@ -6,17 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using ProyectoFinal.Modelo.Compras;
+using ProyectoFinal.Modelo.Ventas;
+using static ProyectoFinal.Modelo.Ventas.Cliente;
 
-namespace ProyectoFinal.Controlador.Compras
+namespace ProyectoFinal.Controlador.Ventas
 {
-    class ControladorProveedor: AccesoDatos.ConexionSQL
+    class ControladorCliente : AccesoDatos.ConexionSQL
     {
-        public ControladorProveedor() {
+        public ControladorCliente()
+        {
             this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
         }
 
-        public void InsertarProveedor(Proveedor p) {
+        public void InsertarCliente(Cliente c)
+        {
             SqlConnection connection = null;
             SqlTransaction transaction = null;
             SqlCommand cmd = null;
@@ -30,13 +33,15 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd.CommandText = Utils.InsertListaContactos;
                 int idLista = (int)cmd.ExecuteScalar();
 
-                string InsertProveedor = "INSERT INTO [Compras].[Proveedores](" + Environment.NewLine +
+                string InsertCliente = "INSERT INTO [Ventas].[Clientes](" + Environment.NewLine +
                     "   Nombre," + Environment.NewLine +
                     "   Telefono," + Environment.NewLine +
                     "   CorreoElectronico," + Environment.NewLine +
                     "   Calle," + Environment.NewLine +
                     "   Numero," + Environment.NewLine +
                     "   Colonia," + Environment.NewLine +
+                    "   RegimenFiscal," + Environment.NewLine +
+                    "   RFC," + Environment.NewLine +
                     "   ListaContactos" + Environment.NewLine +
                     ")VALUES(" + Environment.NewLine +
                     "   @Nombre," + Environment.NewLine +
@@ -45,27 +50,33 @@ namespace ProyectoFinal.Controlador.Compras
                     "   @Calle," + Environment.NewLine +
                     "   @Numero," + Environment.NewLine +
                     "   @Colonia," + Environment.NewLine +
+                    "   @RegimenFiscal," + Environment.NewLine +
+                    "   @RFC," + Environment.NewLine +
                     "   @ListaContactos" + Environment.NewLine +
                     ")" + Environment.NewLine +
                     "SELECT SCOPE_IDENTITY()";
 
-                cmd.CommandText = InsertProveedor;
+                cmd.CommandText = InsertCliente;
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
-                cmd.Parameters.AddWithValue("@Telefono", p.Telefono);
-                cmd.Parameters.AddWithValue("@CorreoElectronico", p.CorreoElectronico);
-                cmd.Parameters.AddWithValue("@Calle", p.Calle);
-                cmd.Parameters.AddWithValue("@Numero", p.Numero);
-                cmd.Parameters.AddWithValue("@Colonia", p.Colonia);
-                cmd.Parameters.AddWithValue("@ListaContactos",idLista);
+                cmd.Parameters.AddWithValue("@Nombre", c.Nombre);
+                cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
+                cmd.Parameters.AddWithValue("@CorreoElectronico", c.CorreoElectronico);
+                cmd.Parameters.AddWithValue("@Calle", c.Calle);
+                cmd.Parameters.AddWithValue("@Numero", c.Numero);
+                cmd.Parameters.AddWithValue("@Colonia", c.Colonia);
+                cmd.Parameters.AddWithValue("@RegimenFiscal", c.RegimenFiscal);
+                cmd.Parameters.AddWithValue("@RFC", c.RFC);
+                cmd.Parameters.AddWithValue("@ListaContactos", idLista);
 
-                int IdProveedor = (int)cmd.ExecuteScalar();
+                int IdCliente = (int)cmd.ExecuteScalar();
 
 
-                if (p.Contactos != null && p.Contactos.Count > 0) {
+                if (c.ListaContactos != null && c.ListaContactos.Count > 0)
+                {
 
-                    foreach(Modelo.Contacto c in p.Contactos){
-                        ControladorContacto.InsertarContacto(c,idLista, cmd);
+                    foreach (Modelo.Contacto contacto in c.ListaContactos)
+                    {
+                        ControladorContacto.InsertarContacto(contacto, idLista, cmd);
                     }
                 }
 
@@ -79,8 +90,8 @@ namespace ProyectoFinal.Controlador.Compras
                 throw ex;
             }
         }
-        
-        public void UpdateProveedor(Proveedor p)
+
+        public void UpdateCliente(Cliente c)
         {
             SqlConnection connection = null;
             SqlCommand cmd = null;
@@ -89,25 +100,29 @@ namespace ProyectoFinal.Controlador.Compras
                 connection = GetConnection();
                 connection.Open();
                 cmd = connection.CreateCommand();
-                
-                string InsertProveedor = "UPDATE Compras.Proveedor SET " + Environment.NewLine +
+
+                string UpdateCliente = "UPDATE [Ventas].[Clientes] SET " + Environment.NewLine +
                     "Nombre = @Nombre, " + Environment.NewLine +
                     "Telefono = @Telefono, " + Environment.NewLine +
                     "CorreoElectronico = @CorreoElectronico, " + Environment.NewLine +
                     "Calle = @Calle, " + Environment.NewLine +
                     "Numero = @Numero, " + Environment.NewLine +
                     "Colonia = @Colonia " + Environment.NewLine +
-                    "WHERE IdProveedor = @IdProveedor";
+                    "RegimenFiscal = @RegimenFiscal " + Environment.NewLine +
+                    "RFC = @RFC " + Environment.NewLine +
+                    "WHERE IdCliente = @IdCliente";
 
-                cmd.CommandText = InsertProveedor;
+                cmd.CommandText = UpdateCliente;
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
-                cmd.Parameters.AddWithValue("@Telefono", p.Telefono);
-                cmd.Parameters.AddWithValue("@CorreoElectronico", p.CorreoElectronico);
-                cmd.Parameters.AddWithValue("@Calle", p.Calle);
-                cmd.Parameters.AddWithValue("@Numero", p.Numero);
-                cmd.Parameters.AddWithValue("@Colonia", p.Colonia);
-                cmd.Parameters.AddWithValue("@IdProveedor", p.IdProveedor);
+                cmd.Parameters.AddWithValue("@Nombre", c.Nombre);
+                cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
+                cmd.Parameters.AddWithValue("@CorreoElectronico", c.CorreoElectronico);
+                cmd.Parameters.AddWithValue("@Calle", c.Calle);
+                cmd.Parameters.AddWithValue("@Numero", c.Numero);
+                cmd.Parameters.AddWithValue("@Colonia", c.Colonia);
+                cmd.Parameters.AddWithValue("@RegimenFiscal", c.RegimenFiscal);
+                cmd.Parameters.AddWithValue("@RFC", c.RFC);
+                cmd.Parameters.AddWithValue("@IdProveedor", c.IdCliente);
 
                 cmd.ExecuteNonQuery();
             }
@@ -129,39 +144,7 @@ namespace ProyectoFinal.Controlador.Compras
                 connection.Open();
 
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Proveedores " + filtro;
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                connection.Close();
-                connection.Dispose();
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                if (connection != null) {
-                    connection.Close();
-                    connection.Dispose();
-                }
-
-                throw ex;
-            }
-        }
-
-        public DataTable GetAll()
-        {
-            SqlConnection connection = null;
-            try
-            {
-                connection = GetConnection();
-
-                connection.Open();
-
-                SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Proveedores";
+                cmd.CommandText = "SELECT * FROM [Ventas].[Clientes] " + filtro;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
@@ -184,9 +167,42 @@ namespace ProyectoFinal.Controlador.Compras
             }
         }
 
-        public Proveedor GetById(int idProveedor)
+        public DataTable GetAll()
         {
-            Proveedor p = null;
+            SqlConnection connection = null;
+            try
+            {
+                connection = GetConnection();
+
+                connection.Open();
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM Ventas.Clientes";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                connection.Close();
+                connection.Dispose();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
+
+                throw ex;
+            }
+        }
+
+        public Cliente GetById(int idCliente)
+        {
+            Cliente c = null;
             SqlConnection connection = null;
             SqlCommand cmd = null;
             SqlDataReader reader = null;
@@ -196,32 +212,33 @@ namespace ProyectoFinal.Controlador.Compras
                 connection = GetConnection();
                 cmd = connection.CreateCommand();
 
-                cmd.CommandText = "SELECT * FROM [Compras].[Proveedores] WHERE IdProveedor = @IdProveedor";
-                cmd.Parameters.AddWithValue("@IdProveedor", idProveedor);
+                cmd.CommandText = "SELECT * FROM [Ventas].[Clientes] WHERE IdCliente = @IdCliente";
+                cmd.Parameters.AddWithValue("@IdCliente", idCliente);
 
                 reader = cmd.ExecuteReader();
-
                 if (reader.Read())
                 {
-                    p = new Proveedor
+                    c = new Cliente
                     {
-                        IdProveedor = reader.GetInt32(0),
+                        IdCliente = reader.GetInt32(0),
                         Nombre = reader.GetString(1),
                         Telefono = reader.GetString(2),
                         CorreoElectronico = reader.GetString(3),
                         Calle = reader.GetString(4),
                         Numero = reader.GetString(5),
                         Colonia = reader.GetString(6),
+                        RegimenFiscal = reader.GetInt32(7),
+                        RFC = reader.GetString(8),
 
-                        Contactos = new Modelo.ListaContactos
+                        ListaContactos = new Modelo.ListaContactos
                         {
-                            IdListaContactos = reader.GetInt32(7)
+                            IdListaContactos = reader.GetInt32(9)
                         }
                     };
 
                     ControladorContacto contContacto = new ControladorContacto();
 
-                    DataTable dt = contContacto.GetAll(p.Contactos.IdListaContactos);
+                    DataTable dt = contContacto.GetAll(c.ListaContactos.IdListaContactos);
 
                     foreach (DataRow row in dt.Rows)
                     {
@@ -239,10 +256,10 @@ namespace ProyectoFinal.Controlador.Compras
                             Colonia = (string)row["Colonia"]
                         };
 
-                        p.Contactos.Add(contacto);
+                        c.ListaContactos.Add(contacto);
                     }
                 }
-                return p;
+                return c;
             }
             catch (Exception ex)
             {

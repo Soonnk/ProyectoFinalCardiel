@@ -12,6 +12,7 @@ namespace ProyectoFinal.Modelo.Usuarios
         public string Username { get; set; }
         public string Password { get; set; }
         public NivelesUsuario NivelUsuario { get; set; }
+        public Departamentos Departamento { get; set; }
         
 
         public enum NivelesUsuario : int
@@ -23,7 +24,7 @@ namespace ProyectoFinal.Modelo.Usuarios
             Visor = 5
         }
 
-        public enum Departamento : int
+        public enum Departamentos : int
         {
             Administracion = 1,
             Ventas = 2,

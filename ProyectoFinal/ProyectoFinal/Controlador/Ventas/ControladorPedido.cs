@@ -32,7 +32,7 @@ namespace ProyectoFinal.Controlador.Ventas
                 transaction = connection.BeginTransaction();
                 cmd.Transaction = transaction;
 
-                string InsertPedido = "INSERT INTO Ventas.Pedidos(IdPedido, Cliente, Vendedor, FechaPedido) " +
+                string InsertPedido = "INSERT INTO [Ventas].[Pedidos](IdPedido, Cliente, Vendedor, FechaPedido) " +
             "VALUES (@IdPedido, @Cliente, @Vendedor, @FechaPedido)";
 
                 Cliente c = new Cliente();
@@ -66,7 +66,7 @@ namespace ProyectoFinal.Controlador.Ventas
                 cmd = connection.CreateCommand();
                 transaction = connection.BeginTransaction();
                 cmd.Transaction = transaction;
-                string InsertProveedor = "UPDATE Ventas.Pedidos SET Cliente = @Cliente, Vendedor = @Vendedor, FechaPedido = @FechaPedido " +
+                string InsertProveedor = "UPDATE [Ventas].[Pedidos] SET Cliente = @Cliente, Vendedor = @Vendedor, FechaPedido = @FechaPedido " +
             "WHERE IdPedido = @IdPedido";
                 
                 Cliente c = new Cliente();
@@ -106,7 +106,7 @@ namespace ProyectoFinal.Controlador.Ventas
                 cmd.Transaction = transaction;
                 using (connection)
                 {
-                    SqlCommand scmd = new SqlCommand("SELECT * FROM Ventas.Pedidos", connection);
+                    SqlCommand scmd = new SqlCommand("SELECT * FROM [Ventas].[Pedidos]", connection);
                     SqlDataReader dr = scmd.ExecuteReader();
 
                     if (dr.Read())
@@ -147,7 +147,7 @@ namespace ProyectoFinal.Controlador.Ventas
                 using (connection)
                 {
 
-                    SqlCommand scmd = new SqlCommand("SELECT * FROM Ventas.Pedidos WHERE IdPedido = @IdPedido", connection);
+                    SqlCommand scmd = new SqlCommand("SELECT * FROM [Ventas].[Pedidos] WHERE IdPedido = @IdPedido", connection);
                     SqlDataReader dr = scmd.ExecuteReader();
 
                     if (dr.Read())
@@ -196,7 +196,7 @@ namespace ProyectoFinal.Controlador.Ventas
                 using (connection)
                 {
 
-                    SqlCommand scmd = new SqlCommand("SELECT * FROM Ventas.Pedidos WHERE " +
+                    SqlCommand scmd = new SqlCommand("SELECT * FROM [Ventas].[Pedidos] WHERE " +
                         "IdPedido = @IdPedido OR " +
                         " Cliente = @Cliente OR" +
                         " Vendedor = @Vendedor OR" +
