@@ -19,31 +19,54 @@ namespace ProyectoFinal.Controlador.Ventas
             this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
         }
 
-        public void insert(Pedido p)
+        public void insert(Pedido p, DetallePedido d)
         {
             SqlConnection connection = null;
             SqlTransaction transaction = null;
-            SqlCommand cmd = null;
+            SqlCommand cmdPedido = null;
+            SqlCommand cmdDetallePedido = null;
             try
             {
                 connection = GetConnection();
                 connection.Open();
-                cmd = connection.CreateCommand();
+                cmdPedido = connection.CreateCommand();
+                cmdDetallePedido = connection.CreateCommand();
                 transaction = connection.BeginTransaction();
-                cmd.Transaction = transaction;
+                cmdPedido.Transaction = transaction;
+                cmdDetallePedido.Transaction = transaction;
 
-                string InsertPedido = "INSERT INTO [Ventas].[Pedidos](IdPedido, Cliente, Vendedor, FechaPedido) " +
+                string InsertPedido = "INSERT INTO [Ventas].[Pedidos](Cliente, Vendedor, FechaPedido) " +
             "VALUES (@IdPedido, @Cliente, @Vendedor, @FechaPedido)";
 
+                string InsertDetallePedido = "INSERT INTO [Ventas].[DetallesPedido](Pedido, Base, Design, Cantidad, Precio) " +
+            "VALUES (@Pedido, @Base, @Design, @Cantidad, @Precio)";
+                
                 Cliente c = new Cliente();
                 Usuario u = new Usuario();
                 c.IdCliente = p.Cliente.IdCliente;
                 u.IdUsuario = p.Vendedor.IdUsuario;
-                cmd.Parameters.AddWithValue("@IdPedido", p.IdPedido);
-                cmd.Parameters.AddWithValue("@Cliente", c.IdCliente);
-                cmd.Parameters.AddWithValue("@Vendedor", u.IdUsuario);
-                cmd.Parameters.AddWithValue("@FechaPedido", p.FechaPedido);
 
+                cmdPedido.CommandText = InsertPedido;
+                cmdPedido.Parameters.Clear();
+                cmdPedido.Parameters.AddWithValue("@Cliente", c.IdCliente);
+                cmdPedido.Parameters.AddWithValue("@Vendedor", u.IdUsuario);
+                cmdPedido.Parameters.AddWithValue("@FechaPedido", p.FechaPedido);
+                
+                Modelo.Produccion.Material b = new Modelo.Produccion.Material();
+                Modelo.Produccion.Design design = new Modelo.Produccion.Design();
+
+                b.IdMaterial = d.Base.IdMaterial;
+                design.IdDesign = d.Design.IdDesign;
+
+                cmdDetallePedido.CommandText = InsertDetallePedido;
+                cmdDetallePedido.Parameters.Clear();
+                cmdDetallePedido.Parameters.AddWithValue("@Pedido", p.IdPedido);
+                cmdDetallePedido.Parameters.AddWithValue("@Base", b.IdMaterial);
+                cmdDetallePedido.Parameters.AddWithValue("@Design", design.IdDesign);
+                cmdDetallePedido.Parameters.AddWithValue("@Cantidad", d.Cantidad);
+                cmdDetallePedido.Parameters.AddWithValue("@Precio", d.Precio);
+
+                transaction.Commit();
             }
             catch (Exception ex)
             {
@@ -54,29 +77,64 @@ namespace ProyectoFinal.Controlador.Ventas
             }
         }
 
-        public void update(Pedido p)
+        public void update(Pedido p, DetallePedido d)
         {
             SqlConnection connection = null;
             SqlTransaction transaction = null;
-            SqlCommand cmd = null;
+            SqlCommand cmdPedido = null;
+            SqlCommand cmdDetallePedido = null;
             try
             {
                 connection = GetConnection();
                 connection.Open();
-                cmd = connection.CreateCommand();
+                cmdPedido = connection.CreateCommand();
+                cmdDetallePedido = connection.CreateCommand();
                 transaction = connection.BeginTransaction();
-                cmd.Transaction = transaction;
-                string InsertProveedor = "UPDATE [Ventas].[Pedidos] SET Cliente = @Cliente, Vendedor = @Vendedor, FechaPedido = @FechaPedido " +
+                cmdPedido.Transaction = transaction;
+                cmdDetallePedido.Transaction = transaction;
+                string UpdatePedido = "UPDATE [Ventas].[Pedidos] SET " +
+                    "Cliente = @Cliente, " +
+                    "Vendedor = @Vendedor, " +
+                    "FechaPedido = @FechaPedido " +
             "WHERE IdPedido = @IdPedido";
-                
+
+                string UpdateDetallePedido = "UPDATE [Ventas].[DetallesPedido] SET " +
+                    "Pedido = @Pedido, " +
+                    "Base = @Base, " +
+                    "Design = @Design, " +
+                    "Cantidad = @Cantidad, " +
+                    "Precio = @Precio " +
+                    "WHERE IdDetalle = @IdDetalle ";
+
                 Cliente c = new Cliente();
                 Usuario u = new Usuario();
                 c.IdCliente = p.Cliente.IdCliente;
                 u.IdUsuario = p.Vendedor.IdUsuario;
-                cmd.Parameters.AddWithValue("@IdPedido", p.IdPedido);
-                cmd.Parameters.AddWithValue("@Cliente", c.IdCliente);
-                cmd.Parameters.AddWithValue("@Vendedor", u.IdUsuario);
-                cmd.Parameters.AddWithValue("@FechaPedido", p.FechaPedido);
+
+                cmdPedido.CommandText = UpdatePedido;
+                cmdPedido.Parameters.Clear();
+                cmdPedido.Parameters.AddWithValue("@IdPedido", p.IdPedido);
+                cmdPedido.Parameters.AddWithValue("@Cliente", c.IdCliente);
+                cmdPedido.Parameters.AddWithValue("@Vendedor", u.IdUsuario);
+                cmdPedido.Parameters.AddWithValue("@FechaPedido", p.FechaPedido);
+
+                Modelo.Produccion.Material b = new Modelo.Produccion.Material();
+                Modelo.Produccion.Design design = new Modelo.Produccion.Design();
+
+                b.IdMaterial = d.Base.IdMaterial;
+                design.IdDesign = d.Design.IdDesign;
+
+                cmdDetallePedido.CommandText = UpdateDetallePedido;
+                cmdDetallePedido.Parameters.Clear();
+                cmdDetallePedido.Parameters.AddWithValue("@IdDetalle", d.IdDetalle);
+                cmdDetallePedido.Parameters.AddWithValue("@Pedido", p.IdPedido);
+                cmdDetallePedido.Parameters.AddWithValue("@Base", b.IdMaterial);
+                cmdDetallePedido.Parameters.AddWithValue("@Design", design.IdDesign);
+                cmdDetallePedido.Parameters.AddWithValue("@Cantidad", d.Cantidad);
+                cmdDetallePedido.Parameters.AddWithValue("@Precio", d.Precio);
+
+                cmdPedido.ExecuteNonQuery();
+                cmdDetallePedido.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -89,143 +147,111 @@ namespace ProyectoFinal.Controlador.Ventas
 
         public DataTable getAll()
         {
-            DataTable table = new DataTable();
-            table.Columns.Add("IdPedido", typeof(int));
-            table.Columns.Add("Cliente", typeof(string));
-            table.Columns.Add("Vendedor", typeof(string));
-            table.Columns.Add("FechaPedido", typeof(string));
             SqlConnection connection = null;
-            SqlTransaction transaction = null;
-            SqlCommand cmd = null;
             try
             {
                 connection = GetConnection();
+
                 connection.Open();
-                cmd = connection.CreateCommand();
-                transaction = connection.BeginTransaction();
-                cmd.Transaction = transaction;
-                using (connection)
-                {
-                    SqlCommand scmd = new SqlCommand("SELECT * FROM [Ventas].[Pedidos]", connection);
-                    SqlDataReader dr = scmd.ExecuteReader();
 
-                    if (dr.Read())
-                    {
-                        table.Rows.Add(Convert.ToString(dr["IdPedido"]),
-                            Convert.ToString(dr["Cliente"]),
-                            Convert.ToString(dr["Vendedor"]),
-                            Convert.ToString(dr["FechaPedido"]));
-                    }
-                }
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM [Ventas].[Pedido] p INNER JOIN [Ventas].[DetallesPedido] d ON p.IdPedido = d.Pedido";
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                connection.Close();
+                connection.Dispose();
+                return dt;
             }
             catch (Exception ex)
             {
-                if (transaction != null) transaction.Rollback();
-                if (connection != null) connection.Close();
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
 
                 throw ex;
             }
-            return table;
         }
 
-        public Pedido getById(int id)
+        public Pedido getById(int idPedido)
         {
             Pedido p = null;
 
             SqlConnection connection = null;
             SqlTransaction transaction = null;
             SqlCommand cmd = null;
+            SqlDataReader reader = null;
             try
             {
                 connection = GetConnection();
-                connection.Open();
                 cmd = connection.CreateCommand();
-                transaction = connection.BeginTransaction();
-                cmd.Transaction = transaction;
 
-                using (connection)
+                cmd.CommandText = "SELECT * FROM [Ventas].[Pedido] p INNER JOIN [Ventas].[DetallesPedido] d ON p.IdPedido = d.Pedido " +
+                    "WHERE IdPedido = @IdPedido";
+                cmd.Parameters.AddWithValue("@IdPedido", idPedido);
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.Read())
                 {
-
-                    SqlCommand scmd = new SqlCommand("SELECT * FROM [Ventas].[Pedidos] WHERE IdPedido = @IdPedido", connection);
-                    SqlDataReader dr = scmd.ExecuteReader();
-
-                    if (dr.Read())
-                    {
-                        Usuario u = new Usuario();
-                        u.IdUsuario = Convert.ToInt32(dr["Vendedor"]);
-
-                        Cliente c = new Cliente();
-                        c.IdCliente = Convert.ToInt32(dr["Cliente"]);
-
-                        p = new Pedido();
-                        p.IdPedido = Convert.ToInt32(dr["IdPedido"]);
-                        p.Cliente = c;
-                        p.Vendedor = u;
-                        p.FechaPedido = Convert.ToString(dr["FechaPedido"]);
-                    }
+                    p = new Pedido();
+                    Cliente c = new Cliente();
+                    Usuario v = new Usuario();
+                    p.IdPedido = reader.GetInt32(0);
+                    c.IdCliente = reader.GetInt32(1);
+                    p.Cliente = c;
+                    v.IdPersona = reader.GetInt32(2);
+                    p.Vendedor = v;
+                    p.FechaPedido = reader.GetString(3);
                 }
+                return p;
             }
             catch (Exception ex)
             {
-                if (transaction != null) transaction.Rollback();
-                if (connection != null) connection.Close();
-
-                throw ex;
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
+                throw;
             }
-            return p;
         }
 
-        public DataTable getBy(string filtro)
+        public DataTable GetBy(string filtro)
         {
-            DataTable table = new DataTable();
-            table.Columns.Add("IdPedido", typeof(int));
-            table.Columns.Add("Cliente", typeof(string));
-            table.Columns.Add("Vendedor", typeof(string));
-            table.Columns.Add("FechaPedido", typeof(string));
             SqlConnection connection = null;
-            SqlTransaction transaction = null;
-            SqlCommand cmd = null;
             try
             {
                 connection = GetConnection();
+
                 connection.Open();
-                cmd = connection.CreateCommand();
-                transaction = connection.BeginTransaction();
-                cmd.Transaction = transaction;
-                using (connection)
-                {
 
-                    SqlCommand scmd = new SqlCommand("SELECT * FROM [Ventas].[Pedidos] WHERE " +
-                        "IdPedido = @IdPedido OR " +
-                        " Cliente = @Cliente OR" +
-                        " Vendedor = @Vendedor OR" +
-                        " FechaPedido = @FechaPedido", connection);
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM [Ventas].[Pedido] p INNER JOIN [Ventas].[DetallesPedido] d ON p.IdPedido = d.Pedido " + filtro;
 
-                    scmd.Parameters.Add(new SqlParameter("@IdPedido", filtro));
-                    scmd.Parameters.Add(new SqlParameter("@Cliente", filtro));
-                    scmd.Parameters.Add(new SqlParameter("@Vendedor", filtro));
-                    scmd.Parameters.Add(new SqlParameter("@FechaPedido", filtro));
-                    SqlDataReader dr = cmd.ExecuteReader();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                    if (dr.Read())
-                    {
-                        table.Rows.Add(Convert.ToString(dr["IdPedido"]),
-                            Convert.ToString(dr["Cliente"]),
-                            Convert.ToString(dr["Vendedor"]),
-                            Convert.ToString(dr["FechaPedido"]));
-                    }
-                }
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
 
+                connection.Close();
+                connection.Dispose();
+                return dt;
             }
             catch (Exception ex)
             {
-                if (transaction != null) transaction.Rollback();
-                if (connection != null) connection.Close();
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
 
                 throw ex;
             }
-            return table;
         }
     }
 }
