@@ -7,9 +7,12 @@ using System.Data.SqlClient;
 using ProyectoFinal.Modelo;
 using System.Data;
 
+using ProyectoFinal.Modelo.Ventas;
+using ProyectoFinal.Modelo.Usuarios;
+
 namespace ProyectoFinal.Controlador
 {
-    class ControladorPedido:Pedido
+    class ControladorPedido
     {
         SqlConnection conn = new SqlConnection(@"Data Source=CEPEDI-AF2B68DC\SQLEXPRESS;Initial Catalog=master;Integrated Security=True");
 
@@ -20,12 +23,12 @@ namespace ProyectoFinal.Controlador
 
             SqlCommand comando = new SqlCommand(sql, conn);
             Cliente c = new Cliente();
-            Vendedor v = new Vendedor();
+            Usuario u = new Usuario();
             c.IdCliente = p.Cliente.IdCliente;
-            v.IdVendedor = p.Vendedor.IdVendedor;
+            u.IdUsuario = p.Vendedor.IdUsuario;
             comando.Parameters.Add(new SqlParameter("@IdPedido", p.IdPedido));
             comando.Parameters.Add(new SqlParameter("@Cliente", c.IdCliente));
-            comando.Parameters.Add(new SqlParameter("@Vendedor", v.IdVendedor));
+            comando.Parameters.Add(new SqlParameter("@Vendedor", u.IdUsuario));
             comando.Parameters.Add(new SqlParameter("@FechaPedido", p.FechaPedido));
 
             conn.Open();
@@ -40,13 +43,13 @@ namespace ProyectoFinal.Controlador
 
             SqlCommand comando = new SqlCommand(sql, conn);
             Cliente c = new Cliente();
-            Vendedor v = new Vendedor();
+            Usuario u = new Usuario();
             c.IdCliente = p.Cliente.IdCliente;
-            v.IdVendedor = p.Vendedor.IdVendedor;
+            u.IdUsuario = p.Vendedor.IdUsuario;
             comando.Parameters.Add(new SqlParameter("@IdPedido", p.IdPedido));
             comando.Parameters.Add(new SqlParameter("@Cliente", c.IdCliente));
-            comando.Parameters.Add(new SqlParameter("@Cliente", v.IdVendedor));
-            comando.Parameters.Add(new SqlParameter("@Cliente", p.FechaPedido));
+            comando.Parameters.Add(new SqlParameter("@Vendedor", u.IdUsuario));
+            comando.Parameters.Add(new SqlParameter("@FechaPedido", p.FechaPedido));
 
             conn.Open();
             comando.ExecuteNonQuery();
@@ -55,23 +58,96 @@ namespace ProyectoFinal.Controlador
 
         public DataTable getAll()
         {
-            string sql = "SELECT * FROM Ventas.Pedidos";
             DataTable table = new DataTable();
+            table.Columns.Add("IdPedido", typeof(int));
+            table.Columns.Add("Cliente", typeof(string));
+            table.Columns.Add("Vendedor", typeof(string));
+            table.Columns.Add("FechaPedido", typeof(string));
 
-            SqlCommand comando = new SqlCommand(sql, conn);
-            Cliente c = new Cliente();
-            Vendedor v = new Vendedor();
-            c.IdCliente = p.Cliente.IdCliente;
-            v.IdVendedor = p.Vendedor.IdVendedor;
-            comando.Parameters.Add(new SqlParameter("@IdPedido", p.IdPedido));
-            comando.Parameters.Add(new SqlParameter("@Cliente", c.IdCliente));
-            comando.Parameters.Add(new SqlParameter("@Cliente", v.IdVendedor));
-            comando.Parameters.Add(new SqlParameter("@Cliente", p.FechaPedido));
+            using (conn)
+            {
+                conn.Open();
 
-            conn.Open();
-            comando.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Ventas.Pedidos", conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    table.Rows.Add(Convert.ToString(dr["IdPedido"]),
+                        Convert.ToString(dr["Cliente"]),
+                        Convert.ToString(dr["Vendedor"]),
+                        Convert.ToString(dr["FechaPedido"]));
+                }
+            }
+
             conn.Close();
+            return table;
         }
 
+        public Pedido getById(int id)
+        {
+            Pedido p = new Pedido();
+            using (conn)
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Ventas.Pedidos WHERE IdPedido = @IdPedido", conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    Usuario u = new Usuario();
+                    u.IdUsuario = Convert.ToInt32(dr["Vendedor"]);
+
+                    Cliente c = new Cliente();
+                    c.IdCliente = Convert.ToInt32(dr["Cliente"]);
+
+                    p.IdPedido = Convert.ToInt32(dr["IdPedido"]);
+                    p.Cliente = c;
+                    p.Vendedor = u;
+                    p.FechaPedido = Convert.ToString(dr["FechaPedido"]);
+                }
+            }
+
+            conn.Close();
+            return p;
+        }
+
+        public DataTable getBy(string filtro)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("IdPedido", typeof(int));
+            table.Columns.Add("Cliente", typeof(string));
+            table.Columns.Add("Vendedor", typeof(string));
+            table.Columns.Add("FechaPedido", typeof(string));
+
+            using (conn)
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Ventas.Pedidos WHERE " +
+                    "IdPedido = @IdPedido OR " +
+                    " Cliente = @Cliente OR" +
+                    " Vendedor = @Vendedor OR" +
+                    " FechaPedido = @FechaPedido", conn);
+
+                cmd.Parameters.Add(new SqlParameter("@IdPedido", filtro));
+                cmd.Parameters.Add(new SqlParameter("@Cliente", filtro));
+                cmd.Parameters.Add(new SqlParameter("@Vendedor", filtro));
+                cmd.Parameters.Add(new SqlParameter("@FechaPedido", filtro));
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    table.Rows.Add(Convert.ToString(dr["IdPedido"]),
+                        Convert.ToString(dr["Cliente"]),
+                        Convert.ToString(dr["Vendedor"]),
+                        Convert.ToString(dr["FechaPedido"]));
+                }
+            }
+
+            conn.Close();
+            return table;
+        }
     }
 }

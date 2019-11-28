@@ -12,7 +12,8 @@ namespace ProyectoFinal.AccesoDatos
         /// <summary>
         /// Nombre del servidor a conectar.
         /// </summary>
-        private readonly string server = "localhost";
+        private readonly string Server = "localhost";
+        private readonly string DBName = "SGPV";
         /* 
          * ARE YOU LOST? Usuarios y contraseñas se deben configurar
          * desde la funcion GetDBUser(). Recuerda que cada nivel de
@@ -35,7 +36,7 @@ namespace ProyectoFinal.AccesoDatos
         /// </remarks>
         public SqlConnection GetConnection() {
             DBUser user = GetDBUser();
-            string conString = "DATA SOURCE = " + server + "; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; TIMEOUT = 10;";
+            string conString = "DATA SOURCE = " + Server + "; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
 
             SqlConnection conn = new SqlConnection(conString);
 

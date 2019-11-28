@@ -11,7 +11,7 @@ namespace ProyectoFinal.Modelo.Compras
         public int IdProveedor { get; set; }
         public String Nombre { get; set; }
         public String Telefono { get; set; }
-        public String Correo { get; set; }
+        public String CorreoElectronico { get; set; }
         public String Calle { get; set; }
         public String Numero { get; set; }
         public String Colonia { get; set; }

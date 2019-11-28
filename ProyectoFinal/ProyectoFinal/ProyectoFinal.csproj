@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos\ConexionSQL.cs" />
+    <Compile Include="Controlador\Compras\ControladorProveedor.cs" />
     <Compile Include="Controlador\ControladorPedido.cs" />
     <Compile Include="Modelo\Compras\Compra.cs" />
     <Compile Include="Modelo\Contacto.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Modelo\Ventas\Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="Vistas\MDI.cs">
       <SubType>Form</SubType>
     </Compile>
