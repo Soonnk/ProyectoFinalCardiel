@@ -29,21 +29,27 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtIdDetalleC = new DevExpress.XtraEditors.TextEdit();
-            this.txtIdMaterial = new DevExpress.XtraEditors.TextEdit();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtIdCompra = new DevExpress.XtraEditors.TextEdit();
+            this.txtIdProveedor = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.dtaFechaOrden = new DevExpress.XtraEditors.DateEdit();
             this.txtIdUsuario = new DevExpress.XtraEditors.TextEdit();
-            this.txtIdCompra = new DevExpress.XtraEditors.TextEdit();
+            this.txtIdDetalleC = new DevExpress.XtraEditors.TextEdit();
+            this.txtIdMaterial = new DevExpress.XtraEditors.TextEdit();
             this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.txtCosto = new DevExpress.XtraEditors.TextEdit();
-            this.txtIdProveedor = new DevExpress.XtraEditors.TextEdit();
+            this.dtaFechaRecepcion = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.campoUsuario = new DevExpress.XtraLayout.LayoutControlItem();
             this.Persona = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Buscar = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtBase = new DevExpress.XtraLayout.LayoutControlItem();
@@ -52,38 +58,34 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.Buscar = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dtaFechaRecepcion = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalleC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdMaterial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdCompra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdProveedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtaFechaOrden.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtaFechaOrden.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdUsuario.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdCompra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalleC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdMaterial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCosto.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdProveedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaFechaRecepcion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaFechaRecepcion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Persona)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Buscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBase)).BeginInit();
@@ -92,16 +94,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Buscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtaFechaRecepcion.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtaFechaRecepcion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +131,170 @@
             this.layoutControl1.Size = new System.Drawing.Size(1188, 736);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(16, 317);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1146, 403);
+            this.gridControl1.TabIndex = 36;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(16, 156);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(480, 25);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Detalles";
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.ImageUri.Uri = "Clear;Office2013";
+            this.simpleButton5.Location = new System.Drawing.Point(502, 154);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(670, 40);
+            this.simpleButton5.StyleController = this.layoutControl1;
+            this.simpleButton5.TabIndex = 34;
+            this.simpleButton5.Text = "Limpiar";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.ImageUri.Uri = "Cancel;Office2013";
+            this.simpleButton4.Location = new System.Drawing.Point(502, 108);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(670, 40);
+            this.simpleButton4.StyleController = this.layoutControl1;
+            this.simpleButton4.TabIndex = 33;
+            this.simpleButton4.Text = "Eliminar";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageUri.Uri = "Redo;Office2013";
+            this.simpleButton2.Location = new System.Drawing.Point(502, 62);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(670, 40);
+            this.simpleButton2.StyleController = this.layoutControl1;
+            this.simpleButton2.TabIndex = 32;
+            this.simpleButton2.Text = "Actualizar";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageUri.Uri = "Add;Size32x32;Office2013";
+            this.simpleButton1.Location = new System.Drawing.Point(502, 16);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(670, 40);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 31;
+            this.simpleButton1.Text = "Agregar";
+            // 
+            // txtIdCompra
+            // 
+            this.txtIdCompra.EditValue = "";
+            this.txtIdCompra.Location = new System.Drawing.Point(141, 16);
+            this.txtIdCompra.Name = "txtIdCompra";
+            this.txtIdCompra.Size = new System.Drawing.Size(355, 22);
+            this.txtIdCompra.StyleController = this.layoutControl1;
+            this.txtIdCompra.TabIndex = 4;
+            // 
+            // txtIdProveedor
+            // 
+            this.txtIdProveedor.Location = new System.Drawing.Point(141, 44);
+            this.txtIdProveedor.Name = "txtIdProveedor";
+            this.txtIdProveedor.Size = new System.Drawing.Size(355, 22);
+            this.txtIdProveedor.StyleController = this.layoutControl1;
+            this.txtIdProveedor.TabIndex = 5;
+            // 
+            // textEdit7
+            // 
+            this.textEdit7.Location = new System.Drawing.Point(627, 271);
+            this.textEdit7.Name = "textEdit7";
+            this.textEdit7.Size = new System.Drawing.Size(176, 22);
+            this.textEdit7.StyleController = this.layoutControl1;
+            this.textEdit7.TabIndex = 13;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageUri.Uri = "Zoom;Office2013";
+            this.simpleButton3.Location = new System.Drawing.Point(809, 271);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(363, 40);
+            this.simpleButton3.StyleController = this.layoutControl1;
+            this.simpleButton3.TabIndex = 22;
+            this.simpleButton3.Text = "Consultar";
+            // 
+            // dtaFechaOrden
+            // 
+            this.dtaFechaOrden.EditValue = null;
+            this.dtaFechaOrden.Location = new System.Drawing.Point(141, 72);
+            this.dtaFechaOrden.Name = "dtaFechaOrden";
+            this.dtaFechaOrden.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtaFechaOrden.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtaFechaOrden.Size = new System.Drawing.Size(355, 22);
+            this.dtaFechaOrden.StyleController = this.layoutControl1;
+            this.dtaFechaOrden.TabIndex = 24;
+            // 
+            // txtIdUsuario
+            // 
+            this.txtIdUsuario.Location = new System.Drawing.Point(141, 128);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(355, 22);
+            this.txtIdUsuario.StyleController = this.layoutControl1;
+            this.txtIdUsuario.TabIndex = 26;
+            // 
+            // txtIdDetalleC
+            // 
+            this.txtIdDetalleC.Location = new System.Drawing.Point(141, 187);
+            this.txtIdDetalleC.Name = "txtIdDetalleC";
+            this.txtIdDetalleC.Size = new System.Drawing.Size(355, 22);
+            this.txtIdDetalleC.StyleController = this.layoutControl1;
+            this.txtIdDetalleC.TabIndex = 27;
+            // 
+            // txtIdMaterial
+            // 
+            this.txtIdMaterial.Location = new System.Drawing.Point(141, 215);
+            this.txtIdMaterial.Name = "txtIdMaterial";
+            this.txtIdMaterial.Size = new System.Drawing.Size(355, 22);
+            this.txtIdMaterial.StyleController = this.layoutControl1;
+            this.txtIdMaterial.TabIndex = 28;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(141, 243);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(355, 22);
+            this.txtCantidad.StyleController = this.layoutControl1;
+            this.txtCantidad.TabIndex = 29;
+            // 
+            // txtCosto
+            // 
+            this.txtCosto.Location = new System.Drawing.Point(141, 271);
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.Size = new System.Drawing.Size(355, 22);
+            this.txtCosto.StyleController = this.layoutControl1;
+            this.txtCosto.TabIndex = 30;
+            // 
+            // dtaFechaRecepcion
+            // 
+            this.dtaFechaRecepcion.EditValue = null;
+            this.dtaFechaRecepcion.Location = new System.Drawing.Point(141, 100);
+            this.dtaFechaRecepcion.Name = "dtaFechaRecepcion";
+            this.dtaFechaRecepcion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtaFechaRecepcion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtaFechaRecepcion.Size = new System.Drawing.Size(355, 22);
+            this.dtaFechaRecepcion.StyleController = this.layoutControl1;
+            this.dtaFechaRecepcion.TabIndex = 24;
             // 
             // layoutControlGroup1
             // 
@@ -162,94 +326,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(1188, 736);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // txtIdDetalleC
-            // 
-            this.txtIdDetalleC.Location = new System.Drawing.Point(141, 187);
-            this.txtIdDetalleC.Name = "txtIdDetalleC";
-            this.txtIdDetalleC.Size = new System.Drawing.Size(355, 22);
-            this.txtIdDetalleC.StyleController = this.layoutControl1;
-            this.txtIdDetalleC.TabIndex = 27;
-            // 
-            // txtIdMaterial
-            // 
-            this.txtIdMaterial.Location = new System.Drawing.Point(141, 215);
-            this.txtIdMaterial.Name = "txtIdMaterial";
-            this.txtIdMaterial.Size = new System.Drawing.Size(355, 22);
-            this.txtIdMaterial.StyleController = this.layoutControl1;
-            this.txtIdMaterial.TabIndex = 28;
-            // 
-            // dtaFechaOrden
-            // 
-            this.dtaFechaOrden.EditValue = null;
-            this.dtaFechaOrden.Location = new System.Drawing.Point(141, 72);
-            this.dtaFechaOrden.Name = "dtaFechaOrden";
-            this.dtaFechaOrden.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtaFechaOrden.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtaFechaOrden.Size = new System.Drawing.Size(355, 22);
-            this.dtaFechaOrden.StyleController = this.layoutControl1;
-            this.dtaFechaOrden.TabIndex = 24;
-            // 
-            // txtIdUsuario
-            // 
-            this.txtIdUsuario.Location = new System.Drawing.Point(141, 128);
-            this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(355, 22);
-            this.txtIdUsuario.StyleController = this.layoutControl1;
-            this.txtIdUsuario.TabIndex = 26;
-            // 
-            // txtIdCompra
-            // 
-            this.txtIdCompra.EditValue = "";
-            this.txtIdCompra.Location = new System.Drawing.Point(141, 16);
-            this.txtIdCompra.Name = "txtIdCompra";
-            this.txtIdCompra.Size = new System.Drawing.Size(355, 22);
-            this.txtIdCompra.StyleController = this.layoutControl1;
-            this.txtIdCompra.TabIndex = 4;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(141, 243);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(355, 22);
-            this.txtCantidad.StyleController = this.layoutControl1;
-            this.txtCantidad.TabIndex = 29;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.ImageUri.Uri = "Zoom;Office2013";
-            this.simpleButton3.Location = new System.Drawing.Point(809, 271);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(363, 40);
-            this.simpleButton3.StyleController = this.layoutControl1;
-            this.simpleButton3.TabIndex = 22;
-            this.simpleButton3.Text = "Consultar";
-            // 
-            // textEdit7
-            // 
-            this.textEdit7.Location = new System.Drawing.Point(627, 271);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(176, 22);
-            this.textEdit7.StyleController = this.layoutControl1;
-            this.textEdit7.TabIndex = 13;
-            // 
-            // txtCosto
-            // 
-            this.txtCosto.Location = new System.Drawing.Point(141, 271);
-            this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(355, 22);
-            this.txtCosto.StyleController = this.layoutControl1;
-            this.txtCosto.TabIndex = 30;
-            // 
-            // txtIdProveedor
-            // 
-            this.txtIdProveedor.Location = new System.Drawing.Point(141, 44);
-            this.txtIdProveedor.Name = "txtIdProveedor";
-            this.txtIdProveedor.Size = new System.Drawing.Size(355, 22);
-            this.txtIdProveedor.StyleController = this.layoutControl1;
-            this.txtIdProveedor.TabIndex = 5;
-            // 
             // campoUsuario
             // 
             this.campoUsuario.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
@@ -270,27 +346,6 @@
             this.Persona.Size = new System.Drawing.Size(486, 28);
             this.Persona.Text = "Id de Proveedor";
             this.Persona.TextSize = new System.Drawing.Size(121, 16);
-            // 
-            // Buscar
-            // 
-            this.Buscar.Control = this.textEdit7;
-            this.Buscar.CustomizationFormText = "Buscar";
-            this.Buscar.Location = new System.Drawing.Point(486, 255);
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(307, 46);
-            this.Buscar.Text = "Buscar";
-            this.Buscar.TextSize = new System.Drawing.Size(121, 16);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.simpleButton3;
-            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
-            this.layoutControlItem5.Location = new System.Drawing.Point(793, 255);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(369, 46);
-            this.layoutControlItem5.Text = "layoutControlItem5";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem7
             // 
@@ -368,72 +423,24 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(676, 71);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // simpleButton5
+            // Buscar
             // 
-            this.simpleButton5.ImageUri.Uri = "Clear;Office2013";
-            this.simpleButton5.Location = new System.Drawing.Point(502, 154);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(670, 40);
-            this.simpleButton5.StyleController = this.layoutControl1;
-            this.simpleButton5.TabIndex = 34;
-            this.simpleButton5.Text = "Limpiar";
+            this.Buscar.Control = this.textEdit7;
+            this.Buscar.CustomizationFormText = "Buscar";
+            this.Buscar.Location = new System.Drawing.Point(486, 255);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(307, 46);
+            this.Buscar.TextSize = new System.Drawing.Size(121, 16);
             // 
-            // simpleButton4
+            // layoutControlItem5
             // 
-            this.simpleButton4.ImageUri.Uri = "Cancel;Office2013";
-            this.simpleButton4.Location = new System.Drawing.Point(502, 108);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(670, 40);
-            this.simpleButton4.StyleController = this.layoutControl1;
-            this.simpleButton4.TabIndex = 33;
-            this.simpleButton4.Text = "Eliminar";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ImageUri.Uri = "Redo;Office2013";
-            this.simpleButton2.Location = new System.Drawing.Point(502, 62);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(670, 40);
-            this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 32;
-            this.simpleButton2.Text = "Actualizar";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageUri.Uri = "Add;Size32x32;Office2013";
-            this.simpleButton1.Location = new System.Drawing.Point(502, 16);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(670, 40);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 31;
-            this.simpleButton1.Text = "Agregar";
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.simpleButton5;
-            this.layoutControlItem1.Location = new System.Drawing.Point(486, 138);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(676, 46);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.simpleButton4;
-            this.layoutControlItem2.Location = new System.Drawing.Point(486, 92);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(676, 46);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.simpleButton2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(486, 46);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(676, 46);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
+            this.layoutControlItem5.Control = this.simpleButton3;
+            this.layoutControlItem5.CustomizationFormText = "layoutControlItem5";
+            this.layoutControlItem5.Location = new System.Drawing.Point(793, 255);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(369, 46);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem4
             // 
@@ -444,18 +451,32 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // dtaFechaRecepcion
+            // layoutControlItem3
             // 
-            this.dtaFechaRecepcion.EditValue = null;
-            this.dtaFechaRecepcion.Location = new System.Drawing.Point(141, 100);
-            this.dtaFechaRecepcion.Name = "dtaFechaRecepcion";
-            this.dtaFechaRecepcion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtaFechaRecepcion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtaFechaRecepcion.Size = new System.Drawing.Size(355, 22);
-            this.dtaFechaRecepcion.StyleController = this.layoutControl1;
-            this.dtaFechaRecepcion.TabIndex = 24;
+            this.layoutControlItem3.Control = this.simpleButton2;
+            this.layoutControlItem3.Location = new System.Drawing.Point(486, 46);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(676, 46);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.simpleButton4;
+            this.layoutControlItem2.Location = new System.Drawing.Point(486, 92);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(676, 46);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.simpleButton5;
+            this.layoutControlItem1.Location = new System.Drawing.Point(486, 138);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(676, 46);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem6
             // 
@@ -467,14 +488,6 @@
             this.layoutControlItem6.Text = "Fecha de Recepción";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(121, 16);
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(16, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(480, 25);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Detalles";
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.label1;
@@ -483,21 +496,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(486, 31);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(16, 317);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1146, 403);
-            this.gridControl1.TabIndex = 36;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
             // 
             // layoutControlItem13
             // 
@@ -518,21 +516,23 @@
             this.Text = "Compras";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalleC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdMaterial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdCompra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdProveedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtaFechaOrden.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtaFechaOrden.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdUsuario.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdCompra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdDetalleC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIdMaterial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCosto.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIdProveedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaFechaRecepcion.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtaFechaRecepcion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Persona)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Buscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBase)).EndInit();
@@ -541,16 +541,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Buscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtaFechaRecepcion.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtaFechaRecepcion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             this.ResumeLayout(false);
 
