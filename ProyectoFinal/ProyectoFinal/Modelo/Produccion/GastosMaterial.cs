@@ -9,7 +9,7 @@ namespace ProyectoFinal.Modelo.Produccion
     class GastosMaterial
     {
         public int IdGastoMaterial { get; set; }
-        public Materiales Material { get; set; }
+        public Material Material { get; set; }
         public LotesEtapas LoteEtapa { get; set; }
         public double Cantidad { get; set; }
 

@@ -65,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos\ConexionSQL.cs" />
+    <Compile Include="Controlador\Compras\ControladorProveedor.cs" />
+    <Compile Include="Controlador\Utils.cs" />
+    <Compile Include="Controlador\Ventas\ControladorPedido.cs" />
     <Compile Include="Modelo\Compras\Compra.cs" />
     <Compile Include="Modelo\Contacto.cs" />
     <Compile Include="Modelo\Compras\DetalleCompra.cs" />
@@ -76,8 +79,13 @@
     <Compile Include="Modelo\Produccion\LotesEtapas.cs" />
     <Compile Include="Modelo\Produccion\LotesProduccion.cs" />
     <Compile Include="Modelo\Produccion\Materiales.cs" />
+    <Compile Include="Modelo\Usuarios\Usuario.cs" />
+    <Compile Include="Modelo\Ventas\Cliente.cs" />
+    <Compile Include="Modelo\Ventas\DetallePedido.cs" />
+    <Compile Include="Modelo\Ventas\Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="Vistas\MDI.cs">
       <SubType>Form</SubType>
     </Compile>

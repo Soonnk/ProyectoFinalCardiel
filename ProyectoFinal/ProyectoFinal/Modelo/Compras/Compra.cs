@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoFinal.Modelo
+namespace ProyectoFinal.Modelo.Compras
 {
     class Compra
     {
@@ -12,7 +12,7 @@ namespace ProyectoFinal.Modelo
         public Proveedor Proveedor { get; set; }
         public DateTime FechaOrden { get; set; }
         public DateTime FechaRecepcion { get; set; }
-        //TODO Reemplazar los Object por su correspondiente clase especializada
-        public Object CompradoPor { get; set; }
+        public Usuarios.Usuario CompradoPor { get; set; }
+        public List<DetalleCompra> DetalleCompras { get; set; }
     }
 }

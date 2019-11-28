@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Produccion
 {
-    class Materiales
+    class Material
     {
         public int IdMaterial { get; set; }
         public String Descripcion { get; set; }
@@ -16,7 +16,6 @@ namespace ProyectoFinal.Modelo.Produccion
 
         public enum TiposMateriales : int
         {
-
             Insumos = 1,
             Base = 2,
             Combustible = 3
