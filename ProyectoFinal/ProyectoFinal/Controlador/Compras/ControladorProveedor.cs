@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -26,41 +27,45 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd = connection.CreateCommand();
                 transaction = connection.BeginTransaction();
                 cmd.Transaction = transaction;
+                cmd.CommandText = Utils.InsertListaContactos;
+                int idLista = (int)cmd.ExecuteScalar();
 
-                string InsertProveedor = "INSERT INTO [Compras].[Proveedores](" +
-                    "   Nombre," +
-                    "   Telefono," +
-                    "   CorreoElectronico," +
-                    "   Calle," +
-                    "   Numero," +
-                    "   Colonia," +
-                    ")VALUES(" +
-                    "   @Nombre," +
-                    "   @Telefono," +
-                    "   @CorreoElectronico," +
-                    "   @Calle," +
-                    "   @Numero," +
-                    "   @Colonia" +
-                    ")" +
+                string InsertProveedor = "INSERT INTO [Compras].[Proveedores](" + Environment.NewLine +
+                    "   Nombre," + Environment.NewLine +
+                    "   Telefono," + Environment.NewLine +
+                    "   CorreoElectronico," + Environment.NewLine +
+                    "   Calle," + Environment.NewLine +
+                    "   Numero," + Environment.NewLine +
+                    "   Colonia," + Environment.NewLine +
+                    "   ListaContactos" + Environment.NewLine +
+                    ")VALUES(" + Environment.NewLine +
+                    "   @Nombre," + Environment.NewLine +
+                    "   @Telefono," + Environment.NewLine +
+                    "   @CorreoElectronico," + Environment.NewLine +
+                    "   @Calle," + Environment.NewLine +
+                    "   @Numero," + Environment.NewLine +
+                    "   @Colonia," + Environment.NewLine +
+                    "   @ListaContactos" + Environment.NewLine +
+                    ")" + Environment.NewLine +
                     "SELECT SCOPE_IDENTITY()";
 
                 cmd.CommandText = InsertProveedor;
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
-                cmd.Parameters.AddWithValue("@telefono", p.Telefono);
+                cmd.Parameters.AddWithValue("@Telefono", p.Telefono);
                 cmd.Parameters.AddWithValue("@CorreoElectronico", p.CorreoElectronico);
                 cmd.Parameters.AddWithValue("@Calle", p.Calle);
                 cmd.Parameters.AddWithValue("@Numero", p.Numero);
                 cmd.Parameters.AddWithValue("@Colonia", p.Colonia);
+                cmd.Parameters.AddWithValue("@ListaContactos",idLista);
 
                 int IdProveedor = (int)cmd.ExecuteScalar();
 
+
                 if (p.Contactos != null && p.Contactos.Count > 0) {
-                    cmd.CommandText = Utils.InsertListaContactos;
-                    int idLista = (int)cmd.ExecuteScalar();
 
                     foreach(Modelo.Contacto c in p.Contactos){
-                        InsertarContacto(c,idLista, cmd);
+                        ControladorContacto.InsertarContacto(c,idLista, cmd);
                     }
                 }
 
@@ -74,59 +79,109 @@ namespace ProyectoFinal.Controlador.Compras
                 throw ex;
             }
         }
-
-        private void InsertarContacto( Modelo.Contacto c , int Lista, SqlCommand cmd)
-        {
-            string insertContacto = "INSERT INTO Persona VALUES(" +
-                "@Nombre," +
-                "@ApellidoPaterno," +
-                "@ApellidoMaterno," +
-                "@Telefono," +
-                "@CorreoElectronico," +
-                "@Calle," +
-                "@Numero," +
-                "@Colonia" +
-                ")" + Environment.NewLine +
-                "SELECT SCOPE_IDENTITY()";
-
-            cmd.CommandText = insertContacto;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@Nombre", c.Nombre);
-            cmd.Parameters.AddWithValue("@ApellidoPaterno", c.ApellidoPaterno);
-            cmd.Parameters.AddWithValue("@ApellidoMaterno", c.ApellidoMaterno);
-            cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
-            cmd.Parameters.AddWithValue("@CorreoElectronico", c.CorreoElectronico);
-            cmd.Parameters.AddWithValue("@Calle", c.Calle);
-            cmd.Parameters.AddWithValue("@Numero", c.Numero);
-            cmd.Parameters.AddWithValue("@Colonia", c.Colonia);
-
-            int idPersona = (int)cmd.ExecuteScalar();
-
-            insertContacto = "INSERT INTO Contactos VALUES (@IdPersona)" + Environment.NewLine +
-                "SELECT SCOPE_IDENTITY()";
-
-            cmd.CommandText = insertContacto;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@IdPersona", idPersona);
-
-            int idContacto = (int)cmd.ExecuteScalar();
-
-            insertContacto = "INSERT INTO DesgloseContactos VALUES(" +
-                "@IdLista," +
-                "@IdContacto" +
-                ")";
-
-            cmd.CommandText = insertContacto;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@IdLista", Lista);
-            cmd.Parameters.AddWithValue("@IdContacto", idContacto);
-
-            cmd.ExecuteNonQuery();
-        }
-
+        
         public void UpdateProveedor(Proveedor p)
         {
+            SqlConnection connection = null;
+            SqlCommand cmd = null;
+            try
+            {
+                connection = GetConnection();
+                connection.Open();
+                cmd = connection.CreateCommand();
+                
+                string InsertProveedor = "UPDATE Compras.Proveedor SET " + Environment.NewLine +
+                    "Nombre = @Nombre, " + Environment.NewLine +
+                    "Telefono = @Telefono, " + Environment.NewLine +
+                    "CorreoElectronico = @CorreoElectronico, " + Environment.NewLine +
+                    "Calle = @Calle, " + Environment.NewLine +
+                    "Numero = @Numero, " + Environment.NewLine +
+                    "Colonia = @Colonia " + Environment.NewLine +
+                    "WHERE IdProveedor = @IdProveedor";
 
+                cmd.CommandText = InsertProveedor;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
+                cmd.Parameters.AddWithValue("@Telefono", p.Telefono);
+                cmd.Parameters.AddWithValue("@CorreoElectronico", p.CorreoElectronico);
+                cmd.Parameters.AddWithValue("@Calle", p.Calle);
+                cmd.Parameters.AddWithValue("@Numero", p.Numero);
+                cmd.Parameters.AddWithValue("@Colonia", p.Colonia);
+                cmd.Parameters.AddWithValue("@IdProveedor", p.IdProveedor);
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                if (connection != null) connection.Close();
+
+                throw ex;
+            }
+        }
+
+        public DataTable GetBy(string filtro)
+        {
+            SqlConnection connection = null;
+            try
+            {
+                connection = GetConnection();
+
+                connection.Open();
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM Proveedores " + filtro;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                connection.Close();
+                connection.Dispose();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (connection != null) {
+                    connection.Close();
+                    connection.Dispose();
+                }
+
+                throw ex;
+            }
+        }
+
+        public DataTable GetAll()
+        {
+            SqlConnection connection = null;
+            try
+            {
+                connection = GetConnection();
+
+                connection.Open();
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM Proveedores";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                connection.Close();
+                connection.Dispose();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
+
+                throw ex;
+            }
         }
     }
 }
