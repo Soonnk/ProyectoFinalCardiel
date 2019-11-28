@@ -39,7 +39,7 @@ namespace ProyectoFinal.AccesoDatos
 
             SqlConnection conn = new SqlConnection(conString);
 
-            return conn
+            return conn;
         }
 
         #region "mafufadas para el control de Usuarios"

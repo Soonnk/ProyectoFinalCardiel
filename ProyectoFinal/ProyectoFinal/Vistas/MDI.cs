@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoFinal
+namespace ProyectoFinal.Vistas
 {
-    public partial class Form1 : Form
+    public partial class MDI : Form
     {
-        public Form1()
+        public MDI()
         {
             InitializeComponent();
+        }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
 
-            //    Hola
-            // Hola 2
-            // Ed maverick el que lo lea
+        }
+
+        private void MDI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

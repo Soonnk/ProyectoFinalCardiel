@@ -9,6 +9,6 @@ namespace ProyectoFinal.Modelo.Produccion
     class LotesProduccion
     {
         public int IdLoteProduccion { get; set; }
-        public DetallesPedido DetalleAsociado { get; set; }
+        public Object DetalleAsociado { get; set; }
     }
 }
