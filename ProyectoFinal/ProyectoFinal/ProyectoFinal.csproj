@@ -86,11 +86,35 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="Vistas\Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ListaDeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ListaDeCompras.Designer.cs">
+      <DependentUpon>ListaDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ListaDePedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ListaDePedidos.Designer.cs">
+      <DependentUpon>ListaDePedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\MDI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\MDI.Designer.cs">
       <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Usuario.cs">
       <SubType>Form</SubType>
@@ -109,8 +133,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ListaDeCompras.resx">
+      <DependentUpon>ListaDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ListaDePedidos.resx">
+      <DependentUpon>ListaDePedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
