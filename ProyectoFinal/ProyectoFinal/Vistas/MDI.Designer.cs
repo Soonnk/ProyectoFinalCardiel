@@ -70,6 +70,7 @@
             // 
             // simpleButton2
             // 
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.simpleButton2.ImageUri.Uri = "AddItem;Office2013";
             this.simpleButton2.Location = new System.Drawing.Point(10, 235);
             this.simpleButton2.Name = "simpleButton2";
