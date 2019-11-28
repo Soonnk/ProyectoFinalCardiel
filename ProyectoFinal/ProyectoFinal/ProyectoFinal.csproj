@@ -90,6 +90,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="Vistas\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Compras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
     <Compile Include="Vistas\ListaDePedidos.Designer.cs">
       <DependentUpon>ListaDePedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Materiales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Materiales.Designer.cs">
+      <DependentUpon>Materiales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\MDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,18 @@
     </Compile>
     <Compile Include="Vistas\Pedidos.Designer.cs">
       <DependentUpon>Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Produccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Produccion.Designer.cs">
+      <DependentUpon>Produccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Usuario.cs">
       <SubType>Form</SubType>
@@ -137,6 +161,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,11 +173,20 @@
     <EmbeddedResource Include="Vistas\ListaDePedidos.resx">
       <DependentUpon>ListaDePedidos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Materiales.resx">
+      <DependentUpon>Materiales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Pedidos.resx">
       <DependentUpon>Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Produccion.resx">
+      <DependentUpon>Produccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
