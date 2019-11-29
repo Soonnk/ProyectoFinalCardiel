@@ -69,6 +69,7 @@
     <Compile Include="Controlador\Compras\ControladorDetalleCompra.cs" />
     <Compile Include="Controlador\Compras\ControladorProveedor.cs" />
     <Compile Include="Controlador\ControladorContacto.cs" />
+    <Compile Include="Controlador\Produccion\ControladorDesign.cs" />
     <Compile Include="Controlador\Produccion\ControladorLote.cs" />
     <Compile Include="Controlador\Produccion\ControladorLoteEtapa.cs" />
     <Compile Include="Controlador\Produccion\ControladorMaterial.cs" />
@@ -155,6 +156,12 @@
     <Compile Include="Vistas\Usuario.Designer.cs">
       <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ViewDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ViewDesign.Designer.cs">
+      <DependentUpon>ViewDesign.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ViewDesign.resx">
+      <DependentUpon>ViewDesign.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
