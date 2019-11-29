@@ -63,7 +63,7 @@ namespace ProyectoFinal.Vistas
         private void MDI_SizeChanged(object sender, EventArgs e)
         {
             PanelMenu.Size = new Size(188, this.Height);
-            PanelContenedor.Size = new Size(this.Width - 188, this.Height);
+            PanelContenedor.Size = new Size(this.Width - 160, this.Height);
         }
     }
 }
