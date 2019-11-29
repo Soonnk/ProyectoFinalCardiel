@@ -18,12 +18,7 @@ namespace ProyectoFinal.Modelo.Ventas
         public RegimenesFiscales RegimenFiscal { get; set; }
         public string RFC { get; set; }
         public ListaContactos ListaContactos { get; set; }
-
-        public static implicit operator Cliente(Cliente v)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public enum RegimenesFiscales : int
         {
             PersonaMoral = 1,

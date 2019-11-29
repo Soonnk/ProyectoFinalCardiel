@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Controls.Add(this.simpleButton10);
             this.panel1.Controls.Add(this.simpleButton9);
             this.panel1.Controls.Add(this.simpleButton7);
             this.panel1.Controls.Add(this.simpleButton8);
@@ -61,58 +62,17 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 724);
+            this.panel1.Size = new System.Drawing.Size(251, 649);
             this.panel1.TabIndex = 0;
             // 
-            // xtraTabbedMdiManager1
+            // simpleButton9
             // 
-            this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.simpleButton2.ImageUri.Uri = "AddItem;Office2013";
-            this.simpleButton2.Location = new System.Drawing.Point(10, 235);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(235, 38);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Clientes";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.ImageUri.Uri = "CustomizeGrid;Office2013";
-            this.simpleButton3.Location = new System.Drawing.Point(10, 279);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(235, 38);
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "Proveedores";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.ImageUri.Uri = "EditDataSource;Office2013";
-            this.simpleButton4.Location = new System.Drawing.Point(10, 323);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(235, 38);
-            this.simpleButton4.TabIndex = 4;
-            this.simpleButton4.Text = "Materiales";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.ImageUri.Uri = "AddNewDataSource;Office2013";
-            this.simpleButton5.Location = new System.Drawing.Point(10, 367);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(235, 38);
-            this.simpleButton5.TabIndex = 5;
-            this.simpleButton5.Text = "Producción";
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.ImageUri.Uri = "DeleteDataSource;Office2013";
-            this.simpleButton6.Location = new System.Drawing.Point(10, 411);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(235, 38);
-            this.simpleButton6.TabIndex = 6;
-            this.simpleButton6.Text = "Pedido";
+            this.simpleButton9.ImageUri.Uri = "Chart;Office2013";
+            this.simpleButton9.Location = new System.Drawing.Point(10, 543);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(235, 38);
+            this.simpleButton9.TabIndex = 9;
+            this.simpleButton9.Text = "Lista de compras";
             // 
             // simpleButton7
             // 
@@ -132,14 +92,51 @@
             this.simpleButton8.TabIndex = 8;
             this.simpleButton8.Text = "Lista de pedidos";
             // 
-            // simpleButton9
+            // simpleButton6
             // 
-            this.simpleButton9.ImageUri.Uri = "Chart;Office2013";
-            this.simpleButton9.Location = new System.Drawing.Point(10, 543);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(235, 38);
-            this.simpleButton9.TabIndex = 9;
-            this.simpleButton9.Text = "Lista de compras";
+            this.simpleButton6.ImageUri.Uri = "DeleteDataSource;Office2013";
+            this.simpleButton6.Location = new System.Drawing.Point(10, 411);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(235, 38);
+            this.simpleButton6.TabIndex = 6;
+            this.simpleButton6.Text = "Pedido";
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.ImageUri.Uri = "AddNewDataSource;Office2013";
+            this.simpleButton5.Location = new System.Drawing.Point(10, 367);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(235, 38);
+            this.simpleButton5.TabIndex = 5;
+            this.simpleButton5.Text = "Producción";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.ImageUri.Uri = "EditDataSource;Office2013";
+            this.simpleButton4.Location = new System.Drawing.Point(10, 323);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(235, 38);
+            this.simpleButton4.TabIndex = 4;
+            this.simpleButton4.Text = "Materiales";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageUri.Uri = "CustomizeGrid;Office2013";
+            this.simpleButton3.Location = new System.Drawing.Point(10, 279);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(235, 38);
+            this.simpleButton3.TabIndex = 3;
+            this.simpleButton3.Text = "Proveedores";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.simpleButton2.ImageUri.Uri = "AddItem;Office2013";
+            this.simpleButton2.Location = new System.Drawing.Point(10, 235);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(235, 38);
+            this.simpleButton2.TabIndex = 2;
+            this.simpleButton2.Text = "Clientes";
             // 
             // simpleButton1
             // 
@@ -165,21 +162,39 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Location = new System.Drawing.Point(259, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(950, 649);
+            this.panel2.TabIndex = 3;
+            // 
+            // simpleButton10
+            // 
+            this.simpleButton10.Location = new System.Drawing.Point(48, 600);
+            this.simpleButton10.Name = "simpleButton10";
+            this.simpleButton10.Size = new System.Drawing.Size(143, 37);
+            this.simpleButton10.TabIndex = 10;
+            this.simpleButton10.Text = "Diseño de Taza";
+            // 
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(1163, 726);
+            this.ClientSize = new System.Drawing.Size(1209, 697);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.Name = "MDI";
             this.Text = "MDI";
             this.Load += new System.EventHandler(this.MDI_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -187,7 +202,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
@@ -197,5 +211,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.Panel panel2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton10;
     }
 }
