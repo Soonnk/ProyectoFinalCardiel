@@ -15,14 +15,12 @@ namespace ProyectoFinal.Vistas
         public MDI()
         {
             InitializeComponent();
-            mdiPrincipal.MdiParent = this;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             Form ventanaUsuario = new Vistas.Usuario();
-            ventanaUsuario.MdiParent = this;
-            ventanaUsuario.Show();
+            CargarFormulario(ventanaUsuario);
         }
 
         private void MDI_Load(object sender, EventArgs e)
@@ -38,6 +36,34 @@ namespace ProyectoFinal.Vistas
         private void flyoutPanelControl1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnProduccion_Click(object sender, EventArgs e)
+        {
+            Form ventanaProduccion = new Vistas.Produccion();
+            CargarFormulario(ventanaProduccion);
+        }
+
+        private void CargarFormulario(Form child)
+        {
+            if (child.Name.Equals(PanelContenedor.Tag))
+                return;
+
+            if (PanelContenedor.Controls.Count > 0)
+                PanelContenedor.Controls.Clear();
+
+            child.FormBorderStyle = FormBorderStyle.None;
+            child.TopLevel = false;
+            child.Dock = DockStyle.Fill;
+            PanelContenedor.Controls.Add(child);
+            PanelContenedor.Tag = child.Name;
+            child.Show();
+        }
+
+        private void MDI_SizeChanged(object sender, EventArgs e)
+        {
+            PanelMenu.Size = new Size(188, this.Height);
+            PanelContenedor.Size = new Size(this.Width - 188, this.Height);
         }
     }
 }
