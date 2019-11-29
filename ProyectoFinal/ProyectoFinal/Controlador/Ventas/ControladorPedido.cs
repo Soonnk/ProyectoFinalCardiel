@@ -190,7 +190,6 @@ namespace ProyectoFinal.Controlador.Ventas
             Pedido p = null;
 
             SqlConnection connection = null;
-            SqlTransaction transaction = null;
             SqlCommand cmd = null;
             SqlDataReader reader = null;
             try

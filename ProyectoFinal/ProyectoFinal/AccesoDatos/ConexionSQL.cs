@@ -12,7 +12,7 @@ namespace ProyectoFinal.AccesoDatos
         /// <summary>
         /// Nombre del servidor a conectar.
         /// </summary>
-        private readonly string Server = "localhost";
+        private readonly string Server = Environment.MachineName;
         private readonly string DBName = "SGPV";
         /* 
          * ARE YOU LOST? Usuarios y contraseñas se deben configurar
