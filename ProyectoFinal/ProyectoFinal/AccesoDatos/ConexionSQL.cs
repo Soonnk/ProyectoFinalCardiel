@@ -36,7 +36,7 @@ namespace ProyectoFinal.AccesoDatos
         /// </remarks>
         public SqlConnection GetConnection() {
             DBUser user = GetDBUser();
-            string conString = "DATA SOURCE = " + Server + "; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
+            string conString = @"DATA SOURCE = DESKTOP-PQOR5LH\SQLEXPRESS ; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
 
             SqlConnection conn = new SqlConnection(conString);
 

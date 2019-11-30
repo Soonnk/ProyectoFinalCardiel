@@ -26,5 +26,16 @@ namespace ProyectoFinal.Vistas
         {
 
         }
+
+        private void Usuario_Load(object sender, EventArgs e)
+        {
+
+            cargarInterfaz();
+        }
+        public void cargarInterfaz()
+        {
+
+            cmbNivelUsuario.Properties.DataSource = Controlador.Utils.GetCatalog("Usuarios.c_NivelesUsuario");
+        }
     }
 }

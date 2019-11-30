@@ -14,23 +14,25 @@ namespace ProyectoFinal.Controlador
             "SELECT Max(IdListaContactos) FROM ListaContactos";
 
         public static DataTable GetCatalog(string catalog) {
-            AccesoDatos.ConexionSQL conn = null;
+            AccesoDatos.ConexionSQL conector = null;
             SqlConnection connection = null;
             SqlDataAdapter adapter = null;
 
-            DataTable dt = null;
+            DataTable dt = new DataTable();
             try
             {
-                conn = new AccesoDatos.ConexionSQL() { NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Visor };
-                connection = conn.GetConnection();
+                conector = new AccesoDatos.ConexionSQL() { NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Visor };
+                connection = conector.GetConnection();
+                connection.Open();
 
-                adapter = new SqlDataAdapter("SELECT * FROM " + catalog, connection);
-
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM " + catalog;
+                adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
 
                 return dt;
             }
-            catch
+            catch(Exception ex)
             {
                 throw;
             }

@@ -17,7 +17,7 @@ namespace ProyectoFinal.Vistas
             InitializeComponent();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btnUsuario_Click(object sender, EventArgs e)
         {
             Form ventanaUsuario = new Vistas.Usuario();
             CargarFormulario(ventanaUsuario);
@@ -69,6 +69,46 @@ namespace ProyectoFinal.Vistas
         private void simpleButton10_Click(object sender, EventArgs e)
         {
             new ViewDesign().ShowDialog(this);
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton10_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
