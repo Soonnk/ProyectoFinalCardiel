@@ -74,7 +74,7 @@
             this.btnTaza.Size = new System.Drawing.Size(143, 37);
             this.btnTaza.TabIndex = 10;
             this.btnTaza.Text = "Diseño de Taza";
-            this.btnTaza.Click += new System.EventHandler(this.simpleButton10_Click_1);
+            this.btnTaza.Click += new System.EventHandler(this.BtnDesigns_Click);
             // 
             // btnListaCompras
             // 

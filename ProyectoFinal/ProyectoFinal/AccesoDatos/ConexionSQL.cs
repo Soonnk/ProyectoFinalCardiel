@@ -12,7 +12,7 @@ namespace ProyectoFinal.AccesoDatos
         /// <summary>
         /// Nombre del servidor a conectar.
         /// </summary>
-        private readonly string Server = Environment.MachineName;
+        private readonly string Server = "(local)";
         private readonly string DBName = "SGPV";
         /* 
          * ARE YOU LOST? Usuarios y contraseñas se deben configurar
@@ -36,8 +36,8 @@ namespace ProyectoFinal.AccesoDatos
         /// </remarks>
         public SqlConnection GetConnection() {
             DBUser user = GetDBUser();
-            string conString = @"DATA SOURCE = DESKTOP-PQOR5LH\SQLEXPRESS ; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
-
+            string conString = @"DATA SOURCE = " + Server + " ; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
+            
             SqlConnection conn = new SqlConnection(conString);
 
             return conn;

@@ -106,9 +106,9 @@ namespace ProyectoFinal.Vistas
 
         }
 
-        private void simpleButton10_Click_1(object sender, EventArgs e)
+        private void BtnDesigns_Click(object sender, EventArgs e)
         {
-
+            new ViewDesign().ShowDialog(this);
         }
     }
 }
