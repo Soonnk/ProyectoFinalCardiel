@@ -114,6 +114,7 @@
             this.simpleButton6.Size = new System.Drawing.Size(176, 31);
             this.simpleButton6.TabIndex = 6;
             this.simpleButton6.Text = "Pedido";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // BtnProduccion
             // 

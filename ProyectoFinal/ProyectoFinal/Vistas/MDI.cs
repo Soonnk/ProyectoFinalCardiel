@@ -70,5 +70,11 @@ namespace ProyectoFinal.Vistas
         {
             new ViewDesign().ShowDialog(this);
         }
+
+        private void simpleButton6_Click(object sender, EventArgs e)
+        {
+            Form ventanaPedido = new Vistas.Pedidos();
+            CargarFormulario(ventanaPedido);
+        }
     }
 }
