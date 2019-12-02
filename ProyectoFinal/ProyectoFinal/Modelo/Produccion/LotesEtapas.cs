@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Produccion
 {
-    class LoteEtapa
+    public class LoteEtapa
     {
         public int IdLoteEtapa { get; set; }
         public Usuarios.Usuario OrdenadoPor { get; set; }

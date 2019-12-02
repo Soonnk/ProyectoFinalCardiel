@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Compras
 {
-    class Proveedor
+    public class Proveedor
     {
         public int IdProveedor { get; set; }
         public String Nombre { get; set; }

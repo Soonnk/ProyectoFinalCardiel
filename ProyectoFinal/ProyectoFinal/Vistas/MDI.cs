@@ -77,7 +77,8 @@ namespace ProyectoFinal.Vistas
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-
+            Form ventanaProveedores = new Vistas.Proveedores();
+            CargarFormulario(ventanaProveedores);
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)

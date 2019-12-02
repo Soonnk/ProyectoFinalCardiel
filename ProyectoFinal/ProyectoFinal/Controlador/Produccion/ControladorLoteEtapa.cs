@@ -9,7 +9,7 @@ using ProyectoFinal.Modelo.Produccion;
 
 namespace ProyectoFinal.Controlador.Produccion
 {
-    class ControladorLoteEtapa: AccesoDatos.ConexionSQL
+    public class ControladorLoteEtapa : AccesoDatos.ConexionSQL
     {
         public ControladorLoteEtapa()
         {

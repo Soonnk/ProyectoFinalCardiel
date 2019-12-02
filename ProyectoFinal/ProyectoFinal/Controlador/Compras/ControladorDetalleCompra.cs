@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Controlador.Compras
 {
-    class ControladorDetalleCompra:AccesoDatos.ConexionSQL
+    public class ControladorDetalleCompra :AccesoDatos.ConexionSQL
     {
         public List<Modelo.Compras.DetalleCompra> GetByCompra(int idCompra)
         {
@@ -42,7 +42,7 @@ namespace ProyectoFinal.Controlador.Compras
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {

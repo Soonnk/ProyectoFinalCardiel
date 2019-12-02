@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Ventas
 {
-    class Pedido
+    public class Pedido
     {
         public int IdPedido { get; set; }
         public Cliente Cliente { get; set; }

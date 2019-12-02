@@ -9,7 +9,7 @@ using ProyectoFinal.Modelo.Produccion;
 
 namespace ProyectoFinal.Controlador.Produccion
 {
-    class ControladorLote:AccesoDatos.ConexionSQL
+    public class ControladorLote :AccesoDatos.ConexionSQL
     {
         public ControladorLote()
         {
@@ -38,7 +38,7 @@ namespace ProyectoFinal.Controlador.Produccion
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
