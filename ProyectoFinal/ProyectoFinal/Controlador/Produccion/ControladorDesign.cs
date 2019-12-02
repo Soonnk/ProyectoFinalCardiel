@@ -29,7 +29,7 @@ namespace ProyectoFinal.Controlador.Produccion
                 cmd.CommandText = "INSERT INTO [Produccion].[Design] VALUES (@Descripcion,@Alto,@Archivo)";
 
                 cmd.Parameters.AddWithValue("@Descripcion", d.Descripcion);
-                cmd.Parameters.AddWithValue("@Alto", d.Descripcion);
+                cmd.Parameters.AddWithValue("@Alto", d.Alto);
                 cmd.Parameters.AddWithValue("@Ancho", d.Ancho);
                 cmd.Parameters.AddWithValue("@Archivo", d.Archivo);
 
@@ -138,14 +138,14 @@ namespace ProyectoFinal.Controlador.Produccion
         {
             SqlConnection connection = null;
             SqlDataAdapter adapter = null;
-            DataTable dt = null;
+            DataTable dt = new DataTable();
 
             try
             {
                 connection = GetConnection();
                 connection.Open();
                 
-                String query = "SELECT * FROM [Produccion].[Design]";
+                String query = "SELECT * FROM [Produccion].[Design] ORDER BY Descripcion";
 
                 adapter = new SqlDataAdapter(query, connection);
 

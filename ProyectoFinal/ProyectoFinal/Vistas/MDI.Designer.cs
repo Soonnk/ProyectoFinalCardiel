@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.BtnProduccion = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTaza = new DevExpress.XtraEditors.SimpleButton();
+            this.btnListaCompras = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCompra = new DevExpress.XtraEditors.SimpleButton();
+            this.btnListaPedidos = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPedido = new DevExpress.XtraEditors.SimpleButton();
+            this.btnProduccion = new DevExpress.XtraEditors.SimpleButton();
+            this.btnMateriales = new DevExpress.XtraEditors.SimpleButton();
+            this.btnProveedores = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClientes = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUsuario = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.PanelMenu.SuspendLayout();
@@ -49,137 +49,144 @@
             // 
             this.PanelMenu.AutoSize = true;
             this.PanelMenu.BackColor = System.Drawing.Color.DarkOrange;
-            this.PanelMenu.Controls.Add(this.simpleButton10);
-            this.PanelMenu.Controls.Add(this.simpleButton9);
-            this.PanelMenu.Controls.Add(this.simpleButton7);
-            this.PanelMenu.Controls.Add(this.simpleButton8);
-            this.PanelMenu.Controls.Add(this.simpleButton6);
-            this.PanelMenu.Controls.Add(this.BtnProduccion);
-            this.PanelMenu.Controls.Add(this.simpleButton4);
-            this.PanelMenu.Controls.Add(this.simpleButton3);
-            this.PanelMenu.Controls.Add(this.simpleButton2);
-            this.PanelMenu.Controls.Add(this.simpleButton1);
+            this.PanelMenu.Controls.Add(this.btnTaza);
+            this.PanelMenu.Controls.Add(this.btnListaCompras);
+            this.PanelMenu.Controls.Add(this.btnCompra);
+            this.PanelMenu.Controls.Add(this.btnListaPedidos);
+            this.PanelMenu.Controls.Add(this.btnPedido);
+            this.PanelMenu.Controls.Add(this.btnProduccion);
+            this.PanelMenu.Controls.Add(this.btnMateriales);
+            this.PanelMenu.Controls.Add(this.btnProveedores);
+            this.PanelMenu.Controls.Add(this.btnClientes);
+            this.PanelMenu.Controls.Add(this.btnUsuario);
             this.PanelMenu.Controls.Add(this.pictureBox1);
-            this.PanelMenu.Location = new System.Drawing.Point(2, 2);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelMenu.Location = new System.Drawing.Point(3, 2);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(188, 561);
+            this.PanelMenu.Size = new System.Drawing.Size(251, 690);
             this.PanelMenu.TabIndex = 0;
             // 
-            // simpleButton10
+            // btnTaza
             // 
-            this.simpleButton10.Location = new System.Drawing.Point(36, 488);
-            this.simpleButton10.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton10.Name = "simpleButton10";
-            this.simpleButton10.Size = new System.Drawing.Size(107, 30);
-            this.simpleButton10.TabIndex = 10;
-            this.simpleButton10.Text = "Diseño de Taza";
+            this.btnTaza.Location = new System.Drawing.Point(48, 601);
+            this.btnTaza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTaza.Name = "btnTaza";
+            this.btnTaza.Size = new System.Drawing.Size(143, 37);
+            this.btnTaza.TabIndex = 10;
+            this.btnTaza.Text = "Diseño de Taza";
+            this.btnTaza.Click += new System.EventHandler(this.BtnDesigns_Click);
             // 
-            // simpleButton9
+            // btnListaCompras
             // 
-            this.simpleButton9.ImageUri.Uri = "Chart;Office2013";
-            this.simpleButton9.Location = new System.Drawing.Point(8, 441);
-            this.simpleButton9.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(176, 31);
-            this.simpleButton9.TabIndex = 9;
-            this.simpleButton9.Text = "Lista de compras";
+            this.btnListaCompras.ImageUri.Uri = "Chart;Office2013";
+            this.btnListaCompras.Location = new System.Drawing.Point(11, 543);
+            this.btnListaCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnListaCompras.Name = "btnListaCompras";
+            this.btnListaCompras.Size = new System.Drawing.Size(235, 38);
+            this.btnListaCompras.TabIndex = 9;
+            this.btnListaCompras.Text = "Lista de compras";
+            this.btnListaCompras.Click += new System.EventHandler(this.simpleButton9_Click);
             // 
-            // simpleButton7
+            // btnCompra
             // 
-            this.simpleButton7.ImageUri.Uri = "Chart;Office2013";
-            this.simpleButton7.Location = new System.Drawing.Point(10, 405);
-            this.simpleButton7.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(176, 31);
-            this.simpleButton7.TabIndex = 7;
-            this.simpleButton7.Text = "Compra";
+            this.btnCompra.ImageUri.Uri = "Chart;Office2013";
+            this.btnCompra.Location = new System.Drawing.Point(13, 498);
+            this.btnCompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(235, 38);
+            this.btnCompra.TabIndex = 7;
+            this.btnCompra.Text = "Compra";
+            this.btnCompra.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
-            // simpleButton8
+            // btnListaPedidos
             // 
-            this.simpleButton8.ImageUri.Uri = "DeleteDataSource;Office2013";
-            this.simpleButton8.Location = new System.Drawing.Point(8, 370);
-            this.simpleButton8.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(176, 31);
-            this.simpleButton8.TabIndex = 8;
-            this.simpleButton8.Text = "Lista de pedidos";
+            this.btnListaPedidos.ImageUri.Uri = "DeleteDataSource;Office2013";
+            this.btnListaPedidos.Location = new System.Drawing.Point(11, 455);
+            this.btnListaPedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnListaPedidos.Name = "btnListaPedidos";
+            this.btnListaPedidos.Size = new System.Drawing.Size(235, 38);
+            this.btnListaPedidos.TabIndex = 8;
+            this.btnListaPedidos.Text = "Lista de pedidos";
+            this.btnListaPedidos.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
-            // simpleButton6
+            // btnPedido
             // 
-            this.simpleButton6.ImageUri.Uri = "DeleteDataSource;Office2013";
-            this.simpleButton6.Location = new System.Drawing.Point(8, 334);
-            this.simpleButton6.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(176, 31);
-            this.simpleButton6.TabIndex = 6;
-            this.simpleButton6.Text = "Pedido";
-            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            this.btnPedido.ImageUri.Uri = "DeleteDataSource;Office2013";
+            this.btnPedido.Location = new System.Drawing.Point(11, 411);
+            this.btnPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(235, 38);
+            this.btnPedido.TabIndex = 6;
+            this.btnPedido.Text = "Pedido";
+            this.btnPedido.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
-            // BtnProduccion
+            // btnProduccion
             // 
-            this.BtnProduccion.ImageUri.Uri = "AddNewDataSource;Office2013";
-            this.BtnProduccion.Location = new System.Drawing.Point(8, 298);
-            this.BtnProduccion.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnProduccion.Name = "BtnProduccion";
-            this.BtnProduccion.Size = new System.Drawing.Size(176, 31);
-            this.BtnProduccion.TabIndex = 5;
-            this.BtnProduccion.Text = "Producción";
-            this.BtnProduccion.Click += new System.EventHandler(this.BtnProduccion_Click);
+            this.btnProduccion.ImageUri.Uri = "AddNewDataSource;Office2013";
+            this.btnProduccion.Location = new System.Drawing.Point(11, 367);
+            this.btnProduccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProduccion.Name = "btnProduccion";
+            this.btnProduccion.Size = new System.Drawing.Size(235, 38);
+            this.btnProduccion.TabIndex = 5;
+            this.btnProduccion.Text = "Producción";
+            this.btnProduccion.Click += new System.EventHandler(this.BtnProduccion_Click);
             // 
-            // simpleButton4
+            // btnMateriales
             // 
-            this.simpleButton4.ImageUri.Uri = "EditDataSource;Office2013";
-            this.simpleButton4.Location = new System.Drawing.Point(8, 262);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(176, 31);
-            this.simpleButton4.TabIndex = 4;
-            this.simpleButton4.Text = "Materiales";
+            this.btnMateriales.ImageUri.Uri = "EditDataSource;Office2013";
+            this.btnMateriales.Location = new System.Drawing.Point(11, 322);
+            this.btnMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMateriales.Name = "btnMateriales";
+            this.btnMateriales.Size = new System.Drawing.Size(235, 38);
+            this.btnMateriales.TabIndex = 4;
+            this.btnMateriales.Text = "Materiales";
+            this.btnMateriales.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
-            // simpleButton3
+            // btnProveedores
             // 
-            this.simpleButton3.ImageUri.Uri = "CustomizeGrid;Office2013";
-            this.simpleButton3.Location = new System.Drawing.Point(8, 227);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(176, 31);
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "Proveedores";
+            this.btnProveedores.ImageUri.Uri = "CustomizeGrid;Office2013";
+            this.btnProveedores.Location = new System.Drawing.Point(11, 279);
+            this.btnProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(235, 38);
+            this.btnProveedores.TabIndex = 3;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
-            // simpleButton2
+            // btnClientes
             // 
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.simpleButton2.ImageUri.Uri = "AddItem;Office2013";
-            this.simpleButton2.Location = new System.Drawing.Point(8, 191);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(176, 31);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Clientes";
+            this.btnClientes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.btnClientes.ImageUri.Uri = "AddItem;Office2013";
+            this.btnClientes.Location = new System.Drawing.Point(11, 235);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(235, 38);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // simpleButton1
+            // btnUsuario
             // 
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.simpleButton1.Image = global::ProyectoFinal.Properties.Resources.naranja;
-            this.simpleButton1.ImageUri.Uri = "Add;Office2013";
-            this.simpleButton1.Location = new System.Drawing.Point(8, 155);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(176, 31);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "Usuario";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnUsuario.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.btnUsuario.Image = global::ProyectoFinal.Properties.Resources.naranja;
+            this.btnUsuario.ImageUri.Uri = "Add;Office2013";
+            this.btnUsuario.Location = new System.Drawing.Point(11, 191);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(235, 38);
+            this.btnUsuario.TabIndex = 1;
+            this.btnUsuario.Text = "Usuario";
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Peru;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::ProyectoFinal.Properties.Resources.sgp;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(213, 152);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -187,24 +194,24 @@
             // PanelContenedor
             // 
             this.PanelContenedor.AutoSize = true;
-            this.PanelContenedor.Location = new System.Drawing.Point(190, 2);
-            this.PanelContenedor.Margin = new System.Windows.Forms.Padding(2);
-            this.PanelContenedor.MinimumSize = new System.Drawing.Size(716, 561);
+            this.PanelContenedor.Location = new System.Drawing.Point(253, 2);
+            this.PanelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelContenedor.MinimumSize = new System.Drawing.Size(955, 690);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(716, 561);
+            this.PanelContenedor.Size = new System.Drawing.Size(955, 690);
             this.PanelContenedor.TabIndex = 3;
             // 
             // MDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(907, 566);
+            this.ClientSize = new System.Drawing.Size(1209, 697);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.PanelMenu);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MDI";
             this.Text = "MDI";
             this.Load += new System.EventHandler(this.MDI_Load);
@@ -220,16 +227,16 @@
 
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton9;
-        private DevExpress.XtraEditors.SimpleButton simpleButton8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton BtnProduccion;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnListaCompras;
+        private DevExpress.XtraEditors.SimpleButton btnListaPedidos;
+        private DevExpress.XtraEditors.SimpleButton btnCompra;
+        private DevExpress.XtraEditors.SimpleButton btnPedido;
+        private DevExpress.XtraEditors.SimpleButton btnProduccion;
+        private DevExpress.XtraEditors.SimpleButton btnMateriales;
+        private DevExpress.XtraEditors.SimpleButton btnProveedores;
+        private DevExpress.XtraEditors.SimpleButton btnClientes;
+        private DevExpress.XtraEditors.SimpleButton btnUsuario;
         private System.Windows.Forms.Panel PanelContenedor;
-        private DevExpress.XtraEditors.SimpleButton simpleButton10;
+        private DevExpress.XtraEditors.SimpleButton btnTaza;
     }
 }
