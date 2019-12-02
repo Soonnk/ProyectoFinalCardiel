@@ -10,7 +10,7 @@ using ProyectoFinal.Modelo.Produccion;
 
 namespace ProyectoFinal.Controlador.Produccion
 {
-    class ControladorMaterial: AccesoDatos.ConexionSQL
+    public class ControladorMaterial : AccesoDatos.ConexionSQL
     {
         public ControladorMaterial()
         {

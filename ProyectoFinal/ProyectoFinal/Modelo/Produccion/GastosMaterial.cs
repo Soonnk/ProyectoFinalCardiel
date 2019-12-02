@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Produccion
 {
-    class GastosMaterial
+    public class GastosMaterial
     {
         public int IdGastoMaterial { get; set; }
         public Material Material { get; set; }

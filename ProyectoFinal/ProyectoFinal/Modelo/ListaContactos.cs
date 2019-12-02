@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo
 {
-    class ListaContactos : List<Contacto>
+    public class ListaContactos : List<Contacto>
     {
         public int IdListaContactos { get; set; }
     }

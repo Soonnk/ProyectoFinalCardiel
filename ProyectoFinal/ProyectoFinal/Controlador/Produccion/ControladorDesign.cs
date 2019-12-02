@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Controlador.Produccion
 {
-    class ControladorDesign: AccesoDatos.ConexionSQL
+    public class ControladorDesign : AccesoDatos.ConexionSQL
     {
         public ControladorDesign()
         {
@@ -37,7 +37,7 @@ namespace ProyectoFinal.Controlador.Produccion
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
@@ -62,7 +62,6 @@ namespace ProyectoFinal.Controlador.Produccion
 
                 cmd.CommandText = "UPDATE [Produccion].[Design] SET " +
                     "Descripcion = @Descripcion, " +
-                    "Alto = @Alto," +
                     "Archivo = @Archivo " +
                     "WHERE IdDesign = @Id";
 
@@ -76,7 +75,7 @@ namespace ProyectoFinal.Controlador.Produccion
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
@@ -112,8 +111,6 @@ namespace ProyectoFinal.Controlador.Produccion
                     d = new Modelo.Produccion.Design() {
                         IdDesign = id,
                         Descripcion = (string)reader["Descripcion"],
-                        Alto = (double)reader["Alto"],
-                        Ancho = 0,
                         Archivo = (Byte[]) reader["Archivo"]
                     };
                 }
@@ -122,7 +119,7 @@ namespace ProyectoFinal.Controlador.Produccion
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
@@ -155,7 +152,7 @@ namespace ProyectoFinal.Controlador.Produccion
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {

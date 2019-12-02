@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.AccesoDatos
 {
-    class ConexionSQL
+    public class ConexionSQL
     {
         /// <summary>
         /// Nombre del servidor a conectar.

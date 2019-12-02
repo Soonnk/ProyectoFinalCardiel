@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Usuarios
 {
-    class Usuario:Persona
+    public class Usuario :Persona
     {
         public int IdUsuario { get; set; }
         public string Username { get; set; }

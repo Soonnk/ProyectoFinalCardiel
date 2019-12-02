@@ -272,7 +272,7 @@ namespace ProyectoFinal.Controlador.Ventas
                     connection.Close();
                     connection.Dispose();
                 }
-                throw;
+                throw ex;
             }
         }
     }

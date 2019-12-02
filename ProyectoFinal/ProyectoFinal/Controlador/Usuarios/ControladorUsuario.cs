@@ -10,7 +10,7 @@ using ProyectoFinal.Modelo;
 
 namespace ProyectoFinal.Controlador.Usuarios
 {
-    class ControladorUsuario: AccesoDatos.ConexionSQL
+    public class ControladorUsuario : AccesoDatos.ConexionSQL
     {
         public ControladorUsuario()
         {
@@ -171,7 +171,7 @@ namespace ProyectoFinal.Controlador.Usuarios
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {
@@ -230,7 +230,7 @@ namespace ProyectoFinal.Controlador.Usuarios
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {

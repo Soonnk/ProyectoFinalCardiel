@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Compras
 {
-    class DetalleCompra
+    public class DetalleCompra
     {
         public int IdDetalleCompra { get; set; }
         public Produccion.Material Material { get; set; }

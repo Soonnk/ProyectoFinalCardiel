@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo
 {
-    class Contacto : Persona
+    public class Contacto : Persona
     {
         public int IdContacto { get; set; }
     }

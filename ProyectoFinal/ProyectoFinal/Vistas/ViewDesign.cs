@@ -129,11 +129,13 @@ namespace ProyectoFinal.Vistas
 
         public void MostrarDesign(DataRow row)
         {
+            Modelo.Produccion.Design d = ctrl.GetById((int)row["IdDesign"]);
+
             if (row == null) return;
 
-            idActual = (int)row["IdDesign"];
-            TxtNombre.EditValue = (string)row["Descripcion"];
-            archivo = (byte[])row["Archivo"];
+            idActual = d.IdDesign;
+            TxtNombre.EditValue = d.Descripcion;
+            archivo = d.Archivo;
             CargarSvg(new MemoryStream(archivo));
 
             nuevo = false;

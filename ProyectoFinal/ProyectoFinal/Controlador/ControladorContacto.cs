@@ -10,7 +10,7 @@ using ProyectoFinal.Modelo;
 
 namespace ProyectoFinal.Controlador
 {
-    class ControladorContacto: AccesoDatos.ConexionSQL
+    public class ControladorContacto : AccesoDatos.ConexionSQL
     {
         public ControladorContacto()
         {
@@ -41,6 +41,16 @@ namespace ProyectoFinal.Controlador
             return dt;
         }
 
+        /// <summary>
+        /// Inserta un contacto en la lista especificada
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="Lista"></param>
+        /// <remarks>
+        /// Utilizar esta funcion para insertar un contacto una vez que el cliente o proveedor
+        /// asociado a la lista ya han sido agregados, es decir, para agregar contactos cuando
+        /// se esta editando el cliente/proveedor.
+        /// </remarks>
         public void InsertarContacto(Contacto c, int Lista) {
             SqlConnection connection = null;
             SqlTransaction transaction = null;
@@ -106,6 +116,8 @@ namespace ProyectoFinal.Controlador
             {
                 if (transaction != null) transaction.Rollback();
                 if (connection != null) connection.Close();
+
+                throw ex;
             }
         }
 
@@ -197,6 +209,55 @@ namespace ProyectoFinal.Controlador
             catch (Exception ex)
             {
                 if (connection != null) connection.Close();
+                throw ex;
+            }
+        }
+
+        public void UpdateContacto(Modelo.Contacto c) {
+            SqlConnection connection = null;
+            SqlTransaction transaction = null;
+            try
+            {
+
+                connection = GetConnection();
+
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.Transaction = transaction;
+                string insertContacto = "UPDATE Persona SET " +
+                    "Nombres = @Nombre," +
+                    "ApellidoPaterno = @ApellidoPaterno, " +
+                    "ApellidoMaterno = @ApellidoMaterno, " +
+                    "Telefono = @Telefono, " +
+                    "CorreoElectronico = @CorreoElectronico, " +
+                    "Calle = @Calle, " +
+                    "Numero = @Numero, " +
+                    "Colonia = @Colonia " +
+                    "WHERE IdPersona = @IdPersona";
+
+                cmd.CommandText = insertContacto;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Nombre", c.Nombre);
+                cmd.Parameters.AddWithValue("@ApellidoPaterno", c.ApellidoPaterno);
+                cmd.Parameters.AddWithValue("@ApellidoMaterno", c.ApellidoMaterno);
+                cmd.Parameters.AddWithValue("@Telefono", c.Telefono);
+                cmd.Parameters.AddWithValue("@CorreoElectronico", c.CorreoElectronico);
+                cmd.Parameters.AddWithValue("@Calle", c.Calle);
+                cmd.Parameters.AddWithValue("@Numero", c.Numero);
+                cmd.Parameters.AddWithValue("@Colonia", c.Colonia);
+                cmd.Parameters.AddWithValue("@IdPersona", c.IdPersona);
+
+                cmd.ExecuteNonQuery();
+
+                transaction.Commit();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                if (transaction != null) transaction.Rollback();
+                if (connection != null) connection.Close();
+
                 throw ex;
             }
         }

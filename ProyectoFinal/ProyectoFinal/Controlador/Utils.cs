@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Controlador
 {
-    class Utils
+    public class Utils
     {
         public static readonly string InsertListaContactos = "INSERT INTO ListaContactos VALUES (next value for seq_ListaContactos)" + Environment.NewLine +
             "SELECT Max(IdListaContactos) FROM ListaContactos";
@@ -34,7 +34,7 @@ namespace ProyectoFinal.Controlador
             }
             catch(Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {

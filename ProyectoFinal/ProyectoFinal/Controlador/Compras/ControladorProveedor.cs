@@ -10,10 +10,12 @@ using ProyectoFinal.Modelo.Compras;
 
 namespace ProyectoFinal.Controlador.Compras
 {
-    class ControladorProveedor: AccesoDatos.ConexionSQL
+    public class ControladorProveedor : AccesoDatos.ConexionSQL
     {
         public ControladorProveedor() {
-            this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+            //TODO Devuleve esto a verificar los permisos del usuario
+            //this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Administrador;
         }
 
         public void InsertarProveedor(Proveedor p) {
@@ -90,7 +92,7 @@ namespace ProyectoFinal.Controlador.Compras
                 connection.Open();
                 cmd = connection.CreateCommand();
                 
-                string InsertProveedor = "UPDATE Compras.Proveedor SET " + Environment.NewLine +
+                string InsertProveedor = "UPDATE [Compras].[Proveedores] SET " + Environment.NewLine +
                     "Nombre = @Nombre, " + Environment.NewLine +
                     "Telefono = @Telefono, " + Environment.NewLine +
                     "CorreoElectronico = @CorreoElectronico, " + Environment.NewLine +
@@ -129,7 +131,7 @@ namespace ProyectoFinal.Controlador.Compras
                 connection.Open();
 
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Proveedores " + filtro;
+                cmd.CommandText = "SELECT * FROM [Compras].[Proveedores] " + filtro;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
@@ -161,7 +163,7 @@ namespace ProyectoFinal.Controlador.Compras
                 connection.Open();
 
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Proveedores";
+                cmd.CommandText = "SELECT * FROM [Compras].[Proveedores]";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
@@ -251,7 +253,7 @@ namespace ProyectoFinal.Controlador.Compras
                     connection.Close();
                     connection.Dispose();
                 }
-                throw;
+                throw ex;
             }
         }
     }

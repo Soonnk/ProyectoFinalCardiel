@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Controlador.Ventas
 {
-    class ControladorDetallePedido: AccesoDatos.ConexionSQL
+    public class ControladorDetallePedido : AccesoDatos.ConexionSQL
     {
         public ControladorDetallePedido()
         {
