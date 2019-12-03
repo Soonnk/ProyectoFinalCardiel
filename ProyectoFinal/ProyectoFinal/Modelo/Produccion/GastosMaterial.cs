@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProyectoFinal.Modelo.Produccion
 {
-    class GastosMaterial
+    public class GastosMaterial
     {
         public int IdGastoMaterial { get; set; }
-        public Materiales Material { get; set; }
-        public LotesEtapas LoteEtapa { get; set; }
+        public Material Material { get; set; }
         public double Cantidad { get; set; }
 
         public TiposGasto Tipo { get; set; }
@@ -24,6 +23,5 @@ namespace ProyectoFinal.Modelo.Produccion
             Consumo = 1,
             Merma = 2
         }
-
     }
 }

@@ -65,6 +65,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos\ConexionSQL.cs" />
+    <Compile Include="Controlador\Compras\ControladorCompra.cs" />
+    <Compile Include="Controlador\Compras\ControladorDetalleCompra.cs" />
+    <Compile Include="Controlador\Compras\ControladorProveedor.cs" />
+    <Compile Include="Controlador\ControladorContacto.cs" />
+    <Compile Include="Controlador\Produccion\ControladorDesign.cs" />
+    <Compile Include="Controlador\Produccion\ControladorLote.cs" />
+    <Compile Include="Controlador\Produccion\ControladorLoteEtapa.cs" />
+    <Compile Include="Controlador\Produccion\ControladorMaterial.cs" />
+    <Compile Include="Controlador\Usuarios\ControladorUsuario.cs" />
+    <Compile Include="Controlador\Utils.cs" />
+    <Compile Include="Controlador\Ventas\ControladorCliente.cs" />
+    <Compile Include="Controlador\Ventas\ControladorDetallePedido.cs" />
+    <Compile Include="Controlador\Ventas\ControladorPedido.cs" />
     <Compile Include="Modelo\Compras\Compra.cs" />
     <Compile Include="Modelo\Contacto.cs" />
     <Compile Include="Modelo\Compras\DetalleCompra.cs" />
@@ -76,13 +89,42 @@
     <Compile Include="Modelo\Produccion\LotesEtapas.cs" />
     <Compile Include="Modelo\Produccion\LotesProduccion.cs" />
     <Compile Include="Modelo\Produccion\Materiales.cs" />
+    <Compile Include="Modelo\Usuarios\Usuario.cs" />
+    <Compile Include="Modelo\Ventas\Cliente.cs" />
+    <Compile Include="Modelo\Ventas\DetallePedido.cs" />
+    <Compile Include="Modelo\Ventas\Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="Vistas\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ListaDeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ListaDeCompras.Designer.cs">
+      <DependentUpon>ListaDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ListaDePedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ListaDePedidos.Designer.cs">
+      <DependentUpon>ListaDePedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Materiales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Materiales.Designer.cs">
+      <DependentUpon>Materiales.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\MDI.cs">
       <SubType>Form</SubType>
@@ -90,11 +132,41 @@
     <Compile Include="Vistas\MDI.Designer.cs">
       <DependentUpon>MDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Produccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Produccion.Designer.cs">
+      <DependentUpon>Produccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\Usuario.Designer.cs">
       <DependentUpon>Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ViewContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ViewContacto.Designer.cs">
+      <DependentUpon>ViewContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ViewDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ViewDesign.Designer.cs">
+      <DependentUpon>ViewDesign.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -110,11 +182,38 @@
     <EmbeddedResource Include="Vistas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ListaDeCompras.resx">
+      <DependentUpon>ListaDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ListaDePedidos.resx">
+      <DependentUpon>ListaDePedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Materiales.resx">
+      <DependentUpon>Materiales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Produccion.resx">
+      <DependentUpon>Produccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ViewContacto.resx">
+      <DependentUpon>ViewContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ViewDesign.resx">
+      <DependentUpon>ViewDesign.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -167,6 +266,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\naranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editcontact_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
