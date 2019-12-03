@@ -192,6 +192,7 @@
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 26;
             this.simpleButton1.Text = "Agregar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // gridControl1
             // 

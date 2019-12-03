@@ -16,5 +16,10 @@ namespace ProyectoFinal.Vistas
         {
             InitializeComponent();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
