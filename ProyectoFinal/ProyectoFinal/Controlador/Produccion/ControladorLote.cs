@@ -28,7 +28,7 @@ namespace ProyectoFinal.Controlador.Produccion
                 cmd = connection.CreateCommand();
 
                 cmd.CommandText = "INSERT INTO [Produccion].[Lotes] VALUES (@DetalleAsociado)" + Environment.NewLine +
-                                    "SELECT SCOPE_IDENTITY()";
+                                    "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 cmd.Parameters.AddWithValue("@DetalleAsociado", l.DetalleAsociado.IdDetallePedido);
 
@@ -67,7 +67,7 @@ namespace ProyectoFinal.Controlador.Produccion
                     "@Lote," +
                     "@Etapa" +
                     ")" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 cmd.Parameters.AddWithValue("@OrdenadoPor", Session.UsuarioEnCurso.IdUsuario);
                 cmd.Parameters.AddWithValue("@Lote", l.IdLoteProduccion);

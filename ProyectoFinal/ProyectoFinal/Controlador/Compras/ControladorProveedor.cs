@@ -48,8 +48,7 @@ namespace ProyectoFinal.Controlador.Compras
                     "   @Numero," + Environment.NewLine +
                     "   @Colonia," + Environment.NewLine +
                     "   @ListaContactos" + Environment.NewLine +
-                    ")" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    ")" + Environment.NewLine;
 
                 cmd.CommandText = InsertProveedor;
                 cmd.Parameters.Clear();
@@ -61,7 +60,7 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd.Parameters.AddWithValue("@Colonia", p.Colonia);
                 cmd.Parameters.AddWithValue("@ListaContactos",idLista);
 
-                int IdProveedor = (int)cmd.ExecuteScalar();
+                cmd.ExecuteNonQuery();
 
 
                 if (p.Contactos != null && p.Contactos.Count > 0) {
@@ -196,6 +195,8 @@ namespace ProyectoFinal.Controlador.Compras
             try
             {
                 connection = GetConnection();
+                connection.Open();
+
                 cmd = connection.CreateCommand();
 
                 cmd.CommandText = "SELECT * FROM [Compras].[Proveedores] WHERE IdProveedor = @IdProveedor";

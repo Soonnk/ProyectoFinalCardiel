@@ -35,7 +35,7 @@ namespace ProyectoFinal.Controlador.Produccion
                     "@Tipo," +
                     "@Observacion" +
                     ")" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 cmd.Parameters.AddWithValue("@Material", g.Material.IdMaterial);
                 cmd.Parameters.AddWithValue("@LoteEtapa", e.IdLoteEtapa);

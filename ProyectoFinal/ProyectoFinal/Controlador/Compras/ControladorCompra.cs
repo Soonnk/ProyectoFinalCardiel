@@ -32,7 +32,7 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd.Transaction = transaction;
 
                 cmd.CommandText = "INSERT INTO [Compras].[Compras] VALUES (@Proveedor,GETDATE(),null,@CompradoPor)" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 cmd.Parameters.AddWithValue("@Proveedor", c.Proveedor.IdProveedor);
                 cmd.Parameters.AddWithValue("@CompradoPor", c.Proveedor.IdProveedor);
@@ -43,7 +43,7 @@ namespace ProyectoFinal.Controlador.Compras
                 foreach (Modelo.Compras.DetalleCompra d in c.DetalleCompras)
                 {
                     cmd.CommandText = "INSERT INTO [Compras].[DetalleCompra] VALUES (@Compra,@Material,@Cantidad,@Costo)" + Environment.NewLine +
-                        "SELECT SCOPE_IDENTITY()";
+                        "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@Compra", id);

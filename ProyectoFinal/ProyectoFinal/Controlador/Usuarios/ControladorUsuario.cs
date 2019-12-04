@@ -41,7 +41,7 @@ namespace ProyectoFinal.Controlador.Usuarios
                     "@Numero," +
                     "@Colonia" +
                     ")" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()"; ;
+                    "SELECT CAST(SCOPE_IDENTITY() as int)"; ;
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@Nombre", u.Nombre);

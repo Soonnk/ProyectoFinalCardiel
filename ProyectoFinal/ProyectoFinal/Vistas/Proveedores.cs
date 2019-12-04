@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,7 @@ namespace ProyectoFinal.Vistas
         {
             InitializeComponent();
             ctrlProveedores = new Controlador.Compras.ControladorProveedor();
+            ctrlContactos = new Controlador.ControladorContacto();
         }
 
         public void CargarProveedores()
@@ -36,8 +38,6 @@ namespace ProyectoFinal.Vistas
 
             TxtIdProveedor.EditValue = "";
             TxtNombres.EditValue = "";
-            TxtApellidoMaterno.EditValue = "";
-            TxtApellidoPaterno.EditValue = "";
             TxtTelefono.EditValue = "";
             TxtCorreoElectronico.EditValue = "";
             TxtCalle.EditValue  = "";
@@ -47,6 +47,29 @@ namespace ProyectoFinal.Vistas
             lst = new Modelo.ListaContactos();
 
             GcContactos.DataSource = lst;
+        }
+
+        private void MostrarProveedor(DataRow row)
+        {
+            if (row == null) return;
+
+            Modelo.Compras.Proveedor p = ctrlProveedores.GetById((int)row["IdProveedor"]);
+
+            if (p == null) return;
+
+            this.IdProveedor = p.IdProveedor;
+
+            this.TxtIdProveedor.EditValue = p.IdProveedor;
+            this.TxtNombres.EditValue = p.Nombre;
+            this.TxtTelefono.EditValue = p.Telefono;
+            this.TxtCorreoElectronico.EditValue = p.CorreoElectronico;
+            this.TxtCalle.EditValue = p.Calle;
+            this.TxtNumero.EditValue = p.Numero;
+            this.TxtColonia.EditValue = p.Colonia;
+            foreach(Modelo.Contacto c in p.Contactos)
+                this.lst.Add(c);
+
+            GcContactos.RefreshDataSource();
         }
 
         private Modelo.Compras.Proveedor GenerarProveedor()
@@ -68,13 +91,19 @@ namespace ProyectoFinal.Vistas
 
         private void GuardarNuevo()
         {
-
+            Modelo.Compras.Proveedor proveedor = GenerarProveedor();
+            ctrlProveedores.InsertarProveedor(proveedor);
         }
 
         private void Proveedores_Load(object sender, EventArgs e)
         {
             CargarProveedores();
             Limpiar();
+        }
+
+        private void GcProveedores_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            MostrarProveedor(((ColumnView)sender).GetDataRow(e.RowHandle));
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -119,6 +148,11 @@ namespace ProyectoFinal.Vistas
 
             lst.Remove(obj);
             GcContactos.RefreshDataSource();
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

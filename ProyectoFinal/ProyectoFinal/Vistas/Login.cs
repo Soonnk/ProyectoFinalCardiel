@@ -32,9 +32,9 @@ namespace ProyectoFinal.Vistas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            } finally
-
-        }
+            }
+            finally { }
+            
 
         }
         private void simpleButton1_Click(object sender, EventArgs e)

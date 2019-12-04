@@ -54,7 +54,7 @@ namespace ProyectoFinal.Controlador.Ventas
                     "   @RFC," + Environment.NewLine +
                     "   @ListaContactos" + Environment.NewLine +
                     ")" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 cmd.CommandText = InsertCliente;
                 cmd.Parameters.Clear();
