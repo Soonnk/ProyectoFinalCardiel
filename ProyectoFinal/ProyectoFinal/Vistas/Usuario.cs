@@ -12,14 +12,18 @@ namespace ProyectoFinal.Vistas
 {
     public partial class Usuario : Form
     {
-        //private Controlador.Usuarios.ControladorUsuario ctrlUsuarios;
-        //private int IdUsuario = 0;
-        //Modelo.Usuarios.Usuario usu;
+        private Controlador.Usuarios.ControladorUsuario ctrlUsuarios;
+        private int IdUsuario = 0;
+        Modelo.Usuarios.Usuario usu;
+        Usuario usua = new Usuario();
+        Controlador.Usuarios.ControladorUsuario controlUsu = new Controlador.Usuarios.ControladorUsuario();
+        
+        
 
         public Usuario()
         {
             InitializeComponent();
-            //ctrlUsuarios = new Controlador.Usuarios.ControladorUsuario();
+            ctrlUsuarios = new Controlador.Usuarios.ControladorUsuario();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -54,7 +58,7 @@ namespace ProyectoFinal.Vistas
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             // Btn Limpiar
-            //limpiar();
+            limpiar();
             
         }
 
@@ -63,7 +67,7 @@ namespace ProyectoFinal.Vistas
 
         }
 
-        /*public void limpiar()
+        public void limpiar()
         {
             txtIdUsuario.ReadOnly = true;
             txtNombre.EditValue = "";
@@ -86,6 +90,24 @@ namespace ProyectoFinal.Vistas
         public void cargarUsuarios()
         {
             gcUsuarios.DataSource = ctrlUsuarios.GetAll();
-        }*/
+        }
+        public void agregar()
+        {
+           
+        }
+
+        private void eliminar()
+        {
+
+        }
+
+        private void modificar()
+        {
+
+        }
+        private void cargarAlumno()
+        {
+            
+        }
     }
 }
