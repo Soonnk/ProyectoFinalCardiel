@@ -12,9 +12,22 @@ namespace ProyectoFinal.Vistas
 {
     public partial class ListaDeCompras : Form
     {
+        private Controlador.Compras.ControladorCompra ctrl;
+
         public ListaDeCompras()
         {
             InitializeComponent();
+            ctrl = new Controlador.Compras.ControladorCompra();
+        }
+
+        public void CargarCompras()
+        {
+            GcCompras.DataSource = ctrl.GetAll();
+        }
+
+        private void ListaDeCompras_Load(object sender, EventArgs e)
+        {
+            CargarCompras();
         }
     }
 }

@@ -15,16 +15,19 @@ namespace ProyectoFinal.Vistas
     {
         
         public Contacto Contacto { get; set; }
+        private int IdContacto { get; set; }
         
         public ViewContacto()
         {
             InitializeComponent();
+            Contacto = new Contacto();
         }
 
         public ViewContacto(Contacto contacto)
         {
             InitializeComponent();
             this.Contacto = contacto;
+            this.IdContacto = contacto.IdContacto;
         }
 
         public void GenerarContacto()
@@ -35,6 +38,8 @@ namespace ProyectoFinal.Vistas
 
             this.Contacto = new Modelo.Contacto()
             {
+                IdContacto = this.Contacto.IdContacto,
+                IdPersona = this.Contacto.IdPersona,
                 Nombre = String.IsNullOrEmpty((string)TxtNombre.EditValue) ? null : (string)TxtNombre.EditValue,
                 ApellidoPaterno = String.IsNullOrEmpty((string)TxtApellidoPaterno.EditValue) ? null : (string)TxtApellidoPaterno.EditValue,
                 ApellidoMaterno = String.IsNullOrEmpty((string)TxtApellidoMaterno.EditValue) ? null : (string)TxtApellidoMaterno.EditValue,

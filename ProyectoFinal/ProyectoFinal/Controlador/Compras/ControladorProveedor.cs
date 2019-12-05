@@ -80,7 +80,7 @@ namespace ProyectoFinal.Controlador.Compras
                 throw ex;
             }
         }
-        
+
         public void UpdateProveedor(Proveedor p)
         {
             SqlConnection connection = null;
@@ -90,7 +90,7 @@ namespace ProyectoFinal.Controlador.Compras
                 connection = GetConnection();
                 connection.Open();
                 cmd = connection.CreateCommand();
-                
+
                 string InsertProveedor = "UPDATE [Compras].[Proveedores] SET " + Environment.NewLine +
                     "Nombre = @Nombre, " + Environment.NewLine +
                     "Telefono = @Telefono, " + Environment.NewLine +
@@ -101,7 +101,6 @@ namespace ProyectoFinal.Controlador.Compras
                     "WHERE IdProveedor = @IdProveedor";
 
                 cmd.CommandText = InsertProveedor;
-                cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
                 cmd.Parameters.AddWithValue("@Telefono", p.Telefono);
                 cmd.Parameters.AddWithValue("@CorreoElectronico", p.CorreoElectronico);
@@ -110,13 +109,17 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd.Parameters.AddWithValue("@Colonia", p.Colonia);
                 cmd.Parameters.AddWithValue("@IdProveedor", p.IdProveedor);
 
-                cmd.ExecuteNonQuery();
+                var rows = cmd.ExecuteNonQuery();
+                Console.WriteLine("" + rows);
             }
             catch (Exception ex)
             {
-                if (connection != null) connection.Close();
 
                 throw ex;
+            }
+            finally
+            {
+                if (connection != null) connection.Close();
             }
         }
 

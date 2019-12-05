@@ -224,11 +224,9 @@ namespace ProyectoFinal.Controlador
                 connection = GetConnection();
 
                 connection.Open();
-                transaction = connection.BeginTransaction();
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.Transaction = transaction;
                 string insertContacto = "UPDATE Personas SET " +
-                    "Nombres = @Nombre," +
+                    "Nombre = @Nombre," +
                     "ApellidoPaterno = @ApellidoPaterno, " +
                     "ApellidoMaterno = @ApellidoMaterno, " +
                     "Telefono = @Telefono, " +
@@ -251,8 +249,7 @@ namespace ProyectoFinal.Controlador
                 cmd.Parameters.AddWithValue("@IdPersona", c.IdPersona);
 
                 cmd.ExecuteNonQuery();
-
-                transaction.Commit();
+                
                 connection.Close();
             }
             catch (Exception ex)

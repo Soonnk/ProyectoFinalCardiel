@@ -47,6 +47,8 @@ namespace ProyectoFinal.Vistas
             lst = new Modelo.ListaContactos();
 
             GcContactos.DataSource = lst;
+
+            CargarProveedores();
         }
 
         private void MostrarProveedor(DataRow row)
@@ -83,7 +85,7 @@ namespace ProyectoFinal.Vistas
                 Contactos = lst,
                 CorreoElectronico = (string)TxtCorreoElectronico.EditValue,
                 Numero = (string)TxtNumero.EditValue,
-                Telefono = (string)TxtNumero.EditValue
+                Telefono = (string)TxtTelefono.EditValue
             };
 
             return p;
@@ -93,6 +95,16 @@ namespace ProyectoFinal.Vistas
         {
             Modelo.Compras.Proveedor proveedor = GenerarProveedor();
             ctrlProveedores.InsertarProveedor(proveedor);
+        }
+
+        private void GuardarCambios()
+        {
+            Modelo.Compras.Proveedor proveedor = GenerarProveedor();
+            ctrlProveedores.UpdateProveedor(proveedor);
+
+            MessageBox.Show("Cambios Guardados con éxito");
+
+            Limpiar();
         }
 
         private void Proveedores_Load(object sender, EventArgs e)
@@ -108,7 +120,10 @@ namespace ProyectoFinal.Vistas
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            GuardarNuevo();
+            if(String.IsNullOrEmpty(""+TxtIdProveedor.EditValue))
+                GuardarNuevo();
+            else
+                GuardarCambios();
         }
 
         private void BtnNuevoContacto_Click(object sender, EventArgs e)
@@ -131,6 +146,7 @@ namespace ProyectoFinal.Vistas
             if (res == DialogResult.OK)
             {
                 lst[GvContactos.FocusedRowHandle] = ventanaContacto.Contacto;
+                if (ventanaContacto.Contacto.IdContacto != 0) ctrlContactos.UpdateContacto(ventanaContacto.Contacto);
                 GcContactos.RefreshDataSource();
             }
         }
@@ -153,6 +169,11 @@ namespace ProyectoFinal.Vistas
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

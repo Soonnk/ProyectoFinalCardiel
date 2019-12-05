@@ -242,7 +242,7 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.ImageUri.Uri = "Clear;Office2013";
-            this.BtnLimpiar.Location = new System.Drawing.Point(686, 568);
+            this.BtnLimpiar.Location = new System.Drawing.Point(686, 526);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.Size = new System.Drawing.Size(194, 38);
@@ -253,6 +253,7 @@
             // 
             // BtnEliminar
             // 
+            this.BtnEliminar.Enabled = false;
             this.BtnEliminar.ImageUri.Uri = "Cancel;Office2013";
             this.BtnEliminar.Location = new System.Drawing.Point(491, 568);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
@@ -264,14 +265,16 @@
             // 
             // BtnActualizar
             // 
+            this.BtnActualizar.Enabled = false;
             this.BtnActualizar.ImageUri.Uri = "Redo;Office2013";
-            this.BtnActualizar.Location = new System.Drawing.Point(686, 526);
+            this.BtnActualizar.Location = new System.Drawing.Point(686, 568);
             this.BtnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(194, 38);
             this.BtnActualizar.StyleController = this.layoutControl1;
             this.BtnActualizar.TabIndex = 31;
             this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnGuardar
             // 
@@ -362,11 +365,11 @@
             this.LciNumero,
             this.LciColonia,
             this.layoutControlItem8,
-            this.layoutControlItem5,
             this.layoutControlItem11,
             this.layoutControlItem9,
-            this.layoutControlItem6,
-            this.layoutControlGroup2});
+            this.layoutControlGroup2,
+            this.layoutControlItem5,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
@@ -447,7 +450,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.BtnActualizar;
-            this.layoutControlItem8.Location = new System.Drawing.Point(674, 514);
+            this.layoutControlItem8.Location = new System.Drawing.Point(674, 556);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(198, 42);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -456,7 +459,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.BtnLimpiar;
-            this.layoutControlItem5.Location = new System.Drawing.Point(674, 556);
+            this.layoutControlItem5.Location = new System.Drawing.Point(674, 514);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(198, 42);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);

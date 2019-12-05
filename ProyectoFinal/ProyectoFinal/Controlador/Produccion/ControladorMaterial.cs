@@ -14,7 +14,9 @@ namespace ProyectoFinal.Controlador.Produccion
     {
         public ControladorMaterial()
         {
-            this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+            //TODO Arreglar permisos aqui
+            //this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Administrador;
         }
 
         public DataTable GetBy(string filtro)
@@ -27,7 +29,7 @@ namespace ProyectoFinal.Controlador.Produccion
                 connection.Open();
 
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT m.*,t.Descripcion as DescripcionTipo FROM [Produccion].[Materiales]  " + Environment.NewLine +
+                cmd.CommandText = "SELECT m.*,t.Descripcion as DescripcionTipo FROM [Produccion].[Materiales] m " + Environment.NewLine +
                     "INNER JOIN [Produccion].[c_TiposMateriales] t ON m.Tipo = t.IdTipoMaterial " + filtro;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
