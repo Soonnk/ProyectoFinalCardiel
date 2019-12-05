@@ -12,9 +12,22 @@ namespace ProyectoFinal.Vistas
 {
     public partial class ListaDePedidos : Form
     {
+        private Controlador.Ventas.ControladorPedido ctrl;
+
         public ListaDePedidos()
         {
             InitializeComponent();
+            ctrl = new Controlador.Ventas.ControladorPedido();
+        }
+
+        private void CargarPedidos()
+        {
+            GcPedido.DataSource = ctrl.GetAll();
+        }
+
+        private void ListaDePedidos_Load(object sender, EventArgs e)
+        {
+            CargarPedidos();
         }
     }
 }
