@@ -11,7 +11,7 @@ namespace ProyectoFinal.Modelo.Usuarios
         public int IdUsuario { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public bool Estatus { get; set; }
+        public string Estatus { get; set; }
         public NivelesUsuario NivelUsuario { get; set; }
         public Departamentos Departamento { get; set; }
         

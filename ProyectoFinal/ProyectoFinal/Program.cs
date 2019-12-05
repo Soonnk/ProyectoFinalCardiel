@@ -16,7 +16,7 @@ namespace ProyectoFinal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vistas.Login());
+            Application.Run(new Vistas.MDI());
 
             Session.UsuarioEnCurso = new Modelo.Usuarios.Usuario() { NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Visor };
         }

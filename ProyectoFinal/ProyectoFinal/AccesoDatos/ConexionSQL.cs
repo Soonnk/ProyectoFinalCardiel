@@ -58,16 +58,16 @@ namespace ProyectoFinal.AccesoDatos
             SqlParameter parNom = new SqlParameter("@nomb", nomb);
             SqlParameter parCon = new SqlParameter("@con", con);
 
-            SqlCommand comando = new SqlCommand("SELECT * FROM [Usuarios].[Usuarios] " +
-                "WHERE Username = @nomb AND Password = @con", connection);
+            SqlCommand comando = new SqlCommand("SELECT * FROM [Usuarios].[Usuarios] WHERE Username = @nomb AND Password = @con", connection);
+
             comando.Parameters.Add(parNom);
             comando.Parameters.Add(parCon);
 
             SqlDataReader lector = comando.ExecuteReader();
             while (lector.Read())
             {
-                username = lector.GetString(4);
-                nivelUsuario = lector.GetString(7);
+                username = lector.GetString(3);
+                nivelUsuario = lector.GetString(6);
 
 
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinal.AccesoDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace ProyectoFinal.Vistas
 {
     public partial class MDI : Form
     {
+
         public MDI()
         {
             InitializeComponent();
+            if (ConexionSQL.nivelUsuario == "User")
+            {
+
+            }
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)

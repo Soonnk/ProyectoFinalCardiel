@@ -15,7 +15,7 @@ namespace ProyectoFinal.Vistas
     public partial class Login : Form
     {
         ConexionSQL conexionSQL = new ConexionSQL();
-        Modelo.Usuarios.Usuario usu;
+        // Modelo.Usuarios.Usuario usu;
         
 
 
@@ -29,6 +29,7 @@ namespace ProyectoFinal.Vistas
         {
             if (!String.IsNullOrEmpty(txtUsuario.Text) && !String.IsNullOrEmpty(txtContrasenia.Text))
             {
+
                 
                 try
                 {
@@ -53,7 +54,7 @@ namespace ProyectoFinal.Vistas
             }
             else
             {
-                MessageBox.Show("Ingrese el usuario y la contraseña para acceder al sistema"+MessageBoxIcon.Information);
+                MessageBox.Show("Ingrese el usuario y la contraseña para acceder al sistema");
             }
             
 

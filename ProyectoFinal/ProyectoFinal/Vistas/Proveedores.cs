@@ -175,5 +175,10 @@ namespace ProyectoFinal.Vistas
         {
 
         }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
