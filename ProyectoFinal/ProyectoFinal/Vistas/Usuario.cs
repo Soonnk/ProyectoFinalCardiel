@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,14 +15,14 @@ namespace ProyectoFinal.Vistas
     {
         private Controlador.Usuarios.ControladorUsuario ctrlUsuarios;
         // private int IdUsuario = 0;
-        Modelo.Usuarios.Usuario usu;
-        Modelo.Persona per;
+
         //Usuario usua = new Usuario();
         //Controlador.Usuarios.ControladorUsuario controlUsu = new Controlador.Usuarios.ControladorUsuario();
         private int IdUsuario = 0;
         private int IdPersona = 0;
 
-
+        Modelo.Usuarios.Usuario usu;
+        Modelo.Persona per;
 
         public Usuario()
         {
@@ -67,7 +68,7 @@ namespace ProyectoFinal.Vistas
         {
             // Btn Limpiar
             limpiar();
-            
+
         }
 
         private void cmbDepartamento_EditValueChanged(object sender, EventArgs e)
@@ -139,6 +140,14 @@ namespace ProyectoFinal.Vistas
             {
                 IdUsuario = IdUsuario,
                 IdPersona = IdPersona,
+                Nombre = (string)txtNombre.EditValue,
+                ApellidoPaterno = (string)txtAPaterno.EditValue,
+                ApellidoMaterno = (string)txtAMaterno.EditValue,
+                Telefono = (string)txtTelefono.EditValue,
+                CorreoElectronico = (string)txtCorreo.EditValue,
+                Calle = (string)txtCalle.EditValue,
+                Numero = (string)txtNumero.EditValue,
+                Colonia = (string)txtColonia.EditValue,
                 Username = (string)txtUsername.EditValue,
                 Password = (string)txtContrasenia.EditValue,
                 Estatus = (bool)txtEstatus.EditValue,
@@ -150,36 +159,16 @@ namespace ProyectoFinal.Vistas
             return u;
         }
 
-        private Modelo.Persona generarPersona()
-        {
-            Modelo.Persona p = new Modelo.Persona()
-            {
-                
-                IdPersona = IdPersona,
-                Nombre = (string)txtNombre.EditValue,
-                ApellidoPaterno = (string)txtAPaterno.EditValue,
-                ApellidoMaterno = (string)txtAMaterno.EditValue,
-                Telefono = (string)txtTelefono.EditValue,
-                CorreoElectronico = (string)txtCorreo.EditValue,
-                Calle = (string)txtCalle.EditValue,
-                Numero = (string)txtNumero.EditValue,
-                Colonia = (string)txtColonia.EditValue
-
-            };
-
-            return p;
-        }
+       
 
         private void GuardarNuevo()
         {
-            Modelo.Persona persona = generarPersona();
             Modelo.Usuarios.Usuario usuario = generarUsuario();
             ctrlUsuarios.InsertarUsuario(usuario);
         }
 
         private void GuardarCambios()
         {
-            Modelo.Persona persona = generarPersona();
             Modelo.Usuarios.Usuario usuario = generarUsuario();
             ctrlUsuarios.UpdateUsuario(usuario);
 
@@ -188,6 +177,67 @@ namespace ProyectoFinal.Vistas
             limpiar();
         }
 
-        
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (usu.Count < 0) return;
+
+            ViewContacto ventanaContacto = new ViewContacto(lst[GvContactos.FocusedRowHandle]);
+            var res = ventanaContacto.ShowDialog(this);
+            if (res == DialogResult.OK)
+            {
+                lst[GvContactos.FocusedRowHandle] = ventanaContacto.Contacto;
+                if (ventanaContacto.Contacto.IdContacto != 0) ctrlContactos.UpdateContacto(ventanaContacto.Contacto);
+                GcContactos.RefreshDataSource();
+            }
+        }
+
+        private void gridView3_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            MostrarUsuario(((ColumnView)sender).GetDataRow(e.RowHandle));
+        }
+
+        private void MostrarUsuario(DataRow row)
+        {
+            if (row == null) return;
+
+            Modelo.Usuarios.Usuario u = ctrlUsuarios.GetById((int)row["IdUsuario"]);
+
+            if (u == null) return;
+
+            this.IdUsuario = u.IdUsuario;
+
+            this.txtIdUsuario.EditValue = u.IdUsuario;
+            this.txtNombre.EditValue = u.Nombre;
+            this.txtAPaterno.EditValue = u.ApellidoPaterno;
+            this.txtAMaterno.EditValue = u.ApellidoMaterno;
+            this.txtTelefono.EditValue = u.Telefono;
+            this.txtCorreo.EditValue = u.CorreoElectronico;
+            this.txtCalle.EditValue = u.Calle;
+            this.txtNumero.EditValue = u.Numero;
+            this.txtColonia.EditValue = u.Colonia;
+            this.txtUsername.EditValue = u.Username;
+            this.txtContrasenia.EditValue = u.Password;
+            this.txtEstatus.EditValue = u.Estatus;
+            this.cmbNivelUsuario.EditValue = u.NivelUsuario;
+            this.cmbDepartamento.EditValue = u.Departamento;
+            
+
+            gcUsuarios.RefreshDataSource();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            /*if (lst.Count < 0) return;
+
+            var obj = lst[GvContactos.FocusedRowHandle];
+
+            if (lst.IdListaContactos != 0)
+            {
+                ctrlContactos.DropContacto(obj, lst.IdListaContactos);
+            }
+
+            lst.Remove(obj);
+            GcContactos.RefreshDataSource();*/
+        }
     }
 }

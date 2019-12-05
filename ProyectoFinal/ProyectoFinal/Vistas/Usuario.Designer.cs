@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtEstatus = new DevExpress.XtraEditors.TextEdit();
             this.txtColonia = new DevExpress.XtraEditors.TextEdit();
             this.txtNumero = new DevExpress.XtraEditors.TextEdit();
             this.txtCalle = new DevExpress.XtraEditors.TextEdit();
@@ -72,10 +74,10 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.NivelUsuario1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.NivelUsuario = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtEstatus = new DevExpress.XtraEditors.TextEdit();
             this.Estatus = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEstatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColonia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumero.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCalle.Properties)).BeginInit();
@@ -114,7 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEstatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Estatus)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,6 +147,14 @@
             this.layoutControl1.Size = new System.Drawing.Size(1154, 728);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtEstatus
+            // 
+            this.txtEstatus.Location = new System.Drawing.Point(131, 324);
+            this.txtEstatus.Name = "txtEstatus";
+            this.txtEstatus.Size = new System.Drawing.Size(356, 22);
+            this.txtEstatus.StyleController = this.layoutControl1;
+            this.txtEstatus.TabIndex = 27;
             // 
             // txtColonia
             // 
@@ -213,6 +222,9 @@
             // 
             // gcUsuarios
             // 
+            gridLevelNode2.RelationName = "Level1";
+            this.gcUsuarios.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
             this.gcUsuarios.Location = new System.Drawing.Point(503, 16);
             this.gcUsuarios.MainView = this.gridView3;
             this.gcUsuarios.Name = "gcUsuarios";
@@ -225,6 +237,7 @@
             // 
             this.gridView3.GridControl = this.gcUsuarios;
             this.gridView3.Name = "gridView3";
+            this.gridView3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView3_RowClick);
             // 
             // simpleButton5
             // 
@@ -246,6 +259,7 @@
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 15;
             this.simpleButton4.Text = "Eliminar";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // simpleButton2
             // 
@@ -256,6 +270,7 @@
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 12;
             this.simpleButton2.Text = "Actualizar";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
@@ -561,14 +576,6 @@
             this.NivelUsuario.Text = "Nivel de Usuario";
             this.NivelUsuario.TextSize = new System.Drawing.Size(111, 16);
             // 
-            // txtEstatus
-            // 
-            this.txtEstatus.Location = new System.Drawing.Point(131, 324);
-            this.txtEstatus.Name = "txtEstatus";
-            this.txtEstatus.Size = new System.Drawing.Size(356, 22);
-            this.txtEstatus.StyleController = this.layoutControl1;
-            this.txtEstatus.TabIndex = 27;
-            // 
             // Estatus
             // 
             this.Estatus.Control = this.txtEstatus;
@@ -588,6 +595,7 @@
             this.Load += new System.EventHandler(this.Usuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtEstatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtColonia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumero.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCalle.Properties)).EndInit();
@@ -626,7 +634,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEstatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Estatus)).EndInit();
             this.ResumeLayout(false);
 
