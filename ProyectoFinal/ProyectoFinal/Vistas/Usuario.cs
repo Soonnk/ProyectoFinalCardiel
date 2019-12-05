@@ -141,9 +141,9 @@ namespace ProyectoFinal.Vistas
                 IdPersona = IdPersona,
                 Username = (string)txtUsername.EditValue,
                 Password = (string)txtContrasenia.EditValue,
-                Estatus = (string)txtEstatus.EditValue,
-                NivelUsuario = (int)cmbNivelUsuario.EditValue,
-                Departamento = (int)cmbDepartamento.EditValue,
+                Estatus = (bool)txtEstatus.EditValue,
+                NivelUsuario = (Modelo.Usuarios.Usuario.NivelesUsuario)cmbNivelUsuario.EditValue,
+                Departamento = (Modelo.Usuarios.Usuario.Departamentos)cmbDepartamento.EditValue,
 
             };
 
@@ -174,14 +174,14 @@ namespace ProyectoFinal.Vistas
         {
             Modelo.Persona persona = generarPersona();
             Modelo.Usuarios.Usuario usuario = generarUsuario();
-            ctrlUsuarios.InsertarUsuario(persona, usuario);
+            ctrlUsuarios.InsertarUsuario(usuario);
         }
 
         private void GuardarCambios()
         {
             Modelo.Persona persona = generarPersona();
             Modelo.Usuarios.Usuario usuario = generarUsuario();
-            ctrlUsuarios.UpdateProveedor(persona, usuario);
+            ctrlUsuarios.UpdateUsuario(usuario);
 
             MessageBox.Show("Cambios Guardados con éxito");
 

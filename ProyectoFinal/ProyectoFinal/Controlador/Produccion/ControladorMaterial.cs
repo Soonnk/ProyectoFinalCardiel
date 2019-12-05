@@ -14,9 +14,7 @@ namespace ProyectoFinal.Controlador.Produccion
     {
         public ControladorMaterial()
         {
-            //TODO Arreglar permisos aqui
-            //this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
-            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Administrador;
+            this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
         }
 
         public DataTable GetBy(string filtro)

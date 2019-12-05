@@ -17,10 +17,6 @@ namespace ProyectoFinal.Vistas
         public MDI()
         {
             InitializeComponent();
-            if (ConexionSQL.nivelUsuario == "User")
-            {
-
-            }
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)

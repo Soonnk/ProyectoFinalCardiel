@@ -14,9 +14,7 @@ namespace ProyectoFinal.Controlador
     {
         public ControladorContacto()
         {
-            //TODO Volver a aplicar Permisos de usuario aqui
-            //this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
-            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Administrador;
+            this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
         }
 
         public DataTable GetAll(int Lista)

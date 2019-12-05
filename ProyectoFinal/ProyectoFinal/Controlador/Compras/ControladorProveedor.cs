@@ -13,9 +13,7 @@ namespace ProyectoFinal.Controlador.Compras
     public class ControladorProveedor : AccesoDatos.ConexionSQL
     {
         public ControladorProveedor() {
-            //TODO Devuleve esto a verificar los permisos del usuario
-            //this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
-            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Administrador;
+            this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
         }
 
         public void InsertarProveedor(Proveedor p) {
@@ -39,6 +37,7 @@ namespace ProyectoFinal.Controlador.Compras
                     "   Calle," + Environment.NewLine +
                     "   Numero," + Environment.NewLine +
                     "   Colonia," + Environment.NewLine +
+                    "   Estatus," + Environment.NewLine +
                     "   ListaContactos" + Environment.NewLine +
                     ")VALUES(" + Environment.NewLine +
                     "   @Nombre," + Environment.NewLine +
@@ -47,6 +46,7 @@ namespace ProyectoFinal.Controlador.Compras
                     "   @Calle," + Environment.NewLine +
                     "   @Numero," + Environment.NewLine +
                     "   @Colonia," + Environment.NewLine +
+                    "   1," + Environment.NewLine +
                     "   @ListaContactos" + Environment.NewLine +
                     ")" + Environment.NewLine;
 
@@ -209,19 +209,19 @@ namespace ProyectoFinal.Controlador.Compras
 
                 if (reader.Read())
                 {
-                    p = new Proveedor
+                    p = new Proveedor()
                     {
-                        IdProveedor = reader.GetInt32(0),
-                        Nombre = reader.GetString(1),
-                        Telefono = reader.GetString(2),
-                        CorreoElectronico = reader.GetString(3),
-                        Calle = reader.GetString(4),
-                        Numero = reader.GetString(5),
-                        Colonia = reader.GetString(6),
+                        IdProveedor = (int)reader["IdProveedor"],
+                        Nombre = (string)reader["Nombre"],
+                        Telefono = (string)reader["Telefono"],
+                        CorreoElectronico = (string)reader["CorreoElectronico"],
+                        Calle = (string)reader["Calle"],
+                        Numero = (string)reader["Numero"],
+                        Colonia = (string)reader["Colonia"],
 
                         Contactos = new Modelo.ListaContactos
                         {
-                            IdListaContactos = reader.GetInt32(7)
+                            IdListaContactos = (int)reader["ListaContactos"]
                         }
                     };
 
