@@ -36,12 +36,55 @@ namespace ProyectoFinal.AccesoDatos
         /// </remarks>
         public SqlConnection GetConnection() {
             DBUser user = GetDBUser();
-            string conString = @"DATA SOURCE = " + Server + " ; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
+            string conString = @"DATA SOURCE = DESKTOP-PQOR5LH\SQLEXPRESS ; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
             
             SqlConnection conn = new SqlConnection(conString);
 
             return conn;
         }
+
+        public static string username = "";
+        public static string nivelUsuario = "";
+
+        public Boolean iniciarSesion(String nomb, String con)
+        {
+            username = "";
+            nivelUsuario = "";
+            SqlConnection connection = null;
+
+            connection = GetConnection();
+            connection.Open();
+
+            SqlParameter parNom = new SqlParameter("@nomb", nomb);
+            SqlParameter parCon = new SqlParameter("@con", con);
+
+            SqlCommand comando = new SqlCommand("SELECT * FROM [Usuarios].[Usuarios] " +
+                "WHERE Username = @nomb AND Password = @con", connection);
+            comando.Parameters.Add(parNom);
+            comando.Parameters.Add(parCon);
+
+            SqlDataReader lector = comando.ExecuteReader();
+            while (lector.Read())
+            {
+                username = lector.GetString(4);
+                nivelUsuario = lector.GetString(7);
+
+
+            }
+            lector.Close();
+            connection.Close();
+
+            if (String.IsNullOrEmpty(nivelUsuario))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
 
         #region "mafufadas para el control de Usuarios"
         private bool IsUserLevelSetted = false;

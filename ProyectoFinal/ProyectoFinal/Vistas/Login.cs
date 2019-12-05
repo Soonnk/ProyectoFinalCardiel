@@ -15,30 +15,48 @@ namespace ProyectoFinal.Vistas
     public partial class Login : Form
     {
         ConexionSQL conexionSQL = new ConexionSQL();
+        Modelo.Usuarios.Usuario usu;
+        
+
+
         public Login()
         {
             InitializeComponent();
         }
 
-        public void ingresar(string username, string password)
-        {
-
-            try
-            {
-
-                SqlCommand cmd = new SqlCommand("SELECT Username, NivelUsuario FROM [Usuarios].[Usuarios] WHERE ");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally { }
-            
-
-        }
+       
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(txtUsuario.Text) && !String.IsNullOrEmpty(txtContrasenia.Text))
+            {
+                
+                try
+                {
+                    ConexionSQL conn = new ConexionSQL();
+                    Boolean res = conn.iniciarSesion(txtUsuario.Text, txtContrasenia.Text);
+                    if (res)
+                    {
+                        this.Hide();
+                        MDI menuPrincipal = new MDI();
+                        menuPrincipal.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Datos incorrectos");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inesperado"+ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese el usuario y la contraseña para acceder al sistema"+MessageBoxIcon.Information);
+            }
+            
+
 
         }
     }
