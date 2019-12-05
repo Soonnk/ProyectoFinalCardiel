@@ -153,7 +153,7 @@ namespace ProyectoFinal.Controlador.Ventas
             }
         }
 
-        public DataTable getAll()
+        public DataTable GetAll()
         {
             SqlConnection connection = null;
             try
@@ -163,7 +163,7 @@ namespace ProyectoFinal.Controlador.Ventas
                 connection.Open();
 
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM [Ventas].[Pedido] p INNER JOIN [Ventas].[DetallesPedido] d ON p.IdPedido = d.Pedido";
+                cmd.CommandText = "SELECT * FROM [Ventas].[Pedidos] p INNER JOIN [Ventas].[DetallesPedido] d ON p.IdPedido = d.Pedido";
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
                 DataTable dt = new DataTable();
@@ -213,7 +213,7 @@ namespace ProyectoFinal.Controlador.Ventas
                     p.Cliente = c;
                     v.IdPersona = reader.GetInt32(2);
                     p.Vendedor = v;
-                    p.FechaPedido = reader.GetString(3);
+                    p.FechaPedido = (DateTime)reader["FechaPedido"];
                 }
                 return p;
             }
