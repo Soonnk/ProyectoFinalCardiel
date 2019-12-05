@@ -179,16 +179,16 @@ namespace ProyectoFinal.Vistas
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (usu.Count < 0) return;
+            /*if (usu.Count < 0) return;
 
-            ViewContacto ventanaContacto = new ViewContacto(lst[GvContactos.FocusedRowHandle]);
+            ViewContacto ventanaContacto = new ViewContacto(usu[GvContactos.FocusedRowHandle]);
             var res = ventanaContacto.ShowDialog(this);
             if (res == DialogResult.OK)
             {
-                lst[GvContactos.FocusedRowHandle] = ventanaContacto.Contacto;
-                if (ventanaContacto.Contacto.IdContacto != 0) ctrlContactos.UpdateContacto(ventanaContacto.Contacto);
+                usu[GvContactos.FocusedRowHandle] = ventanaContacto.Contacto;
+                if (ventanaContacto.Contacto.IdContacto != 0) ctrlUsuarios.UpdateUsuario(ventanaContacto.Contacto);
                 GcContactos.RefreshDataSource();
-            }
+            }*/
         }
 
         private void gridView3_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

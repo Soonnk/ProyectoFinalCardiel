@@ -145,7 +145,7 @@ namespace ProyectoFinal.Controlador.Compras
         {
             SqlConnection connection = null;
             SqlDataAdapter adapter = null;
-            DataTable dt = null;
+            DataTable dt = new DataTable();
 
             try
             {
