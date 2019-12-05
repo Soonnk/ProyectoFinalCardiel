@@ -137,5 +137,10 @@ namespace ProyectoFinal.Vistas
         {
             new ViewDesign().ShowDialog(this);
         }
+        
+        private void MDI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

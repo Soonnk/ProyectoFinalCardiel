@@ -60,18 +60,18 @@
             this.PanelMenu.Controls.Add(this.btnClientes);
             this.PanelMenu.Controls.Add(this.btnUsuario);
             this.PanelMenu.Controls.Add(this.pictureBox1);
-            this.PanelMenu.Location = new System.Drawing.Point(3, 2);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelMenu.Location = new System.Drawing.Point(2, 2);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(251, 690);
+            this.PanelMenu.Size = new System.Drawing.Size(188, 561);
             this.PanelMenu.TabIndex = 0;
             // 
             // btnTaza
             // 
-            this.btnTaza.Location = new System.Drawing.Point(48, 601);
-            this.btnTaza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTaza.Location = new System.Drawing.Point(36, 488);
+            this.btnTaza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTaza.Name = "btnTaza";
-            this.btnTaza.Size = new System.Drawing.Size(143, 37);
+            this.btnTaza.Size = new System.Drawing.Size(107, 30);
             this.btnTaza.TabIndex = 10;
             this.btnTaza.Text = "Diseño de Taza";
             this.btnTaza.Click += new System.EventHandler(this.BtnDesigns_Click);
@@ -79,10 +79,10 @@
             // btnListaCompras
             // 
             this.btnListaCompras.ImageUri.Uri = "Chart;Office2013";
-            this.btnListaCompras.Location = new System.Drawing.Point(11, 543);
-            this.btnListaCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnListaCompras.Location = new System.Drawing.Point(8, 441);
+            this.btnListaCompras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnListaCompras.Name = "btnListaCompras";
-            this.btnListaCompras.Size = new System.Drawing.Size(235, 38);
+            this.btnListaCompras.Size = new System.Drawing.Size(176, 31);
             this.btnListaCompras.TabIndex = 9;
             this.btnListaCompras.Text = "Lista de compras";
             this.btnListaCompras.Click += new System.EventHandler(this.simpleButton9_Click);
@@ -90,10 +90,10 @@
             // btnCompra
             // 
             this.btnCompra.ImageUri.Uri = "Chart;Office2013";
-            this.btnCompra.Location = new System.Drawing.Point(13, 498);
-            this.btnCompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCompra.Location = new System.Drawing.Point(10, 405);
+            this.btnCompra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCompra.Name = "btnCompra";
-            this.btnCompra.Size = new System.Drawing.Size(235, 38);
+            this.btnCompra.Size = new System.Drawing.Size(176, 31);
             this.btnCompra.TabIndex = 7;
             this.btnCompra.Text = "Compra";
             this.btnCompra.Click += new System.EventHandler(this.simpleButton7_Click);
@@ -101,10 +101,10 @@
             // btnListaPedidos
             // 
             this.btnListaPedidos.ImageUri.Uri = "DeleteDataSource;Office2013";
-            this.btnListaPedidos.Location = new System.Drawing.Point(11, 455);
-            this.btnListaPedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnListaPedidos.Location = new System.Drawing.Point(8, 370);
+            this.btnListaPedidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnListaPedidos.Name = "btnListaPedidos";
-            this.btnListaPedidos.Size = new System.Drawing.Size(235, 38);
+            this.btnListaPedidos.Size = new System.Drawing.Size(176, 31);
             this.btnListaPedidos.TabIndex = 8;
             this.btnListaPedidos.Text = "Lista de pedidos";
             this.btnListaPedidos.Click += new System.EventHandler(this.simpleButton8_Click);
@@ -112,10 +112,10 @@
             // btnPedido
             // 
             this.btnPedido.ImageUri.Uri = "DeleteDataSource;Office2013";
-            this.btnPedido.Location = new System.Drawing.Point(11, 411);
-            this.btnPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPedido.Location = new System.Drawing.Point(8, 334);
+            this.btnPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Size = new System.Drawing.Size(235, 38);
+            this.btnPedido.Size = new System.Drawing.Size(176, 31);
             this.btnPedido.TabIndex = 6;
             this.btnPedido.Text = "Pedido";
             this.btnPedido.Click += new System.EventHandler(this.simpleButton6_Click);
@@ -123,10 +123,10 @@
             // btnProduccion
             // 
             this.btnProduccion.ImageUri.Uri = "AddNewDataSource;Office2013";
-            this.btnProduccion.Location = new System.Drawing.Point(11, 367);
-            this.btnProduccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProduccion.Location = new System.Drawing.Point(8, 298);
+            this.btnProduccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProduccion.Name = "btnProduccion";
-            this.btnProduccion.Size = new System.Drawing.Size(235, 38);
+            this.btnProduccion.Size = new System.Drawing.Size(176, 31);
             this.btnProduccion.TabIndex = 5;
             this.btnProduccion.Text = "Producción";
             this.btnProduccion.Click += new System.EventHandler(this.BtnProduccion_Click);
@@ -134,10 +134,10 @@
             // btnMateriales
             // 
             this.btnMateriales.ImageUri.Uri = "EditDataSource;Office2013";
-            this.btnMateriales.Location = new System.Drawing.Point(11, 322);
-            this.btnMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMateriales.Location = new System.Drawing.Point(8, 262);
+            this.btnMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMateriales.Name = "btnMateriales";
-            this.btnMateriales.Size = new System.Drawing.Size(235, 38);
+            this.btnMateriales.Size = new System.Drawing.Size(176, 31);
             this.btnMateriales.TabIndex = 4;
             this.btnMateriales.Text = "Materiales";
             this.btnMateriales.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -145,10 +145,10 @@
             // btnProveedores
             // 
             this.btnProveedores.ImageUri.Uri = "CustomizeGrid;Office2013";
-            this.btnProveedores.Location = new System.Drawing.Point(11, 279);
-            this.btnProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProveedores.Location = new System.Drawing.Point(8, 227);
+            this.btnProveedores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(235, 38);
+            this.btnProveedores.Size = new System.Drawing.Size(176, 31);
             this.btnProveedores.TabIndex = 3;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -157,10 +157,10 @@
             // 
             this.btnClientes.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.btnClientes.ImageUri.Uri = "AddItem;Office2013";
-            this.btnClientes.Location = new System.Drawing.Point(11, 235);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClientes.Location = new System.Drawing.Point(8, 191);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(235, 38);
+            this.btnClientes.Size = new System.Drawing.Size(176, 31);
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
@@ -170,10 +170,10 @@
             this.btnUsuario.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnUsuario.Image = global::ProyectoFinal.Properties.Resources.naranja;
             this.btnUsuario.ImageUri.Uri = "Add;Office2013";
-            this.btnUsuario.Location = new System.Drawing.Point(11, 191);
-            this.btnUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUsuario.Location = new System.Drawing.Point(8, 155);
+            this.btnUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(235, 38);
+            this.btnUsuario.Size = new System.Drawing.Size(176, 31);
             this.btnUsuario.TabIndex = 1;
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
@@ -183,10 +183,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Peru;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::ProyectoFinal.Properties.Resources.sgp;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(213, 152);
+            this.pictureBox1.Size = new System.Drawing.Size(160, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -194,26 +194,27 @@
             // PanelContenedor
             // 
             this.PanelContenedor.AutoSize = true;
-            this.PanelContenedor.Location = new System.Drawing.Point(253, 2);
-            this.PanelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelContenedor.MinimumSize = new System.Drawing.Size(955, 690);
+            this.PanelContenedor.Location = new System.Drawing.Point(190, 2);
+            this.PanelContenedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelContenedor.MinimumSize = new System.Drawing.Size(716, 561);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(955, 690);
+            this.PanelContenedor.Size = new System.Drawing.Size(716, 561);
             this.PanelContenedor.TabIndex = 3;
             // 
             // MDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Orange;
-            this.ClientSize = new System.Drawing.Size(1209, 697);
+            this.ClientSize = new System.Drawing.Size(907, 566);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.PanelMenu);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MDI";
             this.Text = "MDI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDI_FormClosing);
             this.Load += new System.EventHandler(this.MDI_Load);
             this.SizeChanged += new System.EventHandler(this.MDI_SizeChanged);
             this.PanelMenu.ResumeLayout(false);
