@@ -36,20 +36,18 @@ namespace ProyectoFinal.AccesoDatos
         /// </remarks>
         public SqlConnection GetConnection() {
             DBUser user = GetDBUser();
-            string conString = @"DATA SOURCE = DESKTOP-PQOR5LH\SQLEXPRESS ; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
+            string conString = @"DATA SOURCE = " + Server + " ; USER ID = " + user.Username + "; PASSWORD = " + user.Password + "; INITIAL CATALOG = " + DBName + "; TIMEOUT = 10;";
             
             SqlConnection conn = new SqlConnection(conString);
 
             return conn;
         }
-
-        public static string username = "";
-        public static string nivelUsuario = "";
+        
 
         public Boolean iniciarSesion(String nomb, String con)
         {
-            username = "";
-            nivelUsuario = "";
+            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Visor;
+            
             SqlConnection connection = null;
 
             connection = GetConnection();
@@ -58,23 +56,37 @@ namespace ProyectoFinal.AccesoDatos
             SqlParameter parNom = new SqlParameter("@nomb", nomb);
             SqlParameter parCon = new SqlParameter("@con", con);
 
-            SqlCommand comando = new SqlCommand("SELECT * FROM [Usuarios].[Usuarios] WHERE Username = @nomb AND Password = @con", connection);
-
+            SqlCommand comando = new SqlCommand("SELECT * FROM [Usuarios].[Usuarios] u INNER JOIN [Personas] p on p.IdPersona = u.Persona " +
+                "WHERE Username = @nomb AND Password = @con", connection);
             comando.Parameters.Add(parNom);
             comando.Parameters.Add(parCon);
 
             SqlDataReader lector = comando.ExecuteReader();
             while (lector.Read())
             {
-                username = lector.GetString(3);
-                nivelUsuario = lector.GetString(6);
-
-
+                Session.UsuarioEnCurso = new Modelo.Usuarios.Usuario()
+                {
+                    IdUsuario = (int)lector["IdUsuario"],
+                    IdPersona = (int)lector["IdPersona"],
+                    Nombre = (string)lector["Nombre"],
+                    ApellidoMaterno = (string)lector["ApellidoMaterno"],
+                    ApellidoPaterno = (string)lector["ApellidoPaterno"],
+                    Calle = (string)lector["Calle"],
+                    Numero = (string)lector["Numero"],
+                    Colonia = (string)lector["Colonia"],
+                    CorreoElectronico = (string)lector["CorreoElectronico"],
+                    Telefono = (string)lector["Telefono"],
+                    Departamento = (Modelo.Usuarios.Usuario.Departamentos)lector["Departamento"],
+                    NivelUsuario = (Modelo.Usuarios.Usuario.NivelesUsuario)lector["NivelUsuario"],
+                    Estatus = (bool)lector["Estatus"],
+                    Username = (string)lector["Username"],
+                    Password = (string)lector["Password"]
+                };
             }
             lector.Close();
             connection.Close();
 
-            if (String.IsNullOrEmpty(nivelUsuario))
+            if (Session.UsuarioEnCurso == null)
             {
                 return false;
             }
