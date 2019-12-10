@@ -216,7 +216,7 @@ namespace ProyectoFinal.Vistas
             this.txtIdUsuario.EditValue = u.IdPersona;
             this.txtUsername.EditValue = u.Username;
             this.txtContrasenia.EditValue = u.Password;
-            this.txtEstatus.EditValue = u.Estatus;
+            //this.txtEstatus.EditValue = u.Estatus;
             this.cmbNivelUsuario.EditValue = u.NivelUsuario;
             this.cmbDepartamento.EditValue = u.Departamento;
             
