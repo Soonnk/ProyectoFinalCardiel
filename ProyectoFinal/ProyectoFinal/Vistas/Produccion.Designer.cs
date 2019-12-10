@@ -284,6 +284,7 @@
             this.GcPendientes.TabIndex = 35;
             this.GcPendientes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvPendientes});
+            this.GcPendientes.Click += new System.EventHandler(this.GcPendientes_Click);
             // 
             // GvPendientes
             // 

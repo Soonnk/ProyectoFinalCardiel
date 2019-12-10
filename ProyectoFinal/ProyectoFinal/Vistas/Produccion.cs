@@ -45,5 +45,10 @@ namespace ProyectoFinal.Vistas
         {
 
         }
+
+        private void GcPendientes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
