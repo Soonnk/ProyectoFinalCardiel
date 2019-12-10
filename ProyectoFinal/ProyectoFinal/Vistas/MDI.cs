@@ -78,7 +78,6 @@ namespace ProyectoFinal.Vistas
         {
             new ViewDesign().ShowDialog(this);
         }
-
         private void btnClientes_Click(object sender, EventArgs e)
         {
             // Clientes
