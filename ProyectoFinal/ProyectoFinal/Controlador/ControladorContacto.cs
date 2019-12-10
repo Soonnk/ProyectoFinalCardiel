@@ -24,11 +24,11 @@ namespace ProyectoFinal.Controlador
             connection.Open();
 
             SqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ListaContactos" +
+            cmd.CommandText = "SELECT * FROM ListaContactos " +
                             "INNER JOIN DesgloseContactos On DesgloseContactos.ListaContacto = ListaContactos.IdListaContactos " +
-                            "INNER JOIN Contactos On Contactos.IdContacto = DescloseContactos.Contacto " +
-                            "INNER JOIN Persona On Contactos.Persona = Persona.IdPersona" +
-                            "WHERE ListaContactos = @IdLista";
+                            "INNER JOIN Contactos On Contactos.IdContacto = DesgloseContactos.Contacto " +
+                            "INNER JOIN Personas On Contactos.Persona = Personas.IdPersona " +
+                            "WHERE IdListaContactos = @IdLista";
             cmd.Parameters.AddWithValue("@IdLista", Lista);
 
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -63,7 +63,7 @@ namespace ProyectoFinal.Controlador
                 transaction = connection.BeginTransaction();
                 SqlCommand cmd = connection.CreateCommand();
                 cmd.Transaction = transaction;
-                string insertContacto = "INSERT INTO Persona VALUES(" +
+                string insertContacto = "INSERT INTO Personas VALUES(" +
                     "@Nombre," +
                     "@ApellidoPaterno," +
                     "@ApellidoMaterno," +
@@ -73,7 +73,7 @@ namespace ProyectoFinal.Controlador
                     "@Numero," +
                     "@Colonia" +
                     ")" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 cmd.CommandText = insertContacto;
                 cmd.Parameters.Clear();
@@ -89,7 +89,7 @@ namespace ProyectoFinal.Controlador
                 int idPersona = (int)cmd.ExecuteScalar();
 
                 insertContacto = "INSERT INTO Contactos VALUES (@IdPersona)" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 cmd.CommandText = insertContacto;
                 cmd.Parameters.Clear();
@@ -134,7 +134,7 @@ namespace ProyectoFinal.Controlador
         /// </remarks>
         public static void InsertarContacto(Modelo.Contacto c, int Lista, SqlCommand cmd)
         {
-            string insertContacto = "INSERT INTO Persona VALUES(" +
+            string insertContacto = "INSERT INTO Personas VALUES(" +
                 "@Nombre," +
                 "@ApellidoPaterno," +
                 "@ApellidoMaterno," +
@@ -144,7 +144,7 @@ namespace ProyectoFinal.Controlador
                 "@Numero," +
                 "@Colonia" +
                 ")" + Environment.NewLine +
-                "SELECT SCOPE_IDENTITY()";
+                "SELECT CAST(SCOPE_IDENTITY() as int)";
 
             cmd.CommandText = insertContacto;
             cmd.Parameters.Clear();
@@ -157,10 +157,11 @@ namespace ProyectoFinal.Controlador
             cmd.Parameters.AddWithValue("@Numero", c.Numero);
             cmd.Parameters.AddWithValue("@Colonia", c.Colonia);
 
+            Utils.ClearNullParameterValues(cmd.Parameters);
             int idPersona = (int)cmd.ExecuteScalar();
 
             insertContacto = "INSERT INTO Contactos VALUES (@IdPersona)" + Environment.NewLine +
-                "SELECT SCOPE_IDENTITY()";
+                "SELECT CAST(SCOPE_IDENTITY() as int)";
 
             cmd.CommandText = insertContacto;
             cmd.Parameters.Clear();
@@ -177,7 +178,8 @@ namespace ProyectoFinal.Controlador
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@IdLista", Lista);
             cmd.Parameters.AddWithValue("@IdContacto", idContacto);
-
+            
+            Utils.ClearNullParameterValues(cmd.Parameters);
             cmd.ExecuteNonQuery();
         }
 
@@ -213,6 +215,10 @@ namespace ProyectoFinal.Controlador
             }
         }
 
+        /// <summary>
+        /// Actualiza los datos de un contacto en la base de datos
+        /// </summary>
+        /// <param name="c">Contacto a actualizar con los datos nuevos que tendrá</param>
         public void UpdateContacto(Modelo.Contacto c) {
             SqlConnection connection = null;
             SqlTransaction transaction = null;
@@ -222,11 +228,9 @@ namespace ProyectoFinal.Controlador
                 connection = GetConnection();
 
                 connection.Open();
-                transaction = connection.BeginTransaction();
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.Transaction = transaction;
-                string insertContacto = "UPDATE Persona SET " +
-                    "Nombres = @Nombre," +
+                string insertContacto = "UPDATE Personas SET " +
+                    "Nombre = @Nombre," +
                     "ApellidoPaterno = @ApellidoPaterno, " +
                     "ApellidoMaterno = @ApellidoMaterno, " +
                     "Telefono = @Telefono, " +
@@ -248,9 +252,10 @@ namespace ProyectoFinal.Controlador
                 cmd.Parameters.AddWithValue("@Colonia", c.Colonia);
                 cmd.Parameters.AddWithValue("@IdPersona", c.IdPersona);
 
-                cmd.ExecuteNonQuery();
 
-                transaction.Commit();
+                Utils.ClearNullParameterValues(cmd.Parameters);
+                cmd.ExecuteNonQuery();
+                
                 connection.Close();
             }
             catch (Exception ex)

@@ -129,9 +129,11 @@ namespace ProyectoFinal.Vistas
 
         public void MostrarDesign(DataRow row)
         {
+            if (row == null) return;
+
             Modelo.Produccion.Design d = ctrl.GetById((int)row["IdDesign"]);
 
-            if (row == null) return;
+            if (d == null) return;
 
             idActual = d.IdDesign;
             TxtNombre.EditValue = d.Descripcion;

@@ -42,6 +42,61 @@ namespace ProyectoFinal.AccesoDatos
 
             return conn;
         }
+        
+
+        public Boolean iniciarSesion(String nomb, String con)
+        {
+            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Visor;
+            
+            SqlConnection connection = null;
+
+            connection = GetConnection();
+            connection.Open();
+
+            SqlParameter parNom = new SqlParameter("@nomb", nomb);
+            SqlParameter parCon = new SqlParameter("@con", con);
+
+            SqlCommand comando = new SqlCommand("SELECT * FROM [Usuarios].[Usuarios] u INNER JOIN [Personas] p on p.IdPersona = u.Persona " +
+                "WHERE Username = @nomb AND Password = @con", connection);
+            comando.Parameters.Add(parNom);
+            comando.Parameters.Add(parCon);
+
+            SqlDataReader lector = comando.ExecuteReader();
+            while (lector.Read())
+            {
+                Session.UsuarioEnCurso = new Modelo.Usuarios.Usuario()
+                {
+                    IdUsuario = (int)lector["IdUsuario"],
+                    IdPersona = (int)lector["IdPersona"],
+                    Nombre = (string)lector["Nombre"],
+                    ApellidoMaterno = (string)lector["ApellidoMaterno"],
+                    ApellidoPaterno = (string)lector["ApellidoPaterno"],
+                    Calle = (string)lector["Calle"],
+                    Numero = (string)lector["Numero"],
+                    Colonia = (string)lector["Colonia"],
+                    CorreoElectronico = (string)lector["CorreoElectronico"],
+                    Telefono = (string)lector["Telefono"],
+                    Departamento = (Modelo.Usuarios.Usuario.Departamentos)lector["Departamento"],
+                    NivelUsuario = (Modelo.Usuarios.Usuario.NivelesUsuario)lector["NivelUsuario"],
+                    Estatus = (bool)lector["Estatus"],
+                    Username = (string)lector["Username"],
+                    Password = (string)lector["Password"]
+                };
+            }
+            lector.Close();
+            connection.Close();
+
+            if (Session.UsuarioEnCurso == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
 
         #region "mafufadas para el control de Usuarios"
         private bool IsUserLevelSetted = false;

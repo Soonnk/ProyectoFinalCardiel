@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,7 @@ namespace ProyectoFinal.Vistas
         {
             InitializeComponent();
             ctrlProveedores = new Controlador.Compras.ControladorProveedor();
+            ctrlContactos = new Controlador.ControladorContacto();
         }
 
         public void CargarProveedores()
@@ -36,31 +38,58 @@ namespace ProyectoFinal.Vistas
 
             TxtIdProveedor.EditValue = "";
             TxtNombres.EditValue = "";
-            TxtApellidoMaterno.EditValue = "";
-            TxtApellidoPaterno.EditValue = "";
             TxtTelefono.EditValue = "";
             TxtCorreoElectronico.EditValue = "";
             TxtCalle.EditValue  = "";
             TxtNumero.EditValue = "";
             TxtColonia.EditValue = "";
 
-            lst = new Modelo.ListaContactos();
-
+            lst = new Modelo.ListaContactos
+            {
+                IdListaContactos = 0
+            };
             GcContactos.DataSource = lst;
+
+            CargarProveedores();
+        }
+
+        private void MostrarProveedor(DataRow row)
+        {
+            if (row == null) return;
+
+            Modelo.Compras.Proveedor p = ctrlProveedores.GetById((int)row["IdProveedor"]);
+
+            if (p == null) return;
+
+            this.IdProveedor = p.IdProveedor;
+
+            this.TxtIdProveedor.EditValue = p.IdProveedor;
+            this.TxtNombres.EditValue = p.Nombre;
+            this.TxtTelefono.EditValue = p.Telefono;
+            this.TxtCorreoElectronico.EditValue = p.CorreoElectronico;
+            this.TxtCalle.EditValue = p.Calle;
+            this.TxtNumero.EditValue = p.Numero;
+            this.TxtColonia.EditValue = p.Colonia;
+
+            this.lst.IdListaContactos = p.Contactos.IdListaContactos;
+            foreach(Modelo.Contacto c in p.Contactos)
+                this.lst.Add(c);
+
+            GcContactos.RefreshDataSource();
         }
 
         private Modelo.Compras.Proveedor GenerarProveedor()
         {
             Modelo.Compras.Proveedor p = new Modelo.Compras.Proveedor()
             {
-                IdProveedor = IdProveedor,
+                IdProveedor = this.IdProveedor,
                 Nombre = (string)TxtNombres.EditValue,
                 Calle = (string)TxtCalle.EditValue,
                 Colonia = (string)TxtColonia.EditValue,
                 Contactos = lst,
                 CorreoElectronico = (string)TxtCorreoElectronico.EditValue,
                 Numero = (string)TxtNumero.EditValue,
-                Telefono = (string)TxtNumero.EditValue
+                Telefono = (string)TxtTelefono.EditValue
             };
 
             return p;
@@ -68,7 +97,17 @@ namespace ProyectoFinal.Vistas
 
         private void GuardarNuevo()
         {
+            Modelo.Compras.Proveedor proveedor = GenerarProveedor();
+            ctrlProveedores.InsertarProveedor(proveedor);
+        }
 
+        private void GuardarCambios(bool Estatus = true)
+        {
+            Modelo.Compras.Proveedor proveedor = GenerarProveedor();
+            proveedor.Estatus = Estatus;
+            ctrlProveedores.UpdateProveedor(proveedor);
+
+            MessageBox.Show("Cambios Guardados con éxito");
         }
 
         private void Proveedores_Load(object sender, EventArgs e)
@@ -77,9 +116,19 @@ namespace ProyectoFinal.Vistas
             Limpiar();
         }
 
+        private void GcProveedores_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            MostrarProveedor(((ColumnView)sender).GetDataRow(e.RowHandle));
+        }
+
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            GuardarNuevo();
+            if(String.IsNullOrEmpty(""+TxtIdProveedor.EditValue))
+                GuardarNuevo();
+            else
+                GuardarCambios();
+
+            Limpiar();
         }
 
         private void BtnNuevoContacto_Click(object sender, EventArgs e)
@@ -102,6 +151,7 @@ namespace ProyectoFinal.Vistas
             if (res == DialogResult.OK)
             {
                 lst[GvContactos.FocusedRowHandle] = ventanaContacto.Contacto;
+                if (ventanaContacto.Contacto.IdContacto != 0) ctrlContactos.UpdateContacto(ventanaContacto.Contacto);
                 GcContactos.RefreshDataSource();
             }
         }
@@ -119,6 +169,26 @@ namespace ProyectoFinal.Vistas
 
             lst.Remove(obj);
             GcContactos.RefreshDataSource();
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            CargarProveedores();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            GuardarCambios(false);
+        }
+
+        private void GcProveedores_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

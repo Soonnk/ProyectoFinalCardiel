@@ -11,7 +11,7 @@ namespace ProyectoFinal.Modelo.Ventas
         public int IdPedido { get; set; }
         public Cliente Cliente { get; set; }
         public Usuarios.Usuario Vendedor { get; set; }
-        public String FechaPedido { get; set; }
+        public DateTime FechaPedido { get; set; }
         public List<DetallePedido> DetallePedido { get; set; }
     }
 }

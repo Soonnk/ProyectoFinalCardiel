@@ -31,7 +31,7 @@ namespace ProyectoFinal.Controlador.Usuarios
                 cmd = connection.CreateCommand();
                 cmd.Transaction = transaction;
 
-                cmd.CommandText = "INSERT INTO Persona VALUES(" +
+                cmd.CommandText = "INSERT INTO [Personas] VALUES(" +
                     "@Nombre," +
                     "@ApellidoPaterno," +
                     "@ApellidoMaterno," +
@@ -41,7 +41,7 @@ namespace ProyectoFinal.Controlador.Usuarios
                     "@Numero," +
                     "@Colonia" +
                     ")" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()"; ;
+                    "SELECT CAST(SCOPE_IDENTITY() as int)"; 
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@Nombre", u.Nombre);
@@ -197,8 +197,8 @@ namespace ProyectoFinal.Controlador.Usuarios
                 cmd = connection.CreateCommand();
 
                 cmd.CommandText = "SELECT * " +
-                    "FROM [Usuarios].[Usuario] u " +
-                    "INNER JOIN [Personas] On u.IdPersona = p.IdPersona " +
+                    "FROM [Usuarios].[Usuarios] u " +
+                    "INNER JOIN [Personas] p On u.Persona = p.IdPersona " +
                     "WHERE IdUsuario = @Id";
 
                 cmd.Parameters.AddWithValue("@Id", id);

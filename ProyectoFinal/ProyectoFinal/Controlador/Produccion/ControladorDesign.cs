@@ -26,7 +26,7 @@ namespace ProyectoFinal.Controlador.Produccion
                 connection.Open();
                 cmd = connection.CreateCommand();
 
-                cmd.CommandText = "INSERT INTO [Produccion].[Design] VALUES (@Descripcion,@Alto,@Archivo)";
+                cmd.CommandText = "INSERT INTO [Produccion].[Design] VALUES (@Descripcion,@Alto,@Ancho,@Archivo)";
 
                 cmd.Parameters.AddWithValue("@Descripcion", d.Descripcion);
                 cmd.Parameters.AddWithValue("@Alto", d.Alto);

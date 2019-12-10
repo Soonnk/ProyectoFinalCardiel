@@ -32,18 +32,18 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd.Transaction = transaction;
 
                 cmd.CommandText = "INSERT INTO [Compras].[Compras] VALUES (@Proveedor,GETDATE(),null,@CompradoPor)" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 cmd.Parameters.AddWithValue("@Proveedor", c.Proveedor.IdProveedor);
-                cmd.Parameters.AddWithValue("@CompradoPor", c.Proveedor.IdProveedor);
+                cmd.Parameters.AddWithValue("@CompradoPor", c.CompradoPor.IdUsuario);
 
-                int id = (int) cmd.ExecuteScalar();
-                c.IdCompra = id;
+                var id = cmd.ExecuteScalar();
+                c.IdCompra = (int)id;
 
                 foreach (Modelo.Compras.DetalleCompra d in c.DetalleCompras)
                 {
                     cmd.CommandText = "INSERT INTO [Compras].[DetalleCompra] VALUES (@Compra,@Material,@Cantidad,@Costo)" + Environment.NewLine +
-                        "SELECT SCOPE_IDENTITY()";
+                        "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@Compra", id);
@@ -56,7 +56,7 @@ namespace ProyectoFinal.Controlador.Compras
 
                 transaction.Commit();
 
-                return id;
+                return (int)id;
             }
             catch (Exception ex)
             {
@@ -145,7 +145,7 @@ namespace ProyectoFinal.Controlador.Compras
         {
             SqlConnection connection = null;
             SqlDataAdapter adapter = null;
-            DataTable dt = null;
+            DataTable dt = new DataTable();
 
             try
             {
@@ -154,7 +154,7 @@ namespace ProyectoFinal.Controlador.Compras
                 string query = "SELECT c.*, p.Nombre as NombreProveedor, CONCAT(per.Nombre, ' ', per.ApellidoPaterno) as NombreComprador " +
                     "FROM [Compras].[Compras] c " +
                     "INNER JOIN [Compras].[Proveedores] p On c.Proveedor = p.IdProveedor " +
-                    "INNER JOIN [Usuario].[Usuario] u On c.CompradoPor = u.IdUsuario " +
+                    "INNER JOIN [Usuarios].[Usuarios] u On c.CompradoPor = u.IdUsuario " +
                     "INNER JOIN [Personas] per On per.IdPersona = u.Persona";
 
                 adapter = new SqlDataAdapter(query,connection);
@@ -236,17 +236,20 @@ namespace ProyectoFinal.Controlador.Compras
                     "FROM [Compras].[Compras] c " +
                     "WHERE c.IdCompra = @Id";
 
+                cmd.Parameters.AddWithValue("@Id", id);
+
                 reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    c = new Modelo.Compras.Compra() {
-                        IdCompra = (int) reader["IdCompra"],
-                        Proveedor = new Controlador.Compras.ControladorProveedor().GetById((int)reader["Proveedor"]),
-                        FechaOrden = (DateTime) reader["FechaOrden"],
-                        FechaRecepcion = (DateTime) reader["FechaRecepcion"],
-                        CompradoPor = new Controlador.Usuarios.ControladorUsuario().GetById((int) reader["CompradorPor"])
-                    };
+                    c = new Modelo.Compras.Compra();
+                    c.IdCompra = (int)reader["IdCompra"];
+                    c.Proveedor = new Controlador.Compras.ControladorProveedor().GetById((int)reader["Proveedor"]);
+                    c.FechaOrden = (DateTime)reader["FechaOrden"];
+                    c.FechaRecepcion = reader["FechaRecepcion"] != DBNull.Value ? (DateTime)reader["FechaRecepcion"] : DateTime.Today;
+                    c.CompradoPor = new Controlador.Usuarios.ControladorUsuario().GetById((int)reader["CompradoPor"]);
+                    c.DetalleCompras = new Controlador.Compras.ControladorDetalleCompra().GetByCompra(c.IdCompra);
                 }
+                
                 return c;
             }
             catch (Exception ex)

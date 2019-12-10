@@ -14,7 +14,9 @@ namespace ProyectoFinal.Controlador.Produccion
     {
         public ControladorMaterial()
         {
-            this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+            //TODO Reemplaza permiso de usuario aqui
+            //this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Administrador;
         }
 
         public DataTable GetBy(string filtro)
@@ -27,7 +29,7 @@ namespace ProyectoFinal.Controlador.Produccion
                 connection.Open();
 
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT m.*,t.Descripcion as DescripcionTipo FROM [Produccion].[Materiales]  " + Environment.NewLine +
+                cmd.CommandText = "SELECT m.*,t.Descripcion as DescripcionTipo FROM [Produccion].[Materiales] m " + Environment.NewLine +
                     "INNER JOIN [Produccion].[c_TiposMateriales] t ON m.Tipo = t.IdTipoMaterial " + filtro;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -179,20 +181,19 @@ namespace ProyectoFinal.Controlador.Produccion
 
                 if (reader.Read())
                 {
-                    m = new Material()
-                    {
-                        IdMaterial = (int) reader["IdMaterial"],
-                        Descripcion = (string) reader["Descripcion"],
-                        Costo = (double) reader["Costo"],
-                        Existencia = (double) reader["Existencia"],
-                        Tipo = (Material.TiposMateriales) reader["Tipo"]
-                    };
+                    m = new Material();
+                    m.IdMaterial = (int)reader["IdMaterial"];
+                    m.Descripcion = (string)reader["Descripcion"];
+                    m.Costo = (double)(decimal)reader["Costo"];
+                    m.Existencia = (double)(decimal)reader["Existencia"];
+                    m.Tipo = (Material.TiposMateriales)reader["Tipo"];
+                    
                 }
                 connection.Close();
                 connection.Dispose();
                 return m;
             }
-            catch
+            catch (Exception ex)
             {
                 if (connection != null)
                 {

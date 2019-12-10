@@ -13,7 +13,7 @@ namespace ProyectoFinal.Controlador.Compras
     public class ControladorProveedor : AccesoDatos.ConexionSQL
     {
         public ControladorProveedor() {
-            //TODO Devuleve esto a verificar los permisos del usuario
+            //TODO Reemplaza permisos de usuario aqui
             //this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
             this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Administrador;
         }
@@ -39,6 +39,7 @@ namespace ProyectoFinal.Controlador.Compras
                     "   Calle," + Environment.NewLine +
                     "   Numero," + Environment.NewLine +
                     "   Colonia," + Environment.NewLine +
+                    "   Estatus," + Environment.NewLine +
                     "   ListaContactos" + Environment.NewLine +
                     ")VALUES(" + Environment.NewLine +
                     "   @Nombre," + Environment.NewLine +
@@ -47,9 +48,9 @@ namespace ProyectoFinal.Controlador.Compras
                     "   @Calle," + Environment.NewLine +
                     "   @Numero," + Environment.NewLine +
                     "   @Colonia," + Environment.NewLine +
+                    "   1," + Environment.NewLine +
                     "   @ListaContactos" + Environment.NewLine +
-                    ")" + Environment.NewLine +
-                    "SELECT SCOPE_IDENTITY()";
+                    ")" + Environment.NewLine;
 
                 cmd.CommandText = InsertProveedor;
                 cmd.Parameters.Clear();
@@ -61,7 +62,7 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd.Parameters.AddWithValue("@Colonia", p.Colonia);
                 cmd.Parameters.AddWithValue("@ListaContactos",idLista);
 
-                int IdProveedor = (int)cmd.ExecuteScalar();
+                cmd.ExecuteNonQuery();
 
 
                 if (p.Contactos != null && p.Contactos.Count > 0) {
@@ -81,7 +82,7 @@ namespace ProyectoFinal.Controlador.Compras
                 throw ex;
             }
         }
-        
+
         public void UpdateProveedor(Proveedor p)
         {
             SqlConnection connection = null;
@@ -91,7 +92,7 @@ namespace ProyectoFinal.Controlador.Compras
                 connection = GetConnection();
                 connection.Open();
                 cmd = connection.CreateCommand();
-                
+
                 string InsertProveedor = "UPDATE [Compras].[Proveedores] SET " + Environment.NewLine +
                     "Nombre = @Nombre, " + Environment.NewLine +
                     "Telefono = @Telefono, " + Environment.NewLine +
@@ -102,7 +103,6 @@ namespace ProyectoFinal.Controlador.Compras
                     "WHERE IdProveedor = @IdProveedor";
 
                 cmd.CommandText = InsertProveedor;
-                cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
                 cmd.Parameters.AddWithValue("@Telefono", p.Telefono);
                 cmd.Parameters.AddWithValue("@CorreoElectronico", p.CorreoElectronico);
@@ -112,12 +112,24 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd.Parameters.AddWithValue("@IdProveedor", p.IdProveedor);
 
                 cmd.ExecuteNonQuery();
+
+                if (p.Contactos != null && p.Contactos.Count > 0)
+                {
+
+                    foreach (Modelo.Contacto c in  from con in p.Contactos where con.IdContacto == 0 select con)
+                    {
+                        ControladorContacto.InsertarContacto(c, p.Contactos.IdListaContactos, cmd);
+                    }
+                }
             }
             catch (Exception ex)
             {
-                if (connection != null) connection.Close();
 
                 throw ex;
+            }
+            finally
+            {
+                if (connection != null) connection.Close();
             }
         }
 
@@ -196,6 +208,8 @@ namespace ProyectoFinal.Controlador.Compras
             try
             {
                 connection = GetConnection();
+                connection.Open();
+
                 cmd = connection.CreateCommand();
 
                 cmd.CommandText = "SELECT * FROM [Compras].[Proveedores] WHERE IdProveedor = @IdProveedor";
@@ -205,19 +219,19 @@ namespace ProyectoFinal.Controlador.Compras
 
                 if (reader.Read())
                 {
-                    p = new Proveedor
+                    p = new Proveedor()
                     {
-                        IdProveedor = reader.GetInt32(0),
-                        Nombre = reader.GetString(1),
-                        Telefono = reader.GetString(2),
-                        CorreoElectronico = reader.GetString(3),
-                        Calle = reader.GetString(4),
-                        Numero = reader.GetString(5),
-                        Colonia = reader.GetString(6),
+                        IdProveedor = (int)reader["IdProveedor"],
+                        Nombre = (string)reader["Nombre"],
+                        Telefono = (string)reader["Telefono"],
+                        CorreoElectronico = (string)reader["CorreoElectronico"],
+                        Calle = (string)reader["Calle"],
+                        Numero = (string)reader["Numero"],
+                        Colonia = (string)reader["Colonia"],
 
                         Contactos = new Modelo.ListaContactos
                         {
-                            IdListaContactos = reader.GetInt32(7)
+                            IdListaContactos = (int)reader["ListaContactos"]
                         }
                     };
 
@@ -231,14 +245,14 @@ namespace ProyectoFinal.Controlador.Compras
                         {
                             IdContacto = (int)row["IdContacto"],
                             IdPersona = (int)row["IdPersona"],
-                            Nombre = (string)row["Nombre"],
-                            ApellidoPaterno = (string)row["ApellidoMaterno"],
-                            ApellidoMaterno = (string)row["ApellidoMaterno"],
-                            Telefono = (string)row["Telefono"],
-                            CorreoElectronico = (string)row["CorreoElectronico"],
-                            Calle = (string)row["Calle"],
-                            Numero = (string)row["Numero"],
-                            Colonia = (string)row["Colonia"]
+                            Nombre = row["Nombre"] != DBNull.Value ? (string)row["Nombre"] : null,
+                            ApellidoPaterno = row["ApellidoPaterno"] != DBNull.Value ? (string)row["ApellidoPaterno"] : null,
+                            ApellidoMaterno = row["ApellidoMaterno"] != DBNull.Value ? (string)row["ApellidoMaterno"] : null,
+                            Telefono = row["Telefono"] != DBNull.Value ? (string)row["Telefono"] : null,
+                            CorreoElectronico = row["CorreoElectronico"] != DBNull.Value ? (string)row["CorreoElectronico"] : null,
+                            Calle = row["Calle"] != DBNull.Value ? (string)row["Calle"] : null,
+                            Numero = row["Numero"] != DBNull.Value ? (string)row["Numero"] : null,
+                            Colonia = row["Colonia"] != DBNull.Value ? (string)row["Colonia"] : null
                         };
 
                         p.Contactos.Add(contacto);

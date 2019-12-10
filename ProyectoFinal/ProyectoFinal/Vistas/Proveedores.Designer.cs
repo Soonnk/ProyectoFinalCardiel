@@ -34,50 +34,42 @@
             this.BtnNuevoContacto = new DevExpress.XtraEditors.SimpleButton();
             this.GcContactos = new DevExpress.XtraGrid.GridControl();
             this.GvContactos = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ColNombre = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColTelefono = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColCorreoElectronico = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColContactosNombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColContactosTelefono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColContactosCorreoElectronico = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GcProveedores = new DevExpress.XtraGrid.GridControl();
             this.GvProveedores = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.ColProveedoresNombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BtnLimpiar = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnEliminar = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnActualizar = new DevExpress.XtraEditors.SimpleButton();
+            this.BtnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.TxtIdProveedor = new DevExpress.XtraEditors.TextEdit();
             this.TxtNombres = new DevExpress.XtraEditors.TextEdit();
-            this.TxtApellidoPaterno = new DevExpress.XtraEditors.TextEdit();
             this.TxtTelefono = new DevExpress.XtraEditors.TextEdit();
-            this.TxtApellidoMaterno = new DevExpress.XtraEditors.TextEdit();
             this.TxtCorreoElectronico = new DevExpress.XtraEditors.TextEdit();
             this.TxtCalle = new DevExpress.XtraEditors.TextEdit();
             this.TxtNumero = new DevExpress.XtraEditors.TextEdit();
             this.TxtColonia = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.campoUsuario = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Persona = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Username = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Contraseña = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Username1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LciIdProveedor = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LciNombre = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LciTelefono = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LciCorreoElectronico = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LciCalle = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LciNumero = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LciColonia = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Buscar = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GcContactos)).BeginInit();
@@ -86,38 +78,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.GvProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtIdProveedor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNombres.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtApellidoPaterno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTelefono.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtApellidoMaterno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCorreoElectronico.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumero.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtColonia.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.campoUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Persona)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Username)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Contraseña)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Username1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciIdProveedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciTelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciCorreoElectronico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciCalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciNumero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciColonia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Buscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -127,21 +111,17 @@
             this.layoutControl1.Controls.Add(this.BtnNuevoContacto);
             this.layoutControl1.Controls.Add(this.GcContactos);
             this.layoutControl1.Controls.Add(this.GcProveedores);
-            this.layoutControl1.Controls.Add(this.simpleButton3);
-            this.layoutControl1.Controls.Add(this.simpleButton5);
-            this.layoutControl1.Controls.Add(this.simpleButton4);
-            this.layoutControl1.Controls.Add(this.simpleButton2);
-            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.BtnLimpiar);
+            this.layoutControl1.Controls.Add(this.BtnEliminar);
+            this.layoutControl1.Controls.Add(this.BtnActualizar);
+            this.layoutControl1.Controls.Add(this.BtnGuardar);
             this.layoutControl1.Controls.Add(this.TxtIdProveedor);
             this.layoutControl1.Controls.Add(this.TxtNombres);
-            this.layoutControl1.Controls.Add(this.TxtApellidoPaterno);
             this.layoutControl1.Controls.Add(this.TxtTelefono);
-            this.layoutControl1.Controls.Add(this.TxtApellidoMaterno);
             this.layoutControl1.Controls.Add(this.TxtCorreoElectronico);
             this.layoutControl1.Controls.Add(this.TxtCalle);
             this.layoutControl1.Controls.Add(this.TxtNumero);
             this.layoutControl1.Controls.Add(this.TxtColonia);
-            this.layoutControl1.Controls.Add(this.textEdit7);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
@@ -154,7 +134,7 @@
             // BtnEliminarContacto
             // 
             this.BtnEliminarContacto.Image = global::ProyectoFinal.Properties.Resources.cancel_16x16;
-            this.BtnEliminarContacto.Location = new System.Drawing.Point(844, 310);
+            this.BtnEliminarContacto.Location = new System.Drawing.Point(844, 262);
             this.BtnEliminarContacto.Name = "BtnEliminarContacto";
             this.BtnEliminarContacto.Size = new System.Drawing.Size(24, 22);
             this.BtnEliminarContacto.StyleController = this.layoutControl1;
@@ -164,7 +144,7 @@
             // BtnEditarContacto
             // 
             this.BtnEditarContacto.Image = global::ProyectoFinal.Properties.Resources.editcontact_16x16;
-            this.BtnEditarContacto.Location = new System.Drawing.Point(844, 284);
+            this.BtnEditarContacto.Location = new System.Drawing.Point(844, 236);
             this.BtnEditarContacto.Name = "BtnEditarContacto";
             this.BtnEditarContacto.Size = new System.Drawing.Size(24, 22);
             this.BtnEditarContacto.StyleController = this.layoutControl1;
@@ -174,19 +154,20 @@
             // BtnNuevoContacto
             // 
             this.BtnNuevoContacto.Image = global::ProyectoFinal.Properties.Resources.add_16x16;
-            this.BtnNuevoContacto.Location = new System.Drawing.Point(844, 258);
+            this.BtnNuevoContacto.Location = new System.Drawing.Point(844, 210);
             this.BtnNuevoContacto.Name = "BtnNuevoContacto";
             this.BtnNuevoContacto.Size = new System.Drawing.Size(24, 22);
             this.BtnNuevoContacto.StyleController = this.layoutControl1;
             this.BtnNuevoContacto.TabIndex = 37;
+            this.BtnNuevoContacto.ToolTip = "Agregar";
             this.BtnNuevoContacto.Click += new System.EventHandler(this.BtnNuevoContacto_Click);
             // 
             // GcContactos
             // 
-            this.GcContactos.Location = new System.Drawing.Point(503, 258);
+            this.GcContactos.Location = new System.Drawing.Point(508, 210);
             this.GcContactos.MainView = this.GvContactos;
             this.GcContactos.Name = "GcContactos";
-            this.GcContactos.Size = new System.Drawing.Size(337, 252);
+            this.GcContactos.Size = new System.Drawing.Size(332, 300);
             this.GcContactos.TabIndex = 36;
             this.GcContactos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvContactos});
@@ -194,396 +175,306 @@
             // GvContactos
             // 
             this.GvContactos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ColNombre,
-            this.ColTelefono,
-            this.ColCorreoElectronico});
+            this.ColContactosNombre,
+            this.ColContactosTelefono,
+            this.ColContactosCorreoElectronico});
             this.GvContactos.GridControl = this.GcContactos;
             this.GvContactos.Name = "GvContactos";
             this.GvContactos.OptionsBehavior.Editable = false;
             this.GvContactos.OptionsView.ShowGroupPanel = false;
             // 
-            // ColNombre
+            // ColContactosNombre
             // 
-            this.ColNombre.Caption = "Nombre";
-            this.ColNombre.FieldName = "pito";
-            this.ColNombre.Name = "ColNombre";
-            this.ColNombre.UnboundExpression = "Concat(Iif([Nombre] = null, \'\', [Nombre]), \' \', Iif([ApellidoPaterno] = null, \'\'," +
+            this.ColContactosNombre.Caption = "Nombre";
+            this.ColContactosNombre.FieldName = "pito";
+            this.ColContactosNombre.Name = "ColContactosNombre";
+            this.ColContactosNombre.UnboundExpression = "Concat(Iif([Nombre] = null, \'\', [Nombre]), \' \', Iif([ApellidoPaterno] = null, \'\'," +
     " [ApellidoPaterno]), \' \', Iif([ApellidoMaterno] = null, \'\', [ApellidoMaterno]))";
-            this.ColNombre.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.ColNombre.Visible = true;
-            this.ColNombre.VisibleIndex = 0;
+            this.ColContactosNombre.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ColContactosNombre.Visible = true;
+            this.ColContactosNombre.VisibleIndex = 0;
             // 
-            // ColTelefono
+            // ColContactosTelefono
             // 
-            this.ColTelefono.Caption = "Telefono";
-            this.ColTelefono.FieldName = "Telefono";
-            this.ColTelefono.Name = "ColTelefono";
-            this.ColTelefono.Visible = true;
-            this.ColTelefono.VisibleIndex = 1;
+            this.ColContactosTelefono.Caption = "Telefono";
+            this.ColContactosTelefono.FieldName = "Telefono";
+            this.ColContactosTelefono.Name = "ColContactosTelefono";
+            this.ColContactosTelefono.Visible = true;
+            this.ColContactosTelefono.VisibleIndex = 1;
             // 
-            // ColCorreoElectronico
+            // ColContactosCorreoElectronico
             // 
-            this.ColCorreoElectronico.Caption = "Correo Electronico";
-            this.ColCorreoElectronico.FieldName = "CorreoElectronico";
-            this.ColCorreoElectronico.Name = "ColCorreoElectronico";
-            this.ColCorreoElectronico.Visible = true;
-            this.ColCorreoElectronico.VisibleIndex = 2;
+            this.ColContactosCorreoElectronico.Caption = "Correo Electronico";
+            this.ColContactosCorreoElectronico.FieldName = "CorreoElectronico";
+            this.ColContactosCorreoElectronico.Name = "ColContactosCorreoElectronico";
+            this.ColContactosCorreoElectronico.Visible = true;
+            this.ColContactosCorreoElectronico.VisibleIndex = 2;
             // 
             // GcProveedores
             // 
             this.GcProveedores.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.GcProveedores.Location = new System.Drawing.Point(12, 54);
+            this.GcProveedores.Location = new System.Drawing.Point(12, 12);
             this.GcProveedores.MainView = this.GvProveedores;
             this.GcProveedores.Margin = new System.Windows.Forms.Padding(2);
             this.GcProveedores.Name = "GcProveedores";
-            this.GcProveedores.Size = new System.Drawing.Size(475, 552);
+            this.GcProveedores.Size = new System.Drawing.Size(480, 594);
             this.GcProveedores.TabIndex = 35;
             this.GcProveedores.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvProveedores});
             // 
             // GvProveedores
             // 
+            this.GvProveedores.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ColProveedoresNombre});
             this.GvProveedores.GridControl = this.GcProveedores;
             this.GvProveedores.Name = "GvProveedores";
+            this.GvProveedores.OptionsBehavior.Editable = false;
             this.GvProveedores.OptionsView.ShowGroupPanel = false;
+            this.GvProveedores.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GcProveedores_RowClick);
             // 
-            // simpleButton3
+            // ColProveedoresNombre
             // 
-            this.simpleButton3.ImageUri.Uri = "Zoom;Office2013";
-            this.simpleButton3.Location = new System.Drawing.Point(255, 12);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(222, 38);
-            this.simpleButton3.StyleController = this.layoutControl1;
-            this.simpleButton3.TabIndex = 34;
-            this.simpleButton3.Text = "Consultar";
+            this.ColProveedoresNombre.Caption = "Nombre";
+            this.ColProveedoresNombre.FieldName = "Nombre";
+            this.ColProveedoresNombre.Name = "ColProveedoresNombre";
+            this.ColProveedoresNombre.Visible = true;
+            this.ColProveedoresNombre.VisibleIndex = 0;
             // 
-            // simpleButton5
+            // BtnLimpiar
             // 
-            this.simpleButton5.ImageUri.Uri = "Clear;Office2013";
-            this.simpleButton5.Location = new System.Drawing.Point(686, 568);
-            this.simpleButton5.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(194, 38);
-            this.simpleButton5.StyleController = this.layoutControl1;
-            this.simpleButton5.TabIndex = 33;
-            this.simpleButton5.Text = "Limpiar";
+            this.BtnLimpiar.ImageUri.Uri = "Clear;Office2013";
+            this.BtnLimpiar.Location = new System.Drawing.Point(691, 526);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Size = new System.Drawing.Size(189, 38);
+            this.BtnLimpiar.StyleController = this.layoutControl1;
+            this.BtnLimpiar.TabIndex = 33;
+            this.BtnLimpiar.Text = "Limpiar";
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
-            // simpleButton4
+            // BtnEliminar
             // 
-            this.simpleButton4.ImageUri.Uri = "Cancel;Office2013";
-            this.simpleButton4.Location = new System.Drawing.Point(491, 568);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(191, 38);
-            this.simpleButton4.StyleController = this.layoutControl1;
-            this.simpleButton4.TabIndex = 32;
-            this.simpleButton4.Text = "Eliminar";
+            this.BtnEliminar.Enabled = false;
+            this.BtnEliminar.ImageUri.Uri = "Cancel;Office2013";
+            this.BtnEliminar.Location = new System.Drawing.Point(496, 568);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(191, 38);
+            this.BtnEliminar.StyleController = this.layoutControl1;
+            this.BtnEliminar.TabIndex = 32;
+            this.BtnEliminar.Text = "Inhabilitar";
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // simpleButton2
+            // BtnActualizar
             // 
-            this.simpleButton2.ImageUri.Uri = "Redo;Office2013";
-            this.simpleButton2.Location = new System.Drawing.Point(686, 526);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(194, 38);
-            this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 31;
-            this.simpleButton2.Text = "Actualizar";
+            this.BtnActualizar.Enabled = false;
+            this.BtnActualizar.ImageUri.Uri = "Redo;Office2013";
+            this.BtnActualizar.Location = new System.Drawing.Point(691, 568);
+            this.BtnActualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.Size = new System.Drawing.Size(189, 38);
+            this.BtnActualizar.StyleController = this.layoutControl1;
+            this.BtnActualizar.TabIndex = 31;
+            this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
-            // simpleButton1
+            // BtnGuardar
             // 
-            this.simpleButton1.ImageUri.Uri = "Add;Size32x32;Office2013";
-            this.simpleButton1.Location = new System.Drawing.Point(491, 526);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(191, 38);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 30;
-            this.simpleButton1.Text = "Agregar";
-            this.simpleButton1.Click += new System.EventHandler(this.BtnAgregar_Click);
+            this.BtnGuardar.ImageUri.Uri = "Save;Size32x32;Office2013";
+            this.BtnGuardar.Location = new System.Drawing.Point(496, 526);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(191, 38);
+            this.BtnGuardar.StyleController = this.layoutControl1;
+            this.BtnGuardar.TabIndex = 30;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // TxtIdProveedor
             // 
             this.TxtIdProveedor.EditValue = "";
-            this.TxtIdProveedor.Location = new System.Drawing.Point(583, 12);
+            this.TxtIdProveedor.Location = new System.Drawing.Point(588, 12);
             this.TxtIdProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.TxtIdProveedor.Name = "TxtIdProveedor";
-            this.TxtIdProveedor.Size = new System.Drawing.Size(297, 20);
+            this.TxtIdProveedor.Size = new System.Drawing.Size(292, 20);
             this.TxtIdProveedor.StyleController = this.layoutControl1;
             this.TxtIdProveedor.TabIndex = 4;
             // 
             // TxtNombres
             // 
-            this.TxtNombres.Location = new System.Drawing.Point(583, 36);
+            this.TxtNombres.Location = new System.Drawing.Point(588, 36);
             this.TxtNombres.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNombres.Name = "TxtNombres";
-            this.TxtNombres.Size = new System.Drawing.Size(297, 20);
+            this.TxtNombres.Size = new System.Drawing.Size(292, 20);
             this.TxtNombres.StyleController = this.layoutControl1;
             this.TxtNombres.TabIndex = 5;
             // 
-            // TxtApellidoPaterno
-            // 
-            this.TxtApellidoPaterno.Location = new System.Drawing.Point(583, 60);
-            this.TxtApellidoPaterno.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtApellidoPaterno.Name = "TxtApellidoPaterno";
-            this.TxtApellidoPaterno.Size = new System.Drawing.Size(297, 20);
-            this.TxtApellidoPaterno.StyleController = this.layoutControl1;
-            this.TxtApellidoPaterno.TabIndex = 6;
-            // 
             // TxtTelefono
             // 
-            this.TxtTelefono.Location = new System.Drawing.Point(583, 108);
+            this.TxtTelefono.Location = new System.Drawing.Point(588, 60);
             this.TxtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(297, 20);
+            this.TxtTelefono.Size = new System.Drawing.Size(292, 20);
             this.TxtTelefono.StyleController = this.layoutControl1;
             this.TxtTelefono.TabIndex = 7;
             // 
-            // TxtApellidoMaterno
-            // 
-            this.TxtApellidoMaterno.Location = new System.Drawing.Point(583, 84);
-            this.TxtApellidoMaterno.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtApellidoMaterno.Name = "TxtApellidoMaterno";
-            this.TxtApellidoMaterno.Size = new System.Drawing.Size(297, 20);
-            this.TxtApellidoMaterno.StyleController = this.layoutControl1;
-            this.TxtApellidoMaterno.TabIndex = 6;
-            // 
             // TxtCorreoElectronico
             // 
-            this.TxtCorreoElectronico.Location = new System.Drawing.Point(583, 132);
+            this.TxtCorreoElectronico.Location = new System.Drawing.Point(588, 84);
             this.TxtCorreoElectronico.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCorreoElectronico.Name = "TxtCorreoElectronico";
-            this.TxtCorreoElectronico.Size = new System.Drawing.Size(297, 20);
+            this.TxtCorreoElectronico.Size = new System.Drawing.Size(292, 20);
             this.TxtCorreoElectronico.StyleController = this.layoutControl1;
             this.TxtCorreoElectronico.TabIndex = 18;
             // 
             // TxtCalle
             // 
-            this.TxtCalle.Location = new System.Drawing.Point(583, 156);
+            this.TxtCalle.Location = new System.Drawing.Point(588, 108);
             this.TxtCalle.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCalle.Name = "TxtCalle";
-            this.TxtCalle.Size = new System.Drawing.Size(297, 20);
+            this.TxtCalle.Size = new System.Drawing.Size(292, 20);
             this.TxtCalle.StyleController = this.layoutControl1;
             this.TxtCalle.TabIndex = 19;
             // 
             // TxtNumero
             // 
-            this.TxtNumero.Location = new System.Drawing.Point(583, 180);
+            this.TxtNumero.Location = new System.Drawing.Point(588, 132);
             this.TxtNumero.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNumero.Name = "TxtNumero";
-            this.TxtNumero.Size = new System.Drawing.Size(297, 20);
+            this.TxtNumero.Size = new System.Drawing.Size(292, 20);
             this.TxtNumero.StyleController = this.layoutControl1;
             this.TxtNumero.TabIndex = 20;
             // 
             // TxtColonia
             // 
-            this.TxtColonia.Location = new System.Drawing.Point(583, 204);
+            this.TxtColonia.Location = new System.Drawing.Point(588, 156);
             this.TxtColonia.Margin = new System.Windows.Forms.Padding(2);
             this.TxtColonia.Name = "TxtColonia";
-            this.TxtColonia.Size = new System.Drawing.Size(297, 20);
+            this.TxtColonia.Size = new System.Drawing.Size(292, 20);
             this.TxtColonia.StyleController = this.layoutControl1;
             this.TxtColonia.TabIndex = 21;
-            // 
-            // textEdit7
-            // 
-            this.textEdit7.Location = new System.Drawing.Point(104, 12);
-            this.textEdit7.Margin = new System.Windows.Forms.Padding(2);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(147, 20);
-            this.textEdit7.StyleController = this.layoutControl1;
-            this.textEdit7.TabIndex = 13;
             // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.campoUsuario,
-            this.Persona,
-            this.Username,
-            this.Contraseña,
-            this.Username1,
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
+            this.LciIdProveedor,
+            this.LciNombre,
+            this.LciTelefono,
+            this.LciCorreoElectronico,
+            this.LciCalle,
+            this.LciNumero,
+            this.LciColonia,
             this.layoutControlItem8,
-            this.layoutControlItem5,
-            this.Buscar,
-            this.emptySpaceItem1,
-            this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem9,
-            this.layoutControlItem6,
-            this.layoutControlGroup2});
+            this.layoutControlGroup2,
+            this.layoutControlItem5,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroup1.Size = new System.Drawing.Size(892, 618);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // campoUsuario
+            // LciIdProveedor
             // 
-            this.campoUsuario.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.campoUsuario.Control = this.TxtIdProveedor;
-            this.campoUsuario.CustomizationFormText = "ID de Usuario";
-            this.campoUsuario.Location = new System.Drawing.Point(479, 0);
-            this.campoUsuario.Name = "campoUsuario";
-            this.campoUsuario.Size = new System.Drawing.Size(393, 24);
-            this.campoUsuario.Text = "ID de Proveedor";
-            this.campoUsuario.TextSize = new System.Drawing.Size(88, 13);
+            this.LciIdProveedor.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.LciIdProveedor.Control = this.TxtIdProveedor;
+            this.LciIdProveedor.CustomizationFormText = "ID de Usuario";
+            this.LciIdProveedor.Location = new System.Drawing.Point(484, 0);
+            this.LciIdProveedor.Name = "LciIdProveedor";
+            this.LciIdProveedor.Size = new System.Drawing.Size(388, 24);
+            this.LciIdProveedor.Text = "ID de Proveedor";
+            this.LciIdProveedor.TextSize = new System.Drawing.Size(88, 13);
             // 
-            // Persona
+            // LciNombre
             // 
-            this.Persona.Control = this.TxtNombres;
-            this.Persona.CustomizationFormText = "Persona";
-            this.Persona.Location = new System.Drawing.Point(479, 24);
-            this.Persona.Name = "Persona";
-            this.Persona.Size = new System.Drawing.Size(393, 24);
-            this.Persona.Text = "Nombres";
-            this.Persona.TextSize = new System.Drawing.Size(88, 13);
+            this.LciNombre.Control = this.TxtNombres;
+            this.LciNombre.CustomizationFormText = "Persona";
+            this.LciNombre.Location = new System.Drawing.Point(484, 24);
+            this.LciNombre.Name = "LciNombre";
+            this.LciNombre.Size = new System.Drawing.Size(388, 24);
+            this.LciNombre.Text = "Nombres";
+            this.LciNombre.TextSize = new System.Drawing.Size(88, 13);
             // 
-            // Username
+            // LciTelefono
             // 
-            this.Username.Control = this.TxtApellidoPaterno;
-            this.Username.CustomizationFormText = "Username";
-            this.Username.Location = new System.Drawing.Point(479, 48);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(393, 24);
-            this.Username.Text = "Apellido Paterno";
-            this.Username.TextSize = new System.Drawing.Size(88, 13);
+            this.LciTelefono.Control = this.TxtTelefono;
+            this.LciTelefono.CustomizationFormText = "Contraseña";
+            this.LciTelefono.Location = new System.Drawing.Point(484, 48);
+            this.LciTelefono.Name = "LciTelefono";
+            this.LciTelefono.Size = new System.Drawing.Size(388, 24);
+            this.LciTelefono.Text = "Telefono";
+            this.LciTelefono.TextSize = new System.Drawing.Size(88, 13);
             // 
-            // Contraseña
+            // LciCorreoElectronico
             // 
-            this.Contraseña.Control = this.TxtTelefono;
-            this.Contraseña.CustomizationFormText = "Contraseña";
-            this.Contraseña.Location = new System.Drawing.Point(479, 96);
-            this.Contraseña.Name = "Contraseña";
-            this.Contraseña.Size = new System.Drawing.Size(393, 24);
-            this.Contraseña.Text = "Telefono";
-            this.Contraseña.TextSize = new System.Drawing.Size(88, 13);
+            this.LciCorreoElectronico.Control = this.TxtCorreoElectronico;
+            this.LciCorreoElectronico.CustomizationFormText = "Correo Electronico";
+            this.LciCorreoElectronico.Location = new System.Drawing.Point(484, 72);
+            this.LciCorreoElectronico.Name = "LciCorreoElectronico";
+            this.LciCorreoElectronico.Size = new System.Drawing.Size(388, 24);
+            this.LciCorreoElectronico.Text = "Correo Electronico";
+            this.LciCorreoElectronico.TextSize = new System.Drawing.Size(88, 13);
             // 
-            // Username1
+            // LciCalle
             // 
-            this.Username1.Control = this.TxtApellidoMaterno;
-            this.Username1.CustomizationFormText = "Username";
-            this.Username1.Location = new System.Drawing.Point(479, 72);
-            this.Username1.Name = "Username1";
-            this.Username1.Size = new System.Drawing.Size(393, 24);
-            this.Username1.Text = "Apellido Materno";
-            this.Username1.TextSize = new System.Drawing.Size(88, 13);
+            this.LciCalle.Control = this.TxtCalle;
+            this.LciCalle.CustomizationFormText = "Calle";
+            this.LciCalle.Location = new System.Drawing.Point(484, 96);
+            this.LciCalle.Name = "LciCalle";
+            this.LciCalle.Size = new System.Drawing.Size(388, 24);
+            this.LciCalle.Text = "Calle";
+            this.LciCalle.TextSize = new System.Drawing.Size(88, 13);
             // 
-            // layoutControlItem1
+            // LciNumero
             // 
-            this.layoutControlItem1.Control = this.TxtCorreoElectronico;
-            this.layoutControlItem1.CustomizationFormText = "Correo Electronico";
-            this.layoutControlItem1.Location = new System.Drawing.Point(479, 120);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(393, 24);
-            this.layoutControlItem1.Text = "Correo Electronico";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(88, 13);
+            this.LciNumero.Control = this.TxtNumero;
+            this.LciNumero.CustomizationFormText = "Número";
+            this.LciNumero.Location = new System.Drawing.Point(484, 120);
+            this.LciNumero.Name = "LciNumero";
+            this.LciNumero.Size = new System.Drawing.Size(388, 24);
+            this.LciNumero.Text = "Número";
+            this.LciNumero.TextSize = new System.Drawing.Size(88, 13);
             // 
-            // layoutControlItem2
+            // LciColonia
             // 
-            this.layoutControlItem2.Control = this.TxtCalle;
-            this.layoutControlItem2.CustomizationFormText = "Calle";
-            this.layoutControlItem2.Location = new System.Drawing.Point(479, 144);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(393, 24);
-            this.layoutControlItem2.Text = "Calle";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(88, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.TxtNumero;
-            this.layoutControlItem3.CustomizationFormText = "Número";
-            this.layoutControlItem3.Location = new System.Drawing.Point(479, 168);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(393, 24);
-            this.layoutControlItem3.Text = "Número";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(88, 13);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.TxtColonia;
-            this.layoutControlItem4.CustomizationFormText = "Colonia";
-            this.layoutControlItem4.Location = new System.Drawing.Point(479, 192);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(393, 24);
-            this.layoutControlItem4.Text = "Colonia";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(88, 13);
+            this.LciColonia.Control = this.TxtColonia;
+            this.LciColonia.CustomizationFormText = "Colonia";
+            this.LciColonia.Location = new System.Drawing.Point(484, 144);
+            this.LciColonia.Name = "LciColonia";
+            this.LciColonia.Size = new System.Drawing.Size(388, 24);
+            this.LciColonia.Text = "Colonia";
+            this.LciColonia.TextSize = new System.Drawing.Size(88, 13);
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.simpleButton2;
-            this.layoutControlItem8.Location = new System.Drawing.Point(674, 514);
+            this.layoutControlItem8.Control = this.BtnActualizar;
+            this.layoutControlItem8.Location = new System.Drawing.Point(679, 556);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(198, 42);
+            this.layoutControlItem8.Size = new System.Drawing.Size(193, 42);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.simpleButton5;
-            this.layoutControlItem5.Location = new System.Drawing.Point(674, 556);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(198, 42);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
-            // Buscar
-            // 
-            this.Buscar.Control = this.textEdit7;
-            this.Buscar.CustomizationFormText = "Buscar";
-            this.Buscar.Location = new System.Drawing.Point(0, 0);
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(243, 42);
-            this.Buscar.TextSize = new System.Drawing.Size(88, 13);
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(469, 0);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(10, 42);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.simpleButton3;
-            this.layoutControlItem10.Location = new System.Drawing.Point(243, 0);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(226, 42);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.GcProveedores;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 42);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(479, 556);
+            this.layoutControlItem11.Size = new System.Drawing.Size(484, 598);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.simpleButton1;
-            this.layoutControlItem9.Location = new System.Drawing.Point(479, 514);
+            this.layoutControlItem9.Control = this.BtnGuardar;
+            this.layoutControlItem9.Location = new System.Drawing.Point(484, 514);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(195, 42);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.simpleButton4;
-            this.layoutControlItem6.Location = new System.Drawing.Point(479, 556);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(195, 42);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlGroup2
             // 
@@ -593,15 +484,15 @@
             this.layoutControlItem13,
             this.layoutControlItem12,
             this.layoutControlItem7});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(479, 216);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(484, 168);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(393, 298);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(388, 346);
             this.layoutControlGroup2.Text = "Lista de Contactos";
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.BtnEliminarContacto;
-            this.layoutControlItem14.Location = new System.Drawing.Point(341, 52);
+            this.layoutControlItem14.Location = new System.Drawing.Point(336, 52);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.Size = new System.Drawing.Size(28, 26);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
@@ -610,15 +501,15 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(341, 78);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(336, 78);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(28, 178);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(28, 226);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.BtnEditarContacto;
-            this.layoutControlItem13.Location = new System.Drawing.Point(341, 26);
+            this.layoutControlItem13.Location = new System.Drawing.Point(336, 26);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(28, 26);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
@@ -627,7 +518,7 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.BtnNuevoContacto;
-            this.layoutControlItem12.Location = new System.Drawing.Point(341, 0);
+            this.layoutControlItem12.Location = new System.Drawing.Point(336, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(28, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
@@ -638,9 +529,27 @@
             this.layoutControlItem7.Control = this.GcContactos;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(341, 256);
+            this.layoutControlItem7.Size = new System.Drawing.Size(336, 304);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.BtnLimpiar;
+            this.layoutControlItem5.Location = new System.Drawing.Point(679, 514);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(193, 42);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.BtnEliminar;
+            this.layoutControlItem6.Location = new System.Drawing.Point(484, 556);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(195, 42);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // Proveedores
             // 
@@ -660,38 +569,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.GvProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtIdProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNombres.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtApellidoPaterno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTelefono.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtApellidoMaterno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCorreoElectronico.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNumero.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtColonia.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.campoUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Persona)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Username)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Contraseña)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Username1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciIdProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciTelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciCorreoElectronico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciCalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciNumero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciColonia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Buscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -702,37 +603,28 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.TextEdit TxtIdProveedor;
         private DevExpress.XtraEditors.TextEdit TxtNombres;
-        private DevExpress.XtraEditors.TextEdit TxtApellidoPaterno;
         private DevExpress.XtraEditors.TextEdit TxtTelefono;
-        private DevExpress.XtraEditors.TextEdit TxtApellidoMaterno;
         private DevExpress.XtraEditors.TextEdit TxtCorreoElectronico;
         private DevExpress.XtraEditors.TextEdit TxtCalle;
         private DevExpress.XtraEditors.TextEdit TxtNumero;
         private DevExpress.XtraEditors.TextEdit TxtColonia;
-        private DevExpress.XtraLayout.LayoutControlItem campoUsuario;
-        private DevExpress.XtraLayout.LayoutControlItem Persona;
-        private DevExpress.XtraLayout.LayoutControlItem Username;
-        private DevExpress.XtraLayout.LayoutControlItem Contraseña;
-        private DevExpress.XtraLayout.LayoutControlItem Username1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem LciIdProveedor;
+        private DevExpress.XtraLayout.LayoutControlItem LciNombre;
+        private DevExpress.XtraLayout.LayoutControlItem LciTelefono;
+        private DevExpress.XtraLayout.LayoutControlItem LciCorreoElectronico;
+        private DevExpress.XtraLayout.LayoutControlItem LciCalle;
+        private DevExpress.XtraLayout.LayoutControlItem LciNumero;
+        private DevExpress.XtraLayout.LayoutControlItem LciColonia;
+        private DevExpress.XtraEditors.SimpleButton BtnLimpiar;
+        private DevExpress.XtraEditors.SimpleButton BtnEliminar;
+        private DevExpress.XtraEditors.SimpleButton BtnActualizar;
+        private DevExpress.XtraEditors.SimpleButton BtnGuardar;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
-        private DevExpress.XtraLayout.LayoutControlItem Buscar;
         private DevExpress.XtraGrid.GridControl GcProveedores;
         private DevExpress.XtraGrid.Views.Grid.GridView GvProveedores;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraEditors.SimpleButton BtnEliminarContacto;
         private DevExpress.XtraEditors.SimpleButton BtnEditarContacto;
@@ -745,8 +637,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraGrid.Columns.GridColumn ColNombre;
-        private DevExpress.XtraGrid.Columns.GridColumn ColTelefono;
-        private DevExpress.XtraGrid.Columns.GridColumn ColCorreoElectronico;
+        private DevExpress.XtraGrid.Columns.GridColumn ColContactosNombre;
+        private DevExpress.XtraGrid.Columns.GridColumn ColContactosTelefono;
+        private DevExpress.XtraGrid.Columns.GridColumn ColContactosCorreoElectronico;
+        private DevExpress.XtraGrid.Columns.GridColumn ColProveedoresNombre;
     }
 }
