@@ -31,7 +31,7 @@ namespace ProyectoFinal.Controlador.Usuarios
                 cmd = connection.CreateCommand();
                 cmd.Transaction = transaction;
 
-                cmd.CommandText = "INSERT INTO Persona VALUES(" +
+                cmd.CommandText = "INSERT INTO [Personas] VALUES(" +
                     "@Nombre," +
                     "@ApellidoPaterno," +
                     "@ApellidoMaterno," +
@@ -41,7 +41,7 @@ namespace ProyectoFinal.Controlador.Usuarios
                     "@Numero," +
                     "@Colonia" +
                     ")" + Environment.NewLine +
-                    "SELECT CAST(SCOPE_IDENTITY() as int)"; ;
+                    "SELECT CAST(SCOPE_IDENTITY() as int)"; 
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@Nombre", u.Nombre);

@@ -180,5 +180,10 @@ namespace ProyectoFinal.Vistas
         {
 
         }
+
+        private void GcProveedores_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

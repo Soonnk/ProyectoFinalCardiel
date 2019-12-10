@@ -135,7 +135,7 @@
             // 
             this.BtnEliminarContacto.Image = global::ProyectoFinal.Properties.Resources.cancel_16x16;
             this.BtnEliminarContacto.Location = new System.Drawing.Point(1127, 316);
-            this.BtnEliminarContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnEliminarContacto.Margin = new System.Windows.Forms.Padding(4);
             this.BtnEliminarContacto.Name = "BtnEliminarContacto";
             this.BtnEliminarContacto.Size = new System.Drawing.Size(31, 27);
             this.BtnEliminarContacto.StyleController = this.layoutControl1;
@@ -146,7 +146,7 @@
             // 
             this.BtnEditarContacto.Image = global::ProyectoFinal.Properties.Resources.editcontact_16x16;
             this.BtnEditarContacto.Location = new System.Drawing.Point(1127, 283);
-            this.BtnEditarContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnEditarContacto.Margin = new System.Windows.Forms.Padding(4);
             this.BtnEditarContacto.Name = "BtnEditarContacto";
             this.BtnEditarContacto.Size = new System.Drawing.Size(31, 27);
             this.BtnEditarContacto.StyleController = this.layoutControl1;
@@ -157,7 +157,7 @@
             // 
             this.BtnNuevoContacto.Image = global::ProyectoFinal.Properties.Resources.add_16x16;
             this.BtnNuevoContacto.Location = new System.Drawing.Point(1127, 250);
-            this.BtnNuevoContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnNuevoContacto.Margin = new System.Windows.Forms.Padding(4);
             this.BtnNuevoContacto.Name = "BtnNuevoContacto";
             this.BtnNuevoContacto.Size = new System.Drawing.Size(31, 27);
             this.BtnNuevoContacto.StyleController = this.layoutControl1;
@@ -166,10 +166,10 @@
             // 
             // GcContactos
             // 
-            this.GcContactos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcContactos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.GcContactos.Location = new System.Drawing.Point(670, 250);
             this.GcContactos.MainView = this.GvContactos;
-            this.GcContactos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcContactos.Margin = new System.Windows.Forms.Padding(4);
             this.GcContactos.Name = "GcContactos";
             this.GcContactos.Size = new System.Drawing.Size(451, 388);
             this.GcContactos.TabIndex = 36;
@@ -225,6 +225,7 @@
             this.GcProveedores.TabIndex = 35;
             this.GcProveedores.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvProveedores});
+            this.GcProveedores.Click += new System.EventHandler(this.GcProveedores_Click);
             // 
             // GvProveedores
             // 

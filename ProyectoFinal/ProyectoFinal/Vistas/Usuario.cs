@@ -21,19 +21,21 @@ namespace ProyectoFinal.Vistas
         private int IdUsuario = 0;
         private int IdPersona = 0;
 
-        Modelo.Usuarios.Usuario usu;
+        //Modelo.Usuarios.Usuario usu;
         Modelo.Persona per;
 
         public Usuario()
         {
             InitializeComponent();
+
+            //cargarCombo();
+
             ctrlUsuarios = new Controlador.Usuarios.ControladorUsuario();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            int idU = (int)cmbNivelUsuario.EditValue;
-            int idD = (int)cmbDepartamento.EditValue;
+            
             //MessageBox.Show(idU+""+idD+"");
             if (String.IsNullOrEmpty("" + txtIdUsuario.EditValue))
                 GuardarNuevo();
@@ -45,7 +47,11 @@ namespace ProyectoFinal.Vistas
         {
 
         }
-
+        private void cargarCombo()
+        {
+            int idU = (int)cmbNivelUsuario.EditValue;
+            int idD = (int)cmbDepartamento.EditValue;
+        }
         private void Usuario_Load(object sender, EventArgs e)
         {
 
@@ -93,13 +99,13 @@ namespace ProyectoFinal.Vistas
             cmbNivelUsuario.EditValue = "";
             cmbDepartamento.EditValue = "";
 
-            usu = new Modelo.Usuarios.Usuario();
+            //per = new Modelo.Usuarios.Usuario();
 
-            gcUsuarios.DataSource = usu;
+            gcPersona.DataSource = per;
         }
         public void cargarUsuarios()
         {
-            gcUsuarios.DataSource = ctrlUsuarios.GetAll();
+            gcPersona.DataSource = ctrlUsuarios.GetAll();
         }
 
 
@@ -138,7 +144,7 @@ namespace ProyectoFinal.Vistas
         {
             Modelo.Usuarios.Usuario u = new Modelo.Usuarios.Usuario()
             {
-                IdUsuario = IdUsuario,
+
                 IdPersona = IdPersona,
                 Nombre = (string)txtNombre.EditValue,
                 ApellidoPaterno = (string)txtAPaterno.EditValue,
@@ -148,11 +154,12 @@ namespace ProyectoFinal.Vistas
                 Calle = (string)txtCalle.EditValue,
                 Numero = (string)txtNumero.EditValue,
                 Colonia = (string)txtColonia.EditValue,
+                IdUsuario = IdUsuario,
                 Username = (string)txtUsername.EditValue,
                 Password = (string)txtContrasenia.EditValue,
                 Estatus = (bool)txtEstatus.EditValue,
                 NivelUsuario = (Modelo.Usuarios.Usuario.NivelesUsuario)cmbNivelUsuario.EditValue,
-                Departamento = (Modelo.Usuarios.Usuario.Departamentos)cmbDepartamento.EditValue,
+                Departamento = (Modelo.Usuarios.Usuario.Departamentos)cmbDepartamento.EditValue
 
             };
 
@@ -193,10 +200,10 @@ namespace ProyectoFinal.Vistas
 
         private void gridView3_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            MostrarUsuario(((ColumnView)sender).GetDataRow(e.RowHandle));
+            mostrarPersona(((ColumnView)sender).GetDataRow(e.RowHandle));
         }
 
-        private void MostrarUsuario(DataRow row)
+        private void mostrarPersona(DataRow row)
         {
             if (row == null) return;
 
@@ -204,9 +211,9 @@ namespace ProyectoFinal.Vistas
 
             if (u == null) return;
 
-            this.IdUsuario = u.IdUsuario;
+            //this.IdUsuario = u.IdUsuario;
 
-            this.txtIdUsuario.EditValue = u.IdUsuario;
+            
             this.txtNombre.EditValue = u.Nombre;
             this.txtAPaterno.EditValue = u.ApellidoPaterno;
             this.txtAMaterno.EditValue = u.ApellidoMaterno;
@@ -215,6 +222,7 @@ namespace ProyectoFinal.Vistas
             this.txtCalle.EditValue = u.Calle;
             this.txtNumero.EditValue = u.Numero;
             this.txtColonia.EditValue = u.Colonia;
+            this.txtIdUsuario.EditValue = u.IdPersona;
             this.txtUsername.EditValue = u.Username;
             this.txtContrasenia.EditValue = u.Password;
             this.txtEstatus.EditValue = u.Estatus;
@@ -222,7 +230,7 @@ namespace ProyectoFinal.Vistas
             this.cmbDepartamento.EditValue = u.Departamento;
             
 
-            gcUsuarios.RefreshDataSource();
+            gcPersona.RefreshDataSource();
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -238,6 +246,11 @@ namespace ProyectoFinal.Vistas
 
             lst.Remove(obj);
             GcContactos.RefreshDataSource();*/
+        }
+
+        private void gcUsuarios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

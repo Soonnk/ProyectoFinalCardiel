@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtEstatus = new DevExpress.XtraEditors.TextEdit();
             this.txtColonia = new DevExpress.XtraEditors.TextEdit();
@@ -39,7 +39,7 @@
             this.txtAMaterno = new DevExpress.XtraEditors.TextEdit();
             this.txtAPaterno = new DevExpress.XtraEditors.TextEdit();
             this.txtNombre = new DevExpress.XtraEditors.TextEdit();
-            this.gcUsuarios = new DevExpress.XtraGrid.GridControl();
+            this.gcPersona = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
@@ -54,8 +54,6 @@
             this.cmbDepartamento = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.campoUsuario = new DevExpress.XtraLayout.LayoutControlItem();
             this.Username = new DevExpress.XtraLayout.LayoutControlItem();
             this.Contraseña = new DevExpress.XtraLayout.LayoutControlItem();
@@ -75,6 +73,9 @@
             this.NivelUsuario1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.NivelUsuario = new DevExpress.XtraLayout.LayoutControlItem();
             this.Estatus = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gcUsuarios = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEstatus.Properties)).BeginInit();
@@ -86,7 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAMaterno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAPaterno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
@@ -96,8 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Username)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Contraseña)).BeginInit();
@@ -117,10 +116,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Estatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.gcUsuarios);
             this.layoutControl1.Controls.Add(this.txtEstatus);
             this.layoutControl1.Controls.Add(this.txtColonia);
             this.layoutControl1.Controls.Add(this.txtNumero);
@@ -130,7 +133,7 @@
             this.layoutControl1.Controls.Add(this.txtAMaterno);
             this.layoutControl1.Controls.Add(this.txtAPaterno);
             this.layoutControl1.Controls.Add(this.txtNombre);
-            this.layoutControl1.Controls.Add(this.gcUsuarios);
+            this.layoutControl1.Controls.Add(this.gcPersona);
             this.layoutControl1.Controls.Add(this.simpleButton5);
             this.layoutControl1.Controls.Add(this.simpleButton4);
             this.layoutControl1.Controls.Add(this.simpleButton2);
@@ -152,91 +155,93 @@
             // 
             this.txtEstatus.Location = new System.Drawing.Point(131, 324);
             this.txtEstatus.Name = "txtEstatus";
-            this.txtEstatus.Size = new System.Drawing.Size(356, 22);
+            this.txtEstatus.Size = new System.Drawing.Size(371, 22);
             this.txtEstatus.StyleController = this.layoutControl1;
-            this.txtEstatus.TabIndex = 27;
+            this.txtEstatus.TabIndex = 13;
             // 
             // txtColonia
             // 
             this.txtColonia.Location = new System.Drawing.Point(131, 240);
             this.txtColonia.Name = "txtColonia";
-            this.txtColonia.Size = new System.Drawing.Size(356, 22);
+            this.txtColonia.Size = new System.Drawing.Size(371, 22);
             this.txtColonia.StyleController = this.layoutControl1;
-            this.txtColonia.TabIndex = 26;
+            this.txtColonia.TabIndex = 10;
             // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(131, 212);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(356, 22);
+            this.txtNumero.Size = new System.Drawing.Size(371, 22);
             this.txtNumero.StyleController = this.layoutControl1;
-            this.txtNumero.TabIndex = 25;
+            this.txtNumero.TabIndex = 9;
             // 
             // txtCalle
             // 
             this.txtCalle.Location = new System.Drawing.Point(131, 184);
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(356, 22);
+            this.txtCalle.Size = new System.Drawing.Size(371, 22);
             this.txtCalle.StyleController = this.layoutControl1;
-            this.txtCalle.TabIndex = 24;
+            this.txtCalle.TabIndex = 8;
             // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(131, 156);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(356, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(371, 22);
             this.txtCorreo.StyleController = this.layoutControl1;
-            this.txtCorreo.TabIndex = 23;
+            this.txtCorreo.TabIndex = 7;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(131, 128);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(356, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(371, 22);
             this.txtTelefono.StyleController = this.layoutControl1;
-            this.txtTelefono.TabIndex = 22;
+            this.txtTelefono.TabIndex = 6;
             // 
             // txtAMaterno
             // 
             this.txtAMaterno.Location = new System.Drawing.Point(131, 100);
             this.txtAMaterno.Name = "txtAMaterno";
-            this.txtAMaterno.Size = new System.Drawing.Size(356, 22);
+            this.txtAMaterno.Size = new System.Drawing.Size(371, 22);
             this.txtAMaterno.StyleController = this.layoutControl1;
-            this.txtAMaterno.TabIndex = 21;
+            this.txtAMaterno.TabIndex = 5;
             // 
             // txtAPaterno
             // 
             this.txtAPaterno.Location = new System.Drawing.Point(131, 72);
             this.txtAPaterno.Name = "txtAPaterno";
-            this.txtAPaterno.Size = new System.Drawing.Size(356, 22);
+            this.txtAPaterno.Size = new System.Drawing.Size(371, 22);
             this.txtAPaterno.StyleController = this.layoutControl1;
-            this.txtAPaterno.TabIndex = 20;
+            this.txtAPaterno.TabIndex = 4;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(131, 44);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(356, 22);
+            this.txtNombre.Size = new System.Drawing.Size(371, 22);
             this.txtNombre.StyleController = this.layoutControl1;
-            this.txtNombre.TabIndex = 19;
+            this.txtNombre.TabIndex = 3;
             // 
-            // gcUsuarios
+            // gcPersona
             // 
-            gridLevelNode2.RelationName = "Level1";
-            this.gcUsuarios.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
-            this.gcUsuarios.Location = new System.Drawing.Point(503, 16);
-            this.gcUsuarios.MainView = this.gridView3;
-            this.gcUsuarios.Name = "gcUsuarios";
-            this.gcUsuarios.Size = new System.Drawing.Size(635, 696);
-            this.gcUsuarios.TabIndex = 18;
-            this.gcUsuarios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            gridLevelNode1.RelationName = "Level1";
+            this.gcPersona.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gcPersona.Location = new System.Drawing.Point(508, 16);
+            this.gcPersona.MainView = this.gridView3;
+            this.gcPersona.Name = "gcPersona";
+            this.gcPersona.Size = new System.Drawing.Size(630, 353);
+            this.gcPersona.TabIndex = 2;
+            this.gcPersona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
+            this.gcPersona.Click += new System.EventHandler(this.gcUsuarios_Click);
             // 
             // gridView3
             // 
-            this.gridView3.GridControl = this.gcUsuarios;
+            this.gridView3.GridControl = this.gcPersona;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView3_RowClick);
             // 
             // simpleButton5
@@ -244,9 +249,9 @@
             this.simpleButton5.ImageUri.Uri = "Clear;Office2013";
             this.simpleButton5.Location = new System.Drawing.Point(16, 546);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(481, 40);
+            this.simpleButton5.Size = new System.Drawing.Size(486, 40);
             this.simpleButton5.StyleController = this.layoutControl1;
-            this.simpleButton5.TabIndex = 16;
+            this.simpleButton5.TabIndex = 20;
             this.simpleButton5.Text = "Limpiar";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
@@ -255,9 +260,9 @@
             this.simpleButton4.ImageUri.Uri = "Cancel;Office2013";
             this.simpleButton4.Location = new System.Drawing.Point(16, 500);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(481, 40);
+            this.simpleButton4.Size = new System.Drawing.Size(486, 40);
             this.simpleButton4.StyleController = this.layoutControl1;
-            this.simpleButton4.TabIndex = 15;
+            this.simpleButton4.TabIndex = 19;
             this.simpleButton4.Text = "Eliminar";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
@@ -266,9 +271,9 @@
             this.simpleButton2.ImageUri.Uri = "Redo;Office2013";
             this.simpleButton2.Location = new System.Drawing.Point(16, 454);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(481, 40);
+            this.simpleButton2.Size = new System.Drawing.Size(486, 40);
             this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 12;
+            this.simpleButton2.TabIndex = 18;
             this.simpleButton2.Text = "Actualizar";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -277,9 +282,9 @@
             this.simpleButton1.ImageUri.Uri = "Add;Size32x32;Office2013";
             this.simpleButton1.Location = new System.Drawing.Point(16, 408);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(481, 40);
+            this.simpleButton1.Size = new System.Drawing.Size(486, 40);
             this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 11;
+            this.simpleButton1.TabIndex = 17;
             this.simpleButton1.Text = "Agregar";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -288,25 +293,25 @@
             this.txtIdUsuario.EditValue = "";
             this.txtIdUsuario.Location = new System.Drawing.Point(131, 16);
             this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(356, 22);
+            this.txtIdUsuario.Size = new System.Drawing.Size(371, 22);
             this.txtIdUsuario.StyleController = this.layoutControl1;
-            this.txtIdUsuario.TabIndex = 4;
+            this.txtIdUsuario.TabIndex = 0;
             // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(131, 268);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(356, 22);
+            this.txtUsername.Size = new System.Drawing.Size(371, 22);
             this.txtUsername.StyleController = this.layoutControl1;
-            this.txtUsername.TabIndex = 6;
+            this.txtUsername.TabIndex = 11;
             // 
             // txtContrasenia
             // 
             this.txtContrasenia.Location = new System.Drawing.Point(131, 296);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(356, 22);
+            this.txtContrasenia.Size = new System.Drawing.Size(371, 22);
             this.txtContrasenia.StyleController = this.layoutControl1;
-            this.txtContrasenia.TabIndex = 7;
+            this.txtContrasenia.TabIndex = 12;
             // 
             // cmbNivelUsuario
             // 
@@ -318,9 +323,9 @@
             this.cmbNivelUsuario.Properties.DisplayMember = "Descripcion";
             this.cmbNivelUsuario.Properties.ValueMember = "IdNivel";
             this.cmbNivelUsuario.Properties.View = this.gridView1;
-            this.cmbNivelUsuario.Size = new System.Drawing.Size(356, 22);
+            this.cmbNivelUsuario.Size = new System.Drawing.Size(371, 22);
             this.cmbNivelUsuario.StyleController = this.layoutControl1;
-            this.cmbNivelUsuario.TabIndex = 17;
+            this.cmbNivelUsuario.TabIndex = 14;
             this.cmbNivelUsuario.EditValueChanged += new System.EventHandler(this.cmbNivelUsuario_EditValueChanged);
             // 
             // gridView1
@@ -350,9 +355,9 @@
             this.cmbDepartamento.Properties.DisplayMember = "Descripcion";
             this.cmbDepartamento.Properties.ValueMember = "IdDepartamento";
             this.cmbDepartamento.Properties.View = this.gridView2;
-            this.cmbDepartamento.Size = new System.Drawing.Size(356, 22);
+            this.cmbDepartamento.Size = new System.Drawing.Size(371, 22);
             this.cmbDepartamento.StyleController = this.layoutControl1;
-            this.cmbDepartamento.TabIndex = 17;
+            this.cmbDepartamento.TabIndex = 15;
             this.cmbDepartamento.EditValueChanged += new System.EventHandler(this.cmbDepartamento_EditValueChanged);
             // 
             // gridView2
@@ -367,8 +372,6 @@
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem1,
-            this.emptySpaceItem2,
             this.campoUsuario,
             this.Username,
             this.Contraseña,
@@ -387,28 +390,13 @@
             this.layoutControlItem2,
             this.NivelUsuario1,
             this.NivelUsuario,
-            this.Estatus});
+            this.Estatus,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroup1.Size = new System.Drawing.Size(1154, 728);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 576);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(487, 126);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(477, 0);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(10, 392);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // campoUsuario
             // 
@@ -417,7 +405,7 @@
             this.campoUsuario.CustomizationFormText = "ID de Usuario";
             this.campoUsuario.Location = new System.Drawing.Point(0, 0);
             this.campoUsuario.Name = "campoUsuario";
-            this.campoUsuario.Size = new System.Drawing.Size(477, 28);
+            this.campoUsuario.Size = new System.Drawing.Size(492, 28);
             this.campoUsuario.Text = "ID de Usuario";
             this.campoUsuario.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -427,7 +415,7 @@
             this.Username.CustomizationFormText = "Username";
             this.Username.Location = new System.Drawing.Point(0, 252);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(477, 28);
+            this.Username.Size = new System.Drawing.Size(492, 28);
             this.Username.TextSize = new System.Drawing.Size(111, 16);
             // 
             // Contraseña
@@ -436,7 +424,7 @@
             this.Contraseña.CustomizationFormText = "Contraseña";
             this.Contraseña.Location = new System.Drawing.Point(0, 280);
             this.Contraseña.Name = "Contraseña";
-            this.Contraseña.Size = new System.Drawing.Size(477, 28);
+            this.Contraseña.Size = new System.Drawing.Size(492, 28);
             this.Contraseña.TextSize = new System.Drawing.Size(111, 16);
             // 
             // layoutControlItem7
@@ -444,7 +432,7 @@
             this.layoutControlItem7.Control = this.txtNombre;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(477, 28);
+            this.layoutControlItem7.Size = new System.Drawing.Size(492, 28);
             this.layoutControlItem7.Text = "Nombre o Nombres";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -453,7 +441,7 @@
             this.layoutControlItem8.Control = this.txtAPaterno;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(477, 28);
+            this.layoutControlItem8.Size = new System.Drawing.Size(492, 28);
             this.layoutControlItem8.Text = "Apellido Paterno";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -462,7 +450,7 @@
             this.layoutControlItem9.Control = this.txtAMaterno;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 84);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(477, 28);
+            this.layoutControlItem9.Size = new System.Drawing.Size(492, 28);
             this.layoutControlItem9.Text = "Apellido Materno";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -471,7 +459,7 @@
             this.layoutControlItem10.Control = this.txtTelefono;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 112);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(477, 28);
+            this.layoutControlItem10.Size = new System.Drawing.Size(492, 28);
             this.layoutControlItem10.Text = "Telefono";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -480,7 +468,7 @@
             this.layoutControlItem11.Control = this.txtCorreo;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 140);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(477, 28);
+            this.layoutControlItem11.Size = new System.Drawing.Size(492, 28);
             this.layoutControlItem11.Text = "Correo Electronico";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -489,7 +477,7 @@
             this.layoutControlItem12.Control = this.txtCalle;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(477, 28);
+            this.layoutControlItem12.Size = new System.Drawing.Size(492, 28);
             this.layoutControlItem12.Text = "Calle";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -498,7 +486,7 @@
             this.layoutControlItem13.Control = this.txtNumero;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 196);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(477, 28);
+            this.layoutControlItem13.Size = new System.Drawing.Size(492, 28);
             this.layoutControlItem13.Text = "Número #";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -507,7 +495,7 @@
             this.layoutControlItem14.Control = this.txtColonia;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 224);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(477, 28);
+            this.layoutControlItem14.Size = new System.Drawing.Size(492, 28);
             this.layoutControlItem14.Text = "Colonia";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -516,7 +504,7 @@
             this.layoutControlItem3.Control = this.simpleButton1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 392);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(487, 46);
+            this.layoutControlItem3.Size = new System.Drawing.Size(492, 46);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -525,7 +513,7 @@
             this.layoutControlItem4.Control = this.simpleButton2;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 438);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(487, 46);
+            this.layoutControlItem4.Size = new System.Drawing.Size(492, 46);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -534,7 +522,7 @@
             this.layoutControlItem5.Control = this.simpleButton4;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 484);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(487, 46);
+            this.layoutControlItem5.Size = new System.Drawing.Size(492, 46);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -543,16 +531,16 @@
             this.layoutControlItem6.Control = this.simpleButton5;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 530);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(487, 46);
+            this.layoutControlItem6.Size = new System.Drawing.Size(492, 172);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.gcUsuarios;
-            this.layoutControlItem2.Location = new System.Drawing.Point(487, 0);
+            this.layoutControlItem2.Control = this.gcPersona;
+            this.layoutControlItem2.Location = new System.Drawing.Point(492, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(641, 702);
+            this.layoutControlItem2.Size = new System.Drawing.Size(636, 359);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -562,7 +550,7 @@
             this.NivelUsuario1.CustomizationFormText = "NivelUsuario";
             this.NivelUsuario1.Location = new System.Drawing.Point(0, 364);
             this.NivelUsuario1.Name = "NivelUsuario1";
-            this.NivelUsuario1.Size = new System.Drawing.Size(477, 28);
+            this.NivelUsuario1.Size = new System.Drawing.Size(492, 28);
             this.NivelUsuario1.Text = "Departamento";
             this.NivelUsuario1.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -572,7 +560,7 @@
             this.NivelUsuario.CustomizationFormText = "NivelUsuario";
             this.NivelUsuario.Location = new System.Drawing.Point(0, 336);
             this.NivelUsuario.Name = "NivelUsuario";
-            this.NivelUsuario.Size = new System.Drawing.Size(477, 28);
+            this.NivelUsuario.Size = new System.Drawing.Size(492, 28);
             this.NivelUsuario.Text = "Nivel de Usuario";
             this.NivelUsuario.TextSize = new System.Drawing.Size(111, 16);
             // 
@@ -581,8 +569,33 @@
             this.Estatus.Control = this.txtEstatus;
             this.Estatus.Location = new System.Drawing.Point(0, 308);
             this.Estatus.Name = "Estatus";
-            this.Estatus.Size = new System.Drawing.Size(477, 28);
+            this.Estatus.Size = new System.Drawing.Size(492, 28);
             this.Estatus.TextSize = new System.Drawing.Size(111, 16);
+            // 
+            // gcUsuarios
+            // 
+            this.gcUsuarios.Location = new System.Drawing.Point(508, 375);
+            this.gcUsuarios.MainView = this.gridView4;
+            this.gcUsuarios.Name = "gcUsuarios";
+            this.gcUsuarios.Size = new System.Drawing.Size(630, 337);
+            this.gcUsuarios.TabIndex = 16;
+            this.gcUsuarios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.GridControl = this.gcUsuarios;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gcUsuarios;
+            this.layoutControlItem1.Location = new System.Drawing.Point(492, 359);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(636, 343);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // Usuario
             // 
@@ -604,7 +617,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAMaterno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAPaterno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPersona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
@@ -614,8 +627,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartamento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Username)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Contraseña)).EndInit();
@@ -635,6 +646,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Estatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -643,8 +657,6 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -686,6 +698,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.TextEdit txtEstatus;
         private DevExpress.XtraLayout.LayoutControlItem Estatus;
+        private DevExpress.XtraGrid.GridControl gcPersona;
         private DevExpress.XtraGrid.GridControl gcUsuarios;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }
