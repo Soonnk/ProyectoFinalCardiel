@@ -15,6 +15,7 @@ namespace ProyectoFinal.Modelo.Compras
         public String Calle { get; set; }
         public String Numero { get; set; }
         public String Colonia { get; set; }
+        public bool Estatus { get; set; }
         public ListaContactos Contactos { get; set; }
     }
 }

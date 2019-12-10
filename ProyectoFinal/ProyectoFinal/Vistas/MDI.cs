@@ -48,13 +48,17 @@ namespace ProyectoFinal.Vistas
             CargarFormulario(ventanaProduccion);
         }
 
-        private void CargarFormulario(Form child)
+        public void CargarFormulario(Form child)
         {
             if (child.Name.Equals(PanelContenedor.Tag))
                 return;
 
             if (PanelContenedor.Controls.Count > 0)
+            {
+                foreach (Control c in PanelContenedor.Controls)
+                    if (c.GetType() == typeof(Form)) ((Form)c).Close(); 
                 PanelContenedor.Controls.Clear();
+            }
 
             child.FormBorderStyle = FormBorderStyle.None;
             child.TopLevel = false;

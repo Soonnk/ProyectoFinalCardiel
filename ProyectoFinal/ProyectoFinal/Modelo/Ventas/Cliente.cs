@@ -17,6 +17,7 @@ namespace ProyectoFinal.Modelo.Ventas
         public string Colonia { get; set; }
         public RegimenesFiscales RegimenFiscal { get; set; }
         public string RFC { get; set; }
+        public bool Estatus { get; set; }
         public ListaContactos ListaContactos { get; set; }
         
         public enum RegimenesFiscales : int

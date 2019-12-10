@@ -9,6 +9,11 @@ namespace ProyectoFinal.Controlador.Compras
 {
     public class ControladorDetalleCompra :AccesoDatos.ConexionSQL
     {
+        public ControladorDetalleCompra()
+        {
+            this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+        }
+
         public List<Modelo.Compras.DetalleCompra> GetByCompra(int idCompra)
         {
             SqlConnection connection = null;
@@ -22,19 +27,18 @@ namespace ProyectoFinal.Controlador.Compras
                 connection.Open();
 
                 cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM DetalleCompra WHERE IdDetalleCompra = @Id";
+                cmd.CommandText = "SELECT * FROM [Compras].[DetalleCompra] WHERE Compra = @Id";
                 cmd.Parameters.AddWithValue("@Id", idCompra);
 
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    Modelo.Compras.DetalleCompra d = new Modelo.Compras.DetalleCompra() {
-                        IdDetalleCompra = (int)reader["IdDetalleCompra"],
-                        Cantidad = (double)reader["Cantidad"],
-                        Costo = (double)reader["Costo"],
-                        Material = new Produccion.ControladorMaterial().GetById((int)reader["Material"])
-                    };
+                    Modelo.Compras.DetalleCompra d = new Modelo.Compras.DetalleCompra();
+                    d.IdDetalleCompra = (int)reader["IdDetalleCompra"];
+                    d.Cantidad = (double)(int)reader["Cantidad"];
+                    d.Costo = (double)(decimal)reader["Costo"];
+                    d.Material = new Produccion.ControladorMaterial().GetById((int)reader["Material"]);
                     lista.Add(d);
                 }
 

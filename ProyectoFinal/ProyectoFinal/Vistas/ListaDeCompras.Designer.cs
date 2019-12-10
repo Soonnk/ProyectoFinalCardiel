@@ -35,6 +35,11 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.ColIdCompra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColNombreProveedor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColFechaOrden = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColFechaRecepcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColNombreComprador = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GcCompras)).BeginInit();
@@ -49,7 +54,7 @@
             this.layoutControl1.Controls.Add(this.GcCompras);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(875, 574);
@@ -58,10 +63,10 @@
             // 
             // GcCompras
             // 
-            this.GcCompras.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GcCompras.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.GcCompras.Location = new System.Drawing.Point(12, 12);
             this.GcCompras.MainView = this.GvCompras;
-            this.GcCompras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GcCompras.Margin = new System.Windows.Forms.Padding(2);
             this.GcCompras.Name = "GcCompras";
             this.GcCompras.Size = new System.Drawing.Size(851, 540);
             this.GcCompras.TabIndex = 25;
@@ -70,8 +75,16 @@
             // 
             // GvCompras
             // 
+            this.GvCompras.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ColIdCompra,
+            this.ColNombreProveedor,
+            this.ColFechaOrden,
+            this.ColFechaRecepcion,
+            this.ColNombreComprador});
             this.GvCompras.GridControl = this.GcCompras;
             this.GvCompras.Name = "GvCompras";
+            this.GvCompras.OptionsBehavior.Editable = false;
+            this.GvCompras.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.GvCompras_RowClick);
             // 
             // layoutControlGroup1
             // 
@@ -112,13 +125,58 @@
             this.simpleButton3.TabIndex = 23;
             this.simpleButton3.Text = "Consultar";
             // 
+            // ColIdCompra
+            // 
+            this.ColIdCompra.Caption = "Numero de Compra";
+            this.ColIdCompra.FieldName = "IdCompra";
+            this.ColIdCompra.Name = "ColIdCompra";
+            this.ColIdCompra.Visible = true;
+            this.ColIdCompra.VisibleIndex = 0;
+            this.ColIdCompra.Width = 104;
+            // 
+            // ColNombreProveedor
+            // 
+            this.ColNombreProveedor.Caption = "Proveedor";
+            this.ColNombreProveedor.FieldName = "NombreProveedor";
+            this.ColNombreProveedor.Name = "ColNombreProveedor";
+            this.ColNombreProveedor.Visible = true;
+            this.ColNombreProveedor.VisibleIndex = 1;
+            this.ColNombreProveedor.Width = 162;
+            // 
+            // ColFechaOrden
+            // 
+            this.ColFechaOrden.Caption = "Fecha de Orden";
+            this.ColFechaOrden.FieldName = "FechaOrden";
+            this.ColFechaOrden.Name = "ColFechaOrden";
+            this.ColFechaOrden.Visible = true;
+            this.ColFechaOrden.VisibleIndex = 2;
+            this.ColFechaOrden.Width = 127;
+            // 
+            // ColFechaRecepcion
+            // 
+            this.ColFechaRecepcion.Caption = "Fecha de Recepción";
+            this.ColFechaRecepcion.FieldName = "FechaRecepcion";
+            this.ColFechaRecepcion.Name = "ColFechaRecepcion";
+            this.ColFechaRecepcion.Visible = true;
+            this.ColFechaRecepcion.VisibleIndex = 3;
+            this.ColFechaRecepcion.Width = 127;
+            // 
+            // ColNombreComprador
+            // 
+            this.ColNombreComprador.Caption = "Ordenado Por";
+            this.ColNombreComprador.FieldName = "NombreComprador";
+            this.ColNombreComprador.Name = "ColNombreComprador";
+            this.ColNombreComprador.Visible = true;
+            this.ColNombreComprador.VisibleIndex = 4;
+            this.ColNombreComprador.Width = 176;
+            // 
             // ListaDeCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 574);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListaDeCompras";
             this.Text = "ListaDeCompras";
             this.Load += new System.EventHandler(this.ListaDeCompras_Load);
@@ -142,5 +200,10 @@
         private DevExpress.XtraGrid.GridControl GcCompras;
         private DevExpress.XtraGrid.Views.Grid.GridView GvCompras;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn ColIdCompra;
+        private DevExpress.XtraGrid.Columns.GridColumn ColNombreProveedor;
+        private DevExpress.XtraGrid.Columns.GridColumn ColFechaOrden;
+        private DevExpress.XtraGrid.Columns.GridColumn ColFechaRecepcion;
+        private DevExpress.XtraGrid.Columns.GridColumn ColNombreComprador;
     }
 }

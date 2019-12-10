@@ -42,6 +42,7 @@ namespace ProyectoFinal.Controlador.Ventas
                     "   Colonia," + Environment.NewLine +
                     "   RegimenFiscal," + Environment.NewLine +
                     "   RFC," + Environment.NewLine +
+                    "   Estatus," + Environment.NewLine +
                     "   ListaContactos" + Environment.NewLine +
                     ")VALUES(" + Environment.NewLine +
                     "   @Nombre," + Environment.NewLine +
@@ -52,6 +53,7 @@ namespace ProyectoFinal.Controlador.Ventas
                     "   @Colonia," + Environment.NewLine +
                     "   @RegimenFiscal," + Environment.NewLine +
                     "   @RFC," + Environment.NewLine +
+                    "   1," + Environment.NewLine +
                     "   @ListaContactos" + Environment.NewLine +
                     ")" + Environment.NewLine +
                     "SELECT CAST(SCOPE_IDENTITY() as int)";
@@ -107,8 +109,9 @@ namespace ProyectoFinal.Controlador.Ventas
                     "CorreoElectronico = @CorreoElectronico, " + Environment.NewLine +
                     "Calle = @Calle, " + Environment.NewLine +
                     "Numero = @Numero, " + Environment.NewLine +
-                    "Colonia = @Colonia " + Environment.NewLine +
-                    "RegimenFiscal = @RegimenFiscal " + Environment.NewLine +
+                    "Colonia = @Colonia, " + Environment.NewLine +
+                    "Estatus = @Estatus, " + Environment.NewLine +
+                    "RegimenFiscal = @RegimenFiscal, " + Environment.NewLine +
                     "RFC = @RFC " + Environment.NewLine +
                     "WHERE IdCliente = @IdCliente";
 
@@ -120,6 +123,7 @@ namespace ProyectoFinal.Controlador.Ventas
                 cmd.Parameters.AddWithValue("@Calle", c.Calle);
                 cmd.Parameters.AddWithValue("@Numero", c.Numero);
                 cmd.Parameters.AddWithValue("@Colonia", c.Colonia);
+                cmd.Parameters.AddWithValue("@Estatus", c.Estatus);
                 cmd.Parameters.AddWithValue("@RegimenFiscal", c.RegimenFiscal);
                 cmd.Parameters.AddWithValue("@RFC", c.RFC);
                 cmd.Parameters.AddWithValue("@IdProveedor", c.IdCliente);
@@ -210,8 +214,9 @@ namespace ProyectoFinal.Controlador.Ventas
             try
             {
                 connection = GetConnection();
-                cmd = connection.CreateCommand();
+                connection.Open();
 
+                cmd = connection.CreateCommand();
                 cmd.CommandText = "SELECT * FROM [Ventas].[Clientes] WHERE IdCliente = @IdCliente";
                 cmd.Parameters.AddWithValue("@IdCliente", idCliente);
 
@@ -234,11 +239,14 @@ namespace ProyectoFinal.Controlador.Ventas
                         c.RegimenFiscal = RegimenesFiscales.PersonaFisica;
                     }
                     c.RFC = reader.GetString(8);
+
+                    c.Estatus = (bool)reader[9];
                 
                     c.ListaContactos = new Modelo.ListaContactos
                     {
-                        IdListaContactos = reader.GetInt32(9)
+                        IdListaContactos = reader.GetInt32(10)
                     };
+
 
                     ControladorContacto contContacto = new ControladorContacto();
 
@@ -250,14 +258,14 @@ namespace ProyectoFinal.Controlador.Ventas
                         {
                             IdContacto = (int)row["IdContacto"],
                             IdPersona = (int)row["IdPersona"],
-                            Nombre = (string)row["Nombre"],
-                            ApellidoPaterno = (string)row["ApellidoMaterno"],
-                            ApellidoMaterno = (string)row["ApellidoMaterno"],
-                            Telefono = (string)row["Telefono"],
-                            CorreoElectronico = (string)row["CorreoElectronico"],
-                            Calle = (string)row["Calle"],
-                            Numero = (string)row["Numero"],
-                            Colonia = (string)row["Colonia"]
+                            Nombre = row["Nombre"] != DBNull.Value ? (string)row["Nombre"] : null,
+                            ApellidoPaterno = row["ApellidoPaterno"] != DBNull.Value ? (string)row["ApellidoPaterno"] : null,
+                            ApellidoMaterno = row["ApellidoMaterno"] != DBNull.Value ? (string)row["ApellidoMaterno"] : null,
+                            Telefono = row["Telefono"] != DBNull.Value ? (string)row["Telefono"] : null,
+                            CorreoElectronico = row["CorreoElectronico"] != DBNull.Value ? (string)row["CorreoElectronico"] : null,
+                            Calle = row["Calle"] != DBNull.Value ? (string)row["Calle"] : null,
+                            Numero = row["Numero"] != DBNull.Value ? (string)row["Numero"] : null,
+                            Colonia = row["Colonia"] != DBNull.Value ? (string)row["Colonia"] : null
                         };
 
                         c.ListaContactos.Add(contacto);

@@ -13,7 +13,9 @@ namespace ProyectoFinal.Controlador.Compras
     public class ControladorProveedor : AccesoDatos.ConexionSQL
     {
         public ControladorProveedor() {
-            this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+            //TODO Reemplaza permisos de usuario aqui
+            //this.NivelUsuario = Session.UsuarioEnCurso.NivelUsuario;
+            this.NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Administrador;
         }
 
         public void InsertarProveedor(Proveedor p) {
@@ -109,8 +111,16 @@ namespace ProyectoFinal.Controlador.Compras
                 cmd.Parameters.AddWithValue("@Colonia", p.Colonia);
                 cmd.Parameters.AddWithValue("@IdProveedor", p.IdProveedor);
 
-                var rows = cmd.ExecuteNonQuery();
-                Console.WriteLine("" + rows);
+                cmd.ExecuteNonQuery();
+
+                if (p.Contactos != null && p.Contactos.Count > 0)
+                {
+
+                    foreach (Modelo.Contacto c in  from con in p.Contactos where con.IdContacto == 0 select con)
+                    {
+                        ControladorContacto.InsertarContacto(c, p.Contactos.IdListaContactos, cmd);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -235,14 +245,14 @@ namespace ProyectoFinal.Controlador.Compras
                         {
                             IdContacto = (int)row["IdContacto"],
                             IdPersona = (int)row["IdPersona"],
-                            Nombre = (string)row["Nombre"],
-                            ApellidoPaterno = (string)row["ApellidoMaterno"],
-                            ApellidoMaterno = (string)row["ApellidoMaterno"],
-                            Telefono = (string)row["Telefono"],
-                            CorreoElectronico = (string)row["CorreoElectronico"],
-                            Calle = (string)row["Calle"],
-                            Numero = (string)row["Numero"],
-                            Colonia = (string)row["Colonia"]
+                            Nombre = row["Nombre"] != DBNull.Value ? (string)row["Nombre"] : null,
+                            ApellidoPaterno = row["ApellidoPaterno"] != DBNull.Value ? (string)row["ApellidoPaterno"] : null,
+                            ApellidoMaterno = row["ApellidoMaterno"] != DBNull.Value ? (string)row["ApellidoMaterno"] : null,
+                            Telefono = row["Telefono"] != DBNull.Value ? (string)row["Telefono"] : null,
+                            CorreoElectronico = row["CorreoElectronico"] != DBNull.Value ? (string)row["CorreoElectronico"] : null,
+                            Calle = row["Calle"] != DBNull.Value ? (string)row["Calle"] : null,
+                            Numero = row["Numero"] != DBNull.Value ? (string)row["Numero"] : null,
+                            Colonia = row["Colonia"] != DBNull.Value ? (string)row["Colonia"] : null
                         };
 
                         p.Contactos.Add(contacto);
