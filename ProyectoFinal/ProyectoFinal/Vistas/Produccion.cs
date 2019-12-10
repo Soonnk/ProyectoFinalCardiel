@@ -40,5 +40,10 @@ namespace ProyectoFinal.Vistas
         {
             CargarPendientes();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

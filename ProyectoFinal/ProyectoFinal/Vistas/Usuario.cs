@@ -145,7 +145,7 @@ namespace ProyectoFinal.Vistas
             Modelo.Usuarios.Usuario u = new Modelo.Usuarios.Usuario()
             {
 
-                IdPersona = IdPersona,
+                IdPersona = this.IdPersona,
                 Nombre = (string)txtNombre.EditValue,
                 ApellidoPaterno = (string)txtAPaterno.EditValue,
                 ApellidoMaterno = (string)txtAMaterno.EditValue,
@@ -154,10 +154,9 @@ namespace ProyectoFinal.Vistas
                 Calle = (string)txtCalle.EditValue,
                 Numero = (string)txtNumero.EditValue,
                 Colonia = (string)txtColonia.EditValue,
-                IdUsuario = IdUsuario,
+                IdUsuario = this.IdUsuario,
                 Username = (string)txtUsername.EditValue,
                 Password = (string)txtContrasenia.EditValue,
-                Estatus = (bool)txtEstatus.EditValue,
                 NivelUsuario = (Modelo.Usuarios.Usuario.NivelesUsuario)cmbNivelUsuario.EditValue,
                 Departamento = (Modelo.Usuarios.Usuario.Departamentos)cmbDepartamento.EditValue
 
@@ -177,6 +176,7 @@ namespace ProyectoFinal.Vistas
         private void GuardarCambios()
         {
             Modelo.Usuarios.Usuario usuario = generarUsuario();
+            //usuario.Estatus = Estatus;
             ctrlUsuarios.UpdateUsuario(usuario);
 
             MessageBox.Show("Cambios Guardados con éxito");
@@ -186,16 +186,7 @@ namespace ProyectoFinal.Vistas
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            /*if (usu.Count < 0) return;
-
-            ViewContacto ventanaContacto = new ViewContacto(usu[GvContactos.FocusedRowHandle]);
-            var res = ventanaContacto.ShowDialog(this);
-            if (res == DialogResult.OK)
-            {
-                usu[GvContactos.FocusedRowHandle] = ventanaContacto.Contacto;
-                if (ventanaContacto.Contacto.IdContacto != 0) ctrlUsuarios.UpdateUsuario(ventanaContacto.Contacto);
-                GcContactos.RefreshDataSource();
-            }*/
+            cargarUsuarios();
         }
 
         private void gridView3_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -233,19 +224,11 @@ namespace ProyectoFinal.Vistas
             gcPersona.RefreshDataSource();
         }
 
+        
+
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            /*if (lst.Count < 0) return;
-
-            var obj = lst[GvContactos.FocusedRowHandle];
-
-            if (lst.IdListaContactos != 0)
-            {
-                ctrlContactos.DropContacto(obj, lst.IdListaContactos);
-            }
-
-            lst.Remove(obj);
-            GcContactos.RefreshDataSource();*/
+            GuardarCambios();
         }
 
         private void gcUsuarios_Click(object sender, EventArgs e)

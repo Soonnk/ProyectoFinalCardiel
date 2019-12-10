@@ -150,14 +150,15 @@ namespace ProyectoFinal.Controlador.Usuarios
         {
             SqlConnection connection = null;
             SqlDataAdapter adapter = null;
-            DataTable dt = null;
+            DataTable dt = new DataTable();
 
             try
             {
                 connection = GetConnection();
                 connection.Open();
 
-                string query = "SELECT u.Iduuario, u.Username, p.Nombre, p.ApellidoPaterno, p.ApellidoMaterno, n.Descripcion as DescripcionNivelUsuario, d.Descripcion as DescripcionDepartamento " +
+                string query = "SELECT u.Iduuario, u.Username, p.Nombre, p.ApellidoPaterno, p.ApellidoMaterno," +
+                    " n.Descripcion as DescripcionNivelUsuario, d.Descripcion as DescripcionDepartamento " +
                     "FROM [Usuarios].[Usuario] u " +
                     "INNER JOIN [Personas] On u.IdPersona = p.IdPersona " +
                     "INNER JOIN [Usuarios].[c_NivelesUsuario] n On n.IdNivel = u.NivelUsuario " +
