@@ -197,8 +197,8 @@ namespace ProyectoFinal.Controlador.Usuarios
                 cmd = connection.CreateCommand();
 
                 cmd.CommandText = "SELECT * " +
-                    "FROM [Usuarios].[Usuario] u " +
-                    "INNER JOIN [Personas] On u.IdPersona = p.IdPersona " +
+                    "FROM [Usuarios].[Usuarios] u " +
+                    "INNER JOIN [Personas] p On u.Persona = p.IdPersona " +
                     "WHERE IdUsuario = @Id";
 
                 cmd.Parameters.AddWithValue("@Id", id);

@@ -44,8 +44,10 @@ namespace ProyectoFinal.Vistas
             TxtNumero.EditValue = "";
             TxtColonia.EditValue = "";
 
-            lst = new Modelo.ListaContactos();
-
+            lst = new Modelo.ListaContactos
+            {
+                IdListaContactos = 0
+            };
             GcContactos.DataSource = lst;
 
             CargarProveedores();
@@ -68,6 +70,8 @@ namespace ProyectoFinal.Vistas
             this.TxtCalle.EditValue = p.Calle;
             this.TxtNumero.EditValue = p.Numero;
             this.TxtColonia.EditValue = p.Colonia;
+
+            this.lst.IdListaContactos = p.Contactos.IdListaContactos;
             foreach(Modelo.Contacto c in p.Contactos)
                 this.lst.Add(c);
 
@@ -78,7 +82,7 @@ namespace ProyectoFinal.Vistas
         {
             Modelo.Compras.Proveedor p = new Modelo.Compras.Proveedor()
             {
-                IdProveedor = IdProveedor,
+                IdProveedor = this.IdProveedor,
                 Nombre = (string)TxtNombres.EditValue,
                 Calle = (string)TxtCalle.EditValue,
                 Colonia = (string)TxtColonia.EditValue,
@@ -97,14 +101,13 @@ namespace ProyectoFinal.Vistas
             ctrlProveedores.InsertarProveedor(proveedor);
         }
 
-        private void GuardarCambios()
+        private void GuardarCambios(bool Estatus = true)
         {
             Modelo.Compras.Proveedor proveedor = GenerarProveedor();
+            proveedor.Estatus = Estatus;
             ctrlProveedores.UpdateProveedor(proveedor);
 
             MessageBox.Show("Cambios Guardados con éxito");
-
-            Limpiar();
         }
 
         private void Proveedores_Load(object sender, EventArgs e)
@@ -124,6 +127,8 @@ namespace ProyectoFinal.Vistas
                 GuardarNuevo();
             else
                 GuardarCambios();
+
+            Limpiar();
         }
 
         private void BtnNuevoContacto_Click(object sender, EventArgs e)
@@ -173,12 +178,12 @@ namespace ProyectoFinal.Vistas
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-
+            CargarProveedores();
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-
+            GuardarCambios(false);
         }
 
         private void GcProveedores_Click(object sender, EventArgs e)

@@ -124,20 +124,19 @@
             this.layoutControl1.Controls.Add(this.TxtColonia);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1189, 761);
+            this.layoutControl1.Size = new System.Drawing.Size(892, 618);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // BtnEliminarContacto
             // 
             this.BtnEliminarContacto.Image = global::ProyectoFinal.Properties.Resources.cancel_16x16;
-            this.BtnEliminarContacto.Location = new System.Drawing.Point(1127, 316);
-            this.BtnEliminarContacto.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnEliminarContacto.Location = new System.Drawing.Point(844, 262);
             this.BtnEliminarContacto.Name = "BtnEliminarContacto";
-            this.BtnEliminarContacto.Size = new System.Drawing.Size(31, 27);
+            this.BtnEliminarContacto.Size = new System.Drawing.Size(24, 22);
             this.BtnEliminarContacto.StyleController = this.layoutControl1;
             this.BtnEliminarContacto.TabIndex = 39;
             this.BtnEliminarContacto.Click += new System.EventHandler(this.BtnEliminarContacto_Click);
@@ -145,10 +144,9 @@
             // BtnEditarContacto
             // 
             this.BtnEditarContacto.Image = global::ProyectoFinal.Properties.Resources.editcontact_16x16;
-            this.BtnEditarContacto.Location = new System.Drawing.Point(1127, 283);
-            this.BtnEditarContacto.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnEditarContacto.Location = new System.Drawing.Point(844, 236);
             this.BtnEditarContacto.Name = "BtnEditarContacto";
-            this.BtnEditarContacto.Size = new System.Drawing.Size(31, 27);
+            this.BtnEditarContacto.Size = new System.Drawing.Size(24, 22);
             this.BtnEditarContacto.StyleController = this.layoutControl1;
             this.BtnEditarContacto.TabIndex = 38;
             this.BtnEditarContacto.Click += new System.EventHandler(this.BtnEditarContacto_Click);
@@ -156,22 +154,20 @@
             // BtnNuevoContacto
             // 
             this.BtnNuevoContacto.Image = global::ProyectoFinal.Properties.Resources.add_16x16;
-            this.BtnNuevoContacto.Location = new System.Drawing.Point(1127, 250);
-            this.BtnNuevoContacto.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnNuevoContacto.Location = new System.Drawing.Point(844, 210);
             this.BtnNuevoContacto.Name = "BtnNuevoContacto";
-            this.BtnNuevoContacto.Size = new System.Drawing.Size(31, 27);
+            this.BtnNuevoContacto.Size = new System.Drawing.Size(24, 22);
             this.BtnNuevoContacto.StyleController = this.layoutControl1;
             this.BtnNuevoContacto.TabIndex = 37;
+            this.BtnNuevoContacto.ToolTip = "Agregar";
             this.BtnNuevoContacto.Click += new System.EventHandler(this.BtnNuevoContacto_Click);
             // 
             // GcContactos
             // 
-            this.GcContactos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.GcContactos.Location = new System.Drawing.Point(670, 250);
+            this.GcContactos.Location = new System.Drawing.Point(508, 210);
             this.GcContactos.MainView = this.GvContactos;
-            this.GcContactos.Margin = new System.Windows.Forms.Padding(4);
             this.GcContactos.Name = "GcContactos";
-            this.GcContactos.Size = new System.Drawing.Size(451, 388);
+            this.GcContactos.Size = new System.Drawing.Size(332, 300);
             this.GcContactos.TabIndex = 36;
             this.GcContactos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvContactos});
@@ -216,16 +212,15 @@
             // 
             // GcProveedores
             // 
-            this.GcProveedores.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GcProveedores.Location = new System.Drawing.Point(16, 16);
+            this.GcProveedores.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.GcProveedores.Location = new System.Drawing.Point(12, 12);
             this.GcProveedores.MainView = this.GvProveedores;
-            this.GcProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GcProveedores.Margin = new System.Windows.Forms.Padding(2);
             this.GcProveedores.Name = "GcProveedores";
-            this.GcProveedores.Size = new System.Drawing.Size(633, 729);
+            this.GcProveedores.Size = new System.Drawing.Size(480, 594);
             this.GcProveedores.TabIndex = 35;
             this.GcProveedores.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvProveedores});
-            this.GcProveedores.Click += new System.EventHandler(this.GcProveedores_Click);
             // 
             // GvProveedores
             // 
@@ -248,10 +243,10 @@
             // BtnLimpiar
             // 
             this.BtnLimpiar.ImageUri.Uri = "Clear;Office2013";
-            this.BtnLimpiar.Location = new System.Drawing.Point(915, 659);
-            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnLimpiar.Location = new System.Drawing.Point(691, 526);
+            this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(258, 40);
+            this.BtnLimpiar.Size = new System.Drawing.Size(189, 38);
             this.BtnLimpiar.StyleController = this.layoutControl1;
             this.BtnLimpiar.TabIndex = 33;
             this.BtnLimpiar.Text = "Limpiar";
@@ -261,10 +256,10 @@
             // 
             this.BtnEliminar.Enabled = false;
             this.BtnEliminar.ImageUri.Uri = "Cancel;Office2013";
-            this.BtnEliminar.Location = new System.Drawing.Point(655, 705);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnEliminar.Location = new System.Drawing.Point(496, 568);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(254, 40);
+            this.BtnEliminar.Size = new System.Drawing.Size(191, 38);
             this.BtnEliminar.StyleController = this.layoutControl1;
             this.BtnEliminar.TabIndex = 32;
             this.BtnEliminar.Text = "Inhabilitar";
@@ -274,10 +269,10 @@
             // 
             this.BtnActualizar.Enabled = false;
             this.BtnActualizar.ImageUri.Uri = "Redo;Office2013";
-            this.BtnActualizar.Location = new System.Drawing.Point(915, 705);
-            this.BtnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnActualizar.Location = new System.Drawing.Point(691, 568);
+            this.BtnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(258, 40);
+            this.BtnActualizar.Size = new System.Drawing.Size(189, 38);
             this.BtnActualizar.StyleController = this.layoutControl1;
             this.BtnActualizar.TabIndex = 31;
             this.BtnActualizar.Text = "Actualizar";
@@ -285,77 +280,77 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.ImageUri.Uri = "Add;Size32x32;Office2013";
-            this.BtnGuardar.Location = new System.Drawing.Point(655, 659);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnGuardar.ImageUri.Uri = "Save;Size32x32;Office2013";
+            this.BtnGuardar.Location = new System.Drawing.Point(496, 526);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(254, 40);
+            this.BtnGuardar.Size = new System.Drawing.Size(191, 38);
             this.BtnGuardar.StyleController = this.layoutControl1;
             this.BtnGuardar.TabIndex = 30;
-            this.BtnGuardar.Text = "Agregar";
+            this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // TxtIdProveedor
             // 
             this.TxtIdProveedor.EditValue = "";
-            this.TxtIdProveedor.Location = new System.Drawing.Point(764, 16);
-            this.TxtIdProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtIdProveedor.Location = new System.Drawing.Point(588, 12);
+            this.TxtIdProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.TxtIdProveedor.Name = "TxtIdProveedor";
-            this.TxtIdProveedor.Size = new System.Drawing.Size(409, 22);
+            this.TxtIdProveedor.Size = new System.Drawing.Size(292, 20);
             this.TxtIdProveedor.StyleController = this.layoutControl1;
             this.TxtIdProveedor.TabIndex = 4;
             // 
             // TxtNombres
             // 
-            this.TxtNombres.Location = new System.Drawing.Point(764, 44);
-            this.TxtNombres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtNombres.Location = new System.Drawing.Point(588, 36);
+            this.TxtNombres.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNombres.Name = "TxtNombres";
-            this.TxtNombres.Size = new System.Drawing.Size(409, 22);
+            this.TxtNombres.Size = new System.Drawing.Size(292, 20);
             this.TxtNombres.StyleController = this.layoutControl1;
             this.TxtNombres.TabIndex = 5;
             // 
             // TxtTelefono
             // 
-            this.TxtTelefono.Location = new System.Drawing.Point(764, 72);
-            this.TxtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtTelefono.Location = new System.Drawing.Point(588, 60);
+            this.TxtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.TxtTelefono.Name = "TxtTelefono";
-            this.TxtTelefono.Size = new System.Drawing.Size(409, 22);
+            this.TxtTelefono.Size = new System.Drawing.Size(292, 20);
             this.TxtTelefono.StyleController = this.layoutControl1;
             this.TxtTelefono.TabIndex = 7;
             // 
             // TxtCorreoElectronico
             // 
-            this.TxtCorreoElectronico.Location = new System.Drawing.Point(764, 100);
-            this.TxtCorreoElectronico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtCorreoElectronico.Location = new System.Drawing.Point(588, 84);
+            this.TxtCorreoElectronico.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCorreoElectronico.Name = "TxtCorreoElectronico";
-            this.TxtCorreoElectronico.Size = new System.Drawing.Size(409, 22);
+            this.TxtCorreoElectronico.Size = new System.Drawing.Size(292, 20);
             this.TxtCorreoElectronico.StyleController = this.layoutControl1;
             this.TxtCorreoElectronico.TabIndex = 18;
             // 
             // TxtCalle
             // 
-            this.TxtCalle.Location = new System.Drawing.Point(764, 128);
-            this.TxtCalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtCalle.Location = new System.Drawing.Point(588, 108);
+            this.TxtCalle.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCalle.Name = "TxtCalle";
-            this.TxtCalle.Size = new System.Drawing.Size(409, 22);
+            this.TxtCalle.Size = new System.Drawing.Size(292, 20);
             this.TxtCalle.StyleController = this.layoutControl1;
             this.TxtCalle.TabIndex = 19;
             // 
             // TxtNumero
             // 
-            this.TxtNumero.Location = new System.Drawing.Point(764, 156);
-            this.TxtNumero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtNumero.Location = new System.Drawing.Point(588, 132);
+            this.TxtNumero.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNumero.Name = "TxtNumero";
-            this.TxtNumero.Size = new System.Drawing.Size(409, 22);
+            this.TxtNumero.Size = new System.Drawing.Size(292, 20);
             this.TxtNumero.StyleController = this.layoutControl1;
             this.TxtNumero.TabIndex = 20;
             // 
             // TxtColonia
             // 
-            this.TxtColonia.Location = new System.Drawing.Point(764, 184);
-            this.TxtColonia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtColonia.Location = new System.Drawing.Point(588, 156);
+            this.TxtColonia.Margin = new System.Windows.Forms.Padding(2);
             this.TxtColonia.Name = "TxtColonia";
-            this.TxtColonia.Size = new System.Drawing.Size(409, 22);
+            this.TxtColonia.Size = new System.Drawing.Size(292, 20);
             this.TxtColonia.StyleController = this.layoutControl1;
             this.TxtColonia.TabIndex = 21;
             // 
@@ -378,9 +373,9 @@
             this.layoutControlItem5,
             this.layoutControlItem6});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1189, 761);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(892, 618);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // LciIdProveedor
@@ -388,78 +383,78 @@
             this.LciIdProveedor.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.LciIdProveedor.Control = this.TxtIdProveedor;
             this.LciIdProveedor.CustomizationFormText = "ID de Usuario";
-            this.LciIdProveedor.Location = new System.Drawing.Point(639, 0);
+            this.LciIdProveedor.Location = new System.Drawing.Point(484, 0);
             this.LciIdProveedor.Name = "LciIdProveedor";
-            this.LciIdProveedor.Size = new System.Drawing.Size(524, 28);
+            this.LciIdProveedor.Size = new System.Drawing.Size(388, 24);
             this.LciIdProveedor.Text = "ID de Proveedor";
-            this.LciIdProveedor.TextSize = new System.Drawing.Size(105, 16);
+            this.LciIdProveedor.TextSize = new System.Drawing.Size(88, 13);
             // 
             // LciNombre
             // 
             this.LciNombre.Control = this.TxtNombres;
             this.LciNombre.CustomizationFormText = "Persona";
-            this.LciNombre.Location = new System.Drawing.Point(639, 28);
+            this.LciNombre.Location = new System.Drawing.Point(484, 24);
             this.LciNombre.Name = "LciNombre";
-            this.LciNombre.Size = new System.Drawing.Size(524, 28);
+            this.LciNombre.Size = new System.Drawing.Size(388, 24);
             this.LciNombre.Text = "Nombres";
-            this.LciNombre.TextSize = new System.Drawing.Size(105, 16);
+            this.LciNombre.TextSize = new System.Drawing.Size(88, 13);
             // 
             // LciTelefono
             // 
             this.LciTelefono.Control = this.TxtTelefono;
             this.LciTelefono.CustomizationFormText = "Contraseña";
-            this.LciTelefono.Location = new System.Drawing.Point(639, 56);
+            this.LciTelefono.Location = new System.Drawing.Point(484, 48);
             this.LciTelefono.Name = "LciTelefono";
-            this.LciTelefono.Size = new System.Drawing.Size(524, 28);
+            this.LciTelefono.Size = new System.Drawing.Size(388, 24);
             this.LciTelefono.Text = "Telefono";
-            this.LciTelefono.TextSize = new System.Drawing.Size(105, 16);
+            this.LciTelefono.TextSize = new System.Drawing.Size(88, 13);
             // 
             // LciCorreoElectronico
             // 
             this.LciCorreoElectronico.Control = this.TxtCorreoElectronico;
             this.LciCorreoElectronico.CustomizationFormText = "Correo Electronico";
-            this.LciCorreoElectronico.Location = new System.Drawing.Point(639, 84);
+            this.LciCorreoElectronico.Location = new System.Drawing.Point(484, 72);
             this.LciCorreoElectronico.Name = "LciCorreoElectronico";
-            this.LciCorreoElectronico.Size = new System.Drawing.Size(524, 28);
+            this.LciCorreoElectronico.Size = new System.Drawing.Size(388, 24);
             this.LciCorreoElectronico.Text = "Correo Electronico";
-            this.LciCorreoElectronico.TextSize = new System.Drawing.Size(105, 16);
+            this.LciCorreoElectronico.TextSize = new System.Drawing.Size(88, 13);
             // 
             // LciCalle
             // 
             this.LciCalle.Control = this.TxtCalle;
             this.LciCalle.CustomizationFormText = "Calle";
-            this.LciCalle.Location = new System.Drawing.Point(639, 112);
+            this.LciCalle.Location = new System.Drawing.Point(484, 96);
             this.LciCalle.Name = "LciCalle";
-            this.LciCalle.Size = new System.Drawing.Size(524, 28);
+            this.LciCalle.Size = new System.Drawing.Size(388, 24);
             this.LciCalle.Text = "Calle";
-            this.LciCalle.TextSize = new System.Drawing.Size(105, 16);
+            this.LciCalle.TextSize = new System.Drawing.Size(88, 13);
             // 
             // LciNumero
             // 
             this.LciNumero.Control = this.TxtNumero;
             this.LciNumero.CustomizationFormText = "Número";
-            this.LciNumero.Location = new System.Drawing.Point(639, 140);
+            this.LciNumero.Location = new System.Drawing.Point(484, 120);
             this.LciNumero.Name = "LciNumero";
-            this.LciNumero.Size = new System.Drawing.Size(524, 28);
+            this.LciNumero.Size = new System.Drawing.Size(388, 24);
             this.LciNumero.Text = "Número";
-            this.LciNumero.TextSize = new System.Drawing.Size(105, 16);
+            this.LciNumero.TextSize = new System.Drawing.Size(88, 13);
             // 
             // LciColonia
             // 
             this.LciColonia.Control = this.TxtColonia;
             this.LciColonia.CustomizationFormText = "Colonia";
-            this.LciColonia.Location = new System.Drawing.Point(639, 168);
+            this.LciColonia.Location = new System.Drawing.Point(484, 144);
             this.LciColonia.Name = "LciColonia";
-            this.LciColonia.Size = new System.Drawing.Size(524, 28);
+            this.LciColonia.Size = new System.Drawing.Size(388, 24);
             this.LciColonia.Text = "Colonia";
-            this.LciColonia.TextSize = new System.Drawing.Size(105, 16);
+            this.LciColonia.TextSize = new System.Drawing.Size(88, 13);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.BtnActualizar;
-            this.layoutControlItem8.Location = new System.Drawing.Point(899, 689);
+            this.layoutControlItem8.Location = new System.Drawing.Point(679, 556);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(264, 46);
+            this.layoutControlItem8.Size = new System.Drawing.Size(193, 42);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -468,16 +463,16 @@
             this.layoutControlItem11.Control = this.GcProveedores;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(639, 735);
+            this.layoutControlItem11.Size = new System.Drawing.Size(484, 598);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.BtnGuardar;
-            this.layoutControlItem9.Location = new System.Drawing.Point(639, 643);
+            this.layoutControlItem9.Location = new System.Drawing.Point(484, 514);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(260, 46);
+            this.layoutControlItem9.Size = new System.Drawing.Size(195, 42);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -489,43 +484,43 @@
             this.layoutControlItem13,
             this.layoutControlItem12,
             this.layoutControlItem7});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(639, 196);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(484, 168);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(524, 447);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(388, 346);
             this.layoutControlGroup2.Text = "Lista de Contactos";
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.BtnEliminarContacto;
-            this.layoutControlItem14.Location = new System.Drawing.Point(457, 66);
+            this.layoutControlItem14.Location = new System.Drawing.Point(336, 52);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(37, 33);
+            this.layoutControlItem14.Size = new System.Drawing.Size(28, 26);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(457, 99);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(336, 78);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(37, 295);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(28, 226);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.BtnEditarContacto;
-            this.layoutControlItem13.Location = new System.Drawing.Point(457, 33);
+            this.layoutControlItem13.Location = new System.Drawing.Point(336, 26);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(37, 33);
+            this.layoutControlItem13.Size = new System.Drawing.Size(28, 26);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.BtnNuevoContacto;
-            this.layoutControlItem12.Location = new System.Drawing.Point(457, 0);
+            this.layoutControlItem12.Location = new System.Drawing.Point(336, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(37, 33);
+            this.layoutControlItem12.Size = new System.Drawing.Size(28, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
@@ -534,35 +529,35 @@
             this.layoutControlItem7.Control = this.GcContactos;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(457, 394);
+            this.layoutControlItem7.Size = new System.Drawing.Size(336, 304);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.BtnLimpiar;
-            this.layoutControlItem5.Location = new System.Drawing.Point(899, 643);
+            this.layoutControlItem5.Location = new System.Drawing.Point(679, 514);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(264, 46);
+            this.layoutControlItem5.Size = new System.Drawing.Size(193, 42);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.BtnEliminar;
-            this.layoutControlItem6.Location = new System.Drawing.Point(639, 689);
+            this.layoutControlItem6.Location = new System.Drawing.Point(484, 556);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(260, 46);
+            this.layoutControlItem6.Size = new System.Drawing.Size(195, 42);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // Proveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 761);
+            this.ClientSize = new System.Drawing.Size(892, 618);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Proveedores";
             this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.Proveedores_Load);
