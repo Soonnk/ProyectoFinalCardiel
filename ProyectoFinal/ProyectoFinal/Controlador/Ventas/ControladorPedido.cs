@@ -163,7 +163,12 @@ namespace ProyectoFinal.Controlador.Ventas
                 connection.Open();
 
                 SqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM [Ventas].[Pedidos] p INNER JOIN [Ventas].[DetallesPedido] d ON p.IdPedido = d.Pedido";
+                cmd.CommandText = "SELECT p.*, c.Nombre as NombreCliente, CONCAT(per.Nombre, ' ', per.ApellidoPaterno) as NombreVendedor " +
+                    "FROM[Ventas].[Pedidos] p " +
+                    "INNER JOIN[Ventas].[Clientes] c ON p.Cliente = c.IdCliente " +
+                    "INNER JOIN[Usuarios].[Usuarios] u On p.Vendedor = u.IdUsuario " +
+                    "INNER JOIN[Personas] per On per.IdPersona = u.Persona;";
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
                 DataTable dt = new DataTable();
@@ -187,44 +192,44 @@ namespace ProyectoFinal.Controlador.Ventas
 
         public Pedido getById(int idPedido)
         {
-            Pedido p = null;
-
             SqlConnection connection = null;
             SqlCommand cmd = null;
             SqlDataReader reader = null;
+            Modelo.Ventas.Pedido p = null;
             try
             {
                 connection = GetConnection();
+                connection.Open();
                 cmd = connection.CreateCommand();
 
-                cmd.CommandText = "SELECT * FROM [Ventas].[Pedido] p INNER JOIN [Ventas].[DetallesPedido] d ON p.IdPedido = d.Pedido " +
-                    "WHERE IdPedido = @IdPedido";
-                cmd.Parameters.AddWithValue("@IdPedido", idPedido);
+                cmd.CommandText = "SELECT * FROM [Ventas].[Pedidos] WHERE IdPedido = @idPedido";
+                
+                cmd.Parameters.AddWithValue("@idPedido", idPedido);
 
                 reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
                     p = new Pedido();
-                    Cliente c = new Cliente();
-                    Usuario v = new Usuario();
-                    p.IdPedido = reader.GetInt32(0);
-                    c.IdCliente = reader.GetInt32(1);
-                    p.Cliente = c;
-                    v.IdPersona = reader.GetInt32(2);
-                    p.Vendedor = v;
+                    p.IdPedido = (int)reader["IdPedido"];
+                    p.Cliente = new Controlador.Ventas.ControladorCliente().GetById((int)reader["Cliente"]);
+                    p.Vendedor = new Controlador.Usuarios.ControladorUsuario().GetById((int)reader["Vendedor"]);
                     p.FechaPedido = (DateTime)reader["FechaPedido"];
                 }
                 return p;
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+
+            finally
+            {
                 if (connection != null)
                 {
                     connection.Close();
                     connection.Dispose();
                 }
-                throw ex;
             }
         }
 
