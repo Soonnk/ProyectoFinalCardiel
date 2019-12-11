@@ -65,6 +65,8 @@ namespace ProyectoFinal.Controlador.Usuarios
                 cmd.Parameters.AddWithValue("@Departamento", u.Departamento);
 
                 cmd.ExecuteNonQuery();
+
+                transaction.Commit();
             }
             catch (Exception ex)
             {
@@ -157,10 +159,10 @@ namespace ProyectoFinal.Controlador.Usuarios
                 connection = GetConnection();
                 connection.Open();
 
-                string query = "SELECT u.Iduuario, u.Username, p.Nombre, p.ApellidoPaterno, p.ApellidoMaterno," +
+                string query = "SELECT u.IdUsuario, u.Username, p.Nombre, p.ApellidoPaterno, p.ApellidoMaterno," +
                     " n.Descripcion as DescripcionNivelUsuario, d.Descripcion as DescripcionDepartamento " +
-                    "FROM [Usuarios].[Usuario] u " +
-                    "INNER JOIN [Personas] On u.IdPersona = p.IdPersona " +
+                    "FROM [Usuarios].[Usuarios] u " +
+                    "INNER JOIN [Personas] p On u.Persona = p.IdPersona " +
                     "INNER JOIN [Usuarios].[c_NivelesUsuario] n On n.IdNivel = u.NivelUsuario " +
                     "INNER JOIN [Usuarios].[Departamentos] d On d.IdDepartamento = u.Departamento";
 

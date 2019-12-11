@@ -28,7 +28,9 @@ namespace ProyectoFinal.Controlador.Produccion
                 connection.Open();
                 cmd = connection.CreateCommand();
 
-                cmd.CommandText = "INSERT INTO [Produccion].[GastosMaterial] VALUES (" +
+                cmd.CommandText = "UPDATE [Produccion].[Materiales] SET Existencia = Existencia - @Cantidad WHERE IdMaterial = @Material" +
+                    "" + Environment.NewLine +
+                    "INSERT INTO [Produccion].[GastosMaterial] VALUES (" +
                     "@Material," +
                     "@LoteEtapa," +
                     "@Cantidad," +
@@ -45,11 +47,7 @@ namespace ProyectoFinal.Controlador.Produccion
 
                 int id = (int)cmd.ExecuteScalar();
                 g.IdGastoMaterial = id;
-
-                if (!e.GastosMateriales.Contains(g))
-                {
-                    e.GastosMateriales.Add(g);
-                }
+                
             }
             catch (Exception ex)
             {
@@ -64,6 +62,49 @@ namespace ProyectoFinal.Controlador.Produccion
                 }
             }
         }
- 
+
+        public List<GastosMaterial> CargarGastosMaterial(LoteEtapa e)
+        {
+            SqlCommand cmd = null;
+            SqlConnection connection = null;
+            SqlDataReader reader = null;
+
+            try
+            {
+                connection = GetConnection();
+                connection.Open();
+
+                cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM [Produccion].[GastosMaterial] WHERE LoteEtapa = @LoteEtapa";
+                cmd.Parameters.AddWithValue("@LoteEtapa", e.IdLoteEtapa);
+
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read()) {
+                    GastosMaterial g = new GastosMaterial();
+                    g.Cantidad = (double)(decimal)reader["Cantidad"];
+                    g.IdGastoMaterial = (int)reader["IdGastoMaterial"];
+                    g.Material = new Controlador.Produccion.ControladorMaterial().GetById((int)reader["Material"]);
+                    g.Observacion = (string)reader["Observacion"];
+                    g.Tipo = (GastosMaterial.TiposGasto)reader["Tipo"];
+
+                    e.GastosMateriales.Add(g);
+                }
+
+                return e.GastosMateriales;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
+            }
+        }
     }
 }

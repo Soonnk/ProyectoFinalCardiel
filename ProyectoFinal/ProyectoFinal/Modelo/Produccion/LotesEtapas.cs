@@ -8,6 +8,11 @@ namespace ProyectoFinal.Modelo.Produccion
 {
     public class LoteEtapa
     {
+        public LoteEtapa()
+        {
+            this.GastosMateriales = new List<GastosMaterial>();
+        }
+
         public int IdLoteEtapa { get; set; }
         public Usuarios.Usuario OrdenadoPor { get; set; }
         public DateTime FechaOrdemamiento { get; set; }

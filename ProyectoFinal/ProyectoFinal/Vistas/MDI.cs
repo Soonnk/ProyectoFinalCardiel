@@ -27,7 +27,53 @@ namespace ProyectoFinal.Vistas
 
         private void MDI_Load(object sender, EventArgs e)
         {
+            CenterToScreen();
 
+            PermissionCheck();
+        }
+
+        private void PermissionCheck()
+        {
+            LciUsuarios.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciClientes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciProveedores.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciMateriales.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciProduccion.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciPedidos.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciListaPedidos.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciCompra.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciListaCompras.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            LciDesigns.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+
+            switch (Session.UsuarioEnCurso.NivelUsuario) {
+                case Modelo.Usuarios.Usuario.NivelesUsuario.Jefe:
+                    LciMateriales.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciProduccion.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciDesigns.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    break;
+                case Modelo.Usuarios.Usuario.NivelesUsuario.Obrero:
+                    LciProduccion.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciDesigns.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    break;
+                case Modelo.Usuarios.Usuario.NivelesUsuario.Vendedor:
+                    LciClientes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciPedidos.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciListaPedidos.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciDesigns.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    break;
+                default:
+                    LciUsuarios.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciClientes.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciProveedores.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciMateriales.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciProduccion.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciPedidos.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciListaPedidos.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciCompra.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciListaCompras.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    LciDesigns.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                    break;
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

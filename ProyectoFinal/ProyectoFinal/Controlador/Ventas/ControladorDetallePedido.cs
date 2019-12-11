@@ -27,7 +27,7 @@ namespace ProyectoFinal.Controlador.Ventas
                 connection.Open();
                 cmd = connection.CreateCommand();
 
-                cmd.CommandText = "SELECT * FROM [Ventas].[DetallePedido] WHERE IdDetalle = @Id";
+                cmd.CommandText = "SELECT * FROM [Ventas].[DetallesPedido] WHERE IdDetalle = @Id";
 
                 cmd.Parameters.AddWithValue("@Id", Id);
 
@@ -35,13 +35,12 @@ namespace ProyectoFinal.Controlador.Ventas
 
                 if (reader.Read())
                 {
-                    d = new Modelo.Ventas.DetallePedido() {
-                        IdDetallePedido = Id,
-                        Base = new Modelo.Produccion.Material() { IdMaterial = (int)reader["Base"] },
-                        Design = new Modelo.Produccion.Design() { IdDesign = (int)reader["Design"] },
-                        Cantidad = (double)reader["Cantidad"],
-                        Precio = (double)reader["Precio"]
-                    };
+                    d = new Modelo.Ventas.DetallePedido();
+                    d.IdDetallePedido = Id;
+                    d.Base = new Modelo.Produccion.Material() { IdMaterial = (int)reader["Base"] };
+                    d.Design = new Modelo.Produccion.Design() { IdDesign = (int)reader["Design"] };
+                    d.Cantidad = (int)reader["Cantidad"];
+                    d.Precio = (double)(decimal)reader["Precio"];
                 }
 
                 return d;
