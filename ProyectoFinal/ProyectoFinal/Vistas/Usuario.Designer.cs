@@ -235,6 +235,7 @@
             this.gridColumn6});
             this.gridView3.GridControl = this.gcPersona;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView3_RowClick);
             // 

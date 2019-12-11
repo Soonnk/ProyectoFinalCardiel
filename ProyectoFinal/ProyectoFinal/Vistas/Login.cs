@@ -65,5 +65,43 @@ namespace ProyectoFinal.Vistas
         {
             this.CenterToScreen();
         }
+
+        private void txtContrasenia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                if (!String.IsNullOrEmpty(txtUsuario.Text) && !String.IsNullOrEmpty(txtContrasenia.Text))
+                {
+
+
+                    try
+                    {
+                        ConexionSQL conn = new ConexionSQL();
+                        Boolean res = conn.iniciarSesion(txtUsuario.Text, txtContrasenia.Text);
+                        if (res)
+                        {
+                            this.Hide();
+                            MDI menuPrincipal = new MDI();
+                            menuPrincipal.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Datos incorrectos");
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error inesperado" + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese el usuario y la contraseña para acceder al sistema");
+                }
+
+
+
+            }
+        }
     }
 }

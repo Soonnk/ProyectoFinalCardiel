@@ -41,6 +41,10 @@ namespace ProyectoFinal.Vistas
                 GuardarNuevo();
             else
                 GuardarCambios();
+
+
+            cargarUsuarios();
+            limpiar();
         }
 
         private void textEdit1_EditValueChanged(object sender, EventArgs e)

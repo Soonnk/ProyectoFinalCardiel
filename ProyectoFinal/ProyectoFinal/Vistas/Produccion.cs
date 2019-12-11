@@ -46,12 +46,16 @@ namespace ProyectoFinal.Vistas
                     if (dt.Rows.Count > 0)
                         GcPendientes.DataSource = dt.Select("[Etapa] = " + (((int)Session.UsuarioEnCurso.Departamento) - 2)).CopyToDataTable();
                     else
+                    {
                         MessageBox.Show("No se encontró ninguna tarea para tu departamento");
+                        GcPendientes.DataSource = null;
+                    }
                 }
             }
             catch (System.InvalidOperationException ex) //when (ex.Message == "El origen de datos no contiene DataRows")
             {
                 MessageBox.Show("No se encontró ninguna tarea para tu departamento");
+                GcPendientes.DataSource = null;
             }
             catch (Exception ex)
             {

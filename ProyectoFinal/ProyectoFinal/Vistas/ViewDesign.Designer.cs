@@ -80,18 +80,20 @@
             this.layoutControl1.Controls.Add(this.PicturBoxDesign);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(584, 413);
+            this.layoutControl1.Size = new System.Drawing.Size(779, 508);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // BtnDescargar
             // 
             this.BtnDescargar.Image = global::ProyectoFinal.Properties.Resources.download_16x16;
-            this.BtnDescargar.Location = new System.Drawing.Point(12, 278);
+            this.BtnDescargar.Location = new System.Drawing.Point(16, 341);
+            this.BtnDescargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnDescargar.Name = "BtnDescargar";
-            this.BtnDescargar.Size = new System.Drawing.Size(122, 22);
+            this.BtnDescargar.Size = new System.Drawing.Size(162, 27);
             this.BtnDescargar.StyleController = this.layoutControl1;
             this.BtnDescargar.TabIndex = 10;
             this.BtnDescargar.Text = "Descargar";
@@ -100,9 +102,10 @@
             // BtnNuevo
             // 
             this.BtnNuevo.Image = global::ProyectoFinal.Properties.Resources.add_16x16;
-            this.BtnNuevo.Location = new System.Drawing.Point(198, 12);
+            this.BtnNuevo.Location = new System.Drawing.Point(264, 16);
+            this.BtnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(63, 22);
+            this.BtnNuevo.Size = new System.Drawing.Size(84, 27);
             this.BtnNuevo.StyleController = this.layoutControl1;
             this.BtnNuevo.TabIndex = 9;
             this.BtnNuevo.Text = "Nuevo";
@@ -110,19 +113,22 @@
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(52, 12);
+            this.TxtNombre.Location = new System.Drawing.Point(64, 16);
+            this.TxtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(142, 20);
+            this.TxtNombre.Size = new System.Drawing.Size(194, 22);
             this.TxtNombre.StyleController = this.layoutControl1;
             this.TxtNombre.TabIndex = 8;
             this.TxtNombre.EditValueChanged += new System.EventHandler(this.TxtNombre_EditValueChanged);
             // 
             // GcDesigns
             // 
-            this.GcDesigns.Location = new System.Drawing.Point(265, 12);
+            this.GcDesigns.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GcDesigns.Location = new System.Drawing.Point(354, 16);
             this.GcDesigns.MainView = this.GvDesigns;
+            this.GcDesigns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GcDesigns.Name = "GcDesigns";
-            this.GcDesigns.Size = new System.Drawing.Size(307, 389);
+            this.GcDesigns.Size = new System.Drawing.Size(409, 476);
             this.GcDesigns.TabIndex = 7;
             this.GcDesigns.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvDesigns});
@@ -146,9 +152,10 @@
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(143, 242);
+            this.BtnCancelar.Location = new System.Drawing.Point(191, 298);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(118, 22);
+            this.BtnCancelar.Size = new System.Drawing.Size(157, 27);
             this.BtnCancelar.StyleController = this.layoutControl1;
             this.BtnCancelar.TabIndex = 6;
             this.BtnCancelar.Text = "Cancelar";
@@ -156,9 +163,10 @@
             // 
             // BtnAceptar
             // 
-            this.BtnAceptar.Location = new System.Drawing.Point(12, 242);
+            this.BtnAceptar.Location = new System.Drawing.Point(16, 298);
+            this.BtnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(127, 22);
+            this.BtnAceptar.Size = new System.Drawing.Size(169, 27);
             this.BtnAceptar.StyleController = this.layoutControl1;
             this.BtnAceptar.TabIndex = 5;
             this.BtnAceptar.Text = "Aceptar";
@@ -168,12 +176,13 @@
             // 
             this.PicturBoxDesign.Cursor = System.Windows.Forms.Cursors.Default;
             this.PicturBoxDesign.EditValue = global::ProyectoFinal.Properties.Resources.add_32x32;
-            this.PicturBoxDesign.Location = new System.Drawing.Point(12, 38);
+            this.PicturBoxDesign.Location = new System.Drawing.Point(16, 49);
+            this.PicturBoxDesign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PicturBoxDesign.Name = "PicturBoxDesign";
             this.PicturBoxDesign.Properties.InitialImage = global::ProyectoFinal.Properties.Resources.add_32x32;
             this.PicturBoxDesign.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.PicturBoxDesign.Properties.ZoomAccelerationFactor = 1D;
-            this.PicturBoxDesign.Size = new System.Drawing.Size(249, 200);
+            this.PicturBoxDesign.Size = new System.Drawing.Size(332, 243);
             this.PicturBoxDesign.StyleController = this.layoutControl1;
             this.PicturBoxDesign.TabIndex = 4;
             this.PicturBoxDesign.Click += new System.EventHandler(this.PicturBoxDesign_Click);
@@ -195,51 +204,51 @@
             this.emptySpaceItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(584, 413);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(779, 508);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.PicturBoxDesign;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 33);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(253, 204);
+            this.layoutControlItem1.Size = new System.Drawing.Size(338, 249);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.BtnAceptar;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 230);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 282);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(131, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(175, 33);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.BtnCancelar;
-            this.layoutControlItem3.Location = new System.Drawing.Point(131, 230);
+            this.layoutControlItem3.Location = new System.Drawing.Point(175, 282);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(122, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(163, 33);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.GcDesigns;
-            this.layoutControlItem4.Location = new System.Drawing.Point(253, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(338, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(311, 393);
+            this.layoutControlItem4.Size = new System.Drawing.Size(415, 482);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 292);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 358);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(253, 101);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(338, 124);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
@@ -247,42 +256,42 @@
             this.layoutControlItem5.Control = this.TxtNombre;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(186, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(248, 33);
             this.layoutControlItem5.Text = "Nombre";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(37, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(45, 16);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.BtnNuevo;
-            this.layoutControlItem6.Location = new System.Drawing.Point(186, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(248, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(67, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(90, 33);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(126, 266);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(168, 325);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(127, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(170, 33);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.BtnDescargar;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 266);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 325);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(126, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(168, 33);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 256);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 315);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(253, 10);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(338, 10);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // FileDialogSvg
@@ -292,12 +301,13 @@
             // 
             // ViewDesign
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 413);
+            this.ClientSize = new System.Drawing.Size(779, 508);
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ViewDesign";
-            this.Text = "ViewDesign";
+            this.Text = "Diseños";
             this.Load += new System.EventHandler(this.ViewDesign_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

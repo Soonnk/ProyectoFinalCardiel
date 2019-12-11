@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.GcDetallePedido = new DevExpress.XtraGrid.GridControl();
             this.GvDetallePedido = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -40,6 +39,7 @@
             this.ColDesign = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CmbDesign = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
@@ -60,7 +60,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.LciCliente = new DevExpress.XtraLayout.LayoutControlItem();
             this.campoUsuario1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GcDetallePedido)).BeginInit();
@@ -97,24 +97,24 @@
             this.layoutControl1.Controls.Add(this.dtpFecha);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(892, 589);
+            this.layoutControl1.Size = new System.Drawing.Size(1189, 725);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // GcDetallePedido
             // 
-            this.GcDetallePedido.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.GcDetallePedido.Location = new System.Drawing.Point(12, 138);
+            this.GcDetallePedido.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GcDetallePedido.Location = new System.Drawing.Point(16, 154);
             this.GcDetallePedido.MainView = this.GvDetallePedido;
-            this.GcDetallePedido.Margin = new System.Windows.Forms.Padding(2);
+            this.GcDetallePedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GcDetallePedido.Name = "GcDetallePedido";
             this.GcDetallePedido.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.CmbBase,
             this.CmbDesign});
-            this.GcDetallePedido.Size = new System.Drawing.Size(868, 439);
+            this.GcDetallePedido.Size = new System.Drawing.Size(1157, 555);
             this.GcDetallePedido.TabIndex = 23;
             this.GcDetallePedido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvDetallePedido});
@@ -199,15 +199,26 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CmbDesign.DisplayMember = "Descripcion";
             this.CmbDesign.Name = "CmbDesign";
+            this.CmbDesign.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
             this.CmbDesign.ValueMember = "IdDesign";
             this.CmbDesign.View = this.repositoryItemGridLookUpEdit2View;
             // 
             // repositoryItemGridLookUpEdit2View
             // 
+            this.repositoryItemGridLookUpEdit2View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1});
             this.repositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemGridLookUpEdit2View.Name = "repositoryItemGridLookUpEdit2View";
             this.repositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Diseño";
+            this.gridColumn1.FieldName = "Descripcion";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // ColCantidad
             // 
@@ -230,10 +241,10 @@
             // simpleButton5
             // 
             this.simpleButton5.ImageUri.Uri = "Clear;Office2013";
-            this.simpleButton5.Location = new System.Drawing.Point(365, 96);
-            this.simpleButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButton5.Location = new System.Drawing.Point(487, 108);
+            this.simpleButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(515, 38);
+            this.simpleButton5.Size = new System.Drawing.Size(686, 40);
             this.simpleButton5.StyleController = this.layoutControl1;
             this.simpleButton5.TabIndex = 21;
             this.simpleButton5.Text = "Limpiar";
@@ -241,10 +252,10 @@
             // simpleButton4
             // 
             this.simpleButton4.ImageUri.Uri = "Cancel;Office2013";
-            this.simpleButton4.Location = new System.Drawing.Point(365, 54);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButton4.Location = new System.Drawing.Point(487, 62);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(515, 38);
+            this.simpleButton4.Size = new System.Drawing.Size(686, 40);
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 20;
             this.simpleButton4.Text = "Eliminar";
@@ -253,10 +264,10 @@
             // 
             this.BtnGuardar.Image = global::ProyectoFinal.Properties.Resources.save_32x32;
             this.BtnGuardar.ImageUri.Uri = "Add;Size32x32;Office2013";
-            this.BtnGuardar.Location = new System.Drawing.Point(365, 12);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnGuardar.Location = new System.Drawing.Point(487, 16);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(515, 38);
+            this.BtnGuardar.Size = new System.Drawing.Size(686, 40);
             this.BtnGuardar.StyleController = this.layoutControl1;
             this.BtnGuardar.TabIndex = 18;
             this.BtnGuardar.Text = "Agregar";
@@ -265,17 +276,17 @@
             // txtIdPedido
             // 
             this.txtIdPedido.EditValue = "";
-            this.txtIdPedido.Location = new System.Drawing.Point(77, 12);
-            this.txtIdPedido.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdPedido.Location = new System.Drawing.Point(92, 16);
+            this.txtIdPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdPedido.Name = "txtIdPedido";
-            this.txtIdPedido.Size = new System.Drawing.Size(284, 20);
+            this.txtIdPedido.Size = new System.Drawing.Size(389, 22);
             this.txtIdPedido.StyleController = this.layoutControl1;
             this.txtIdPedido.TabIndex = 4;
             // 
             // cmbIdCliente
             // 
-            this.cmbIdCliente.Location = new System.Drawing.Point(77, 36);
-            this.cmbIdCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbIdCliente.Location = new System.Drawing.Point(92, 44);
+            this.cmbIdCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbIdCliente.Name = "cmbIdCliente";
             this.cmbIdCliente.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -283,7 +294,7 @@
             this.cmbIdCliente.Properties.NullText = "";
             this.cmbIdCliente.Properties.ValueMember = "IdCliente";
             this.cmbIdCliente.Properties.View = this.gridLookUpEdit1View;
-            this.cmbIdCliente.Size = new System.Drawing.Size(284, 20);
+            this.cmbIdCliente.Size = new System.Drawing.Size(389, 22);
             this.cmbIdCliente.StyleController = this.layoutControl1;
             this.cmbIdCliente.TabIndex = 5;
             // 
@@ -319,8 +330,8 @@
             // dtpFecha
             // 
             this.dtpFecha.EditValue = "";
-            this.dtpFecha.Location = new System.Drawing.Point(77, 60);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFecha.Location = new System.Drawing.Point(92, 72);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -332,7 +343,7 @@
             this.dtpFecha.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpFecha.Properties.Mask.EditMask = "";
             this.dtpFecha.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dtpFecha.Size = new System.Drawing.Size(284, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(389, 22);
             this.dtpFecha.StyleController = this.layoutControl1;
             this.dtpFecha.TabIndex = 4;
             // 
@@ -352,7 +363,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(892, 589);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1189, 725);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // campoUsuario
@@ -362,82 +373,82 @@
             this.campoUsuario.CustomizationFormText = "ID de Usuario";
             this.campoUsuario.Location = new System.Drawing.Point(0, 0);
             this.campoUsuario.Name = "campoUsuario";
-            this.campoUsuario.Size = new System.Drawing.Size(353, 24);
+            this.campoUsuario.Size = new System.Drawing.Size(471, 28);
             this.campoUsuario.Text = "ID de Pedido";
-            this.campoUsuario.TextSize = new System.Drawing.Size(61, 13);
+            this.campoUsuario.TextSize = new System.Drawing.Size(72, 16);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.simpleButton5;
-            this.layoutControlItem1.Location = new System.Drawing.Point(353, 84);
+            this.layoutControlItem1.Location = new System.Drawing.Point(471, 92);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(519, 42);
+            this.layoutControlItem1.Size = new System.Drawing.Size(692, 46);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.GcDetallePedido;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 126);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 138);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(872, 443);
+            this.layoutControlItem6.Size = new System.Drawing.Size(1163, 561);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.BtnGuardar;
-            this.layoutControlItem4.Location = new System.Drawing.Point(353, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(471, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(519, 42);
+            this.layoutControlItem4.Size = new System.Drawing.Size(692, 46);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.simpleButton4;
-            this.layoutControlItem2.Location = new System.Drawing.Point(353, 42);
+            this.layoutControlItem2.Location = new System.Drawing.Point(471, 46);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(519, 42);
+            this.layoutControlItem2.Size = new System.Drawing.Size(692, 46);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 72);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 84);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(353, 54);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(471, 54);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // LciCliente
             // 
             this.LciCliente.Control = this.cmbIdCliente;
             this.LciCliente.CustomizationFormText = "Persona";
-            this.LciCliente.Location = new System.Drawing.Point(0, 24);
+            this.LciCliente.Location = new System.Drawing.Point(0, 28);
             this.LciCliente.Name = "LciCliente";
-            this.LciCliente.Size = new System.Drawing.Size(353, 24);
+            this.LciCliente.Size = new System.Drawing.Size(471, 28);
             this.LciCliente.Text = "Id Cliente";
-            this.LciCliente.TextSize = new System.Drawing.Size(61, 13);
+            this.LciCliente.TextSize = new System.Drawing.Size(72, 16);
             // 
             // campoUsuario1
             // 
             this.campoUsuario1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.campoUsuario1.Control = this.dtpFecha;
             this.campoUsuario1.CustomizationFormText = "ID de Usuario";
-            this.campoUsuario1.Location = new System.Drawing.Point(0, 48);
+            this.campoUsuario1.Location = new System.Drawing.Point(0, 56);
             this.campoUsuario1.Name = "campoUsuario1";
-            this.campoUsuario1.Size = new System.Drawing.Size(353, 24);
+            this.campoUsuario1.Size = new System.Drawing.Size(471, 28);
             this.campoUsuario1.Text = "Fecha";
-            this.campoUsuario1.TextSize = new System.Drawing.Size(61, 13);
+            this.campoUsuario1.TextSize = new System.Drawing.Size(72, 16);
             // 
             // Pedidos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 589);
+            this.ClientSize = new System.Drawing.Size(1189, 725);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Pedidos";
             this.Text = "Pedidos";
             this.Load += new System.EventHandler(this.Pedidos_Load);
@@ -502,5 +513,6 @@
         private DevExpress.XtraEditors.DateEdit dtpFecha;
         private DevExpress.XtraLayout.LayoutControlItem campoUsuario1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

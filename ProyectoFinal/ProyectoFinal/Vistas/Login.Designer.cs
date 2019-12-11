@@ -62,20 +62,20 @@
             this.layoutControl1.Controls.Add(this.txtUsuario);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(276, 269);
+            this.layoutControl1.Size = new System.Drawing.Size(368, 331);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProyectoFinal.Properties.Resources.sgp;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 102);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(79, 118);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 155);
+            this.pictureBox1.Size = new System.Drawing.Size(212, 197);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -83,10 +83,10 @@
             // simpleButton1
             // 
             this.simpleButton1.ImageUri.Uri = "Backward;Office2013";
-            this.simpleButton1.Location = new System.Drawing.Point(12, 60);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButton1.Location = new System.Drawing.Point(16, 72);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(252, 38);
+            this.simpleButton1.Size = new System.Drawing.Size(336, 40);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "Iniciar Sesión";
@@ -94,22 +94,24 @@
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(106, 36);
-            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContrasenia.Location = new System.Drawing.Point(129, 44);
+            this.txtContrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Properties.PasswordChar = '*';
-            this.txtContrasenia.Size = new System.Drawing.Size(158, 20);
+            this.txtContrasenia.Size = new System.Drawing.Size(223, 22);
             this.txtContrasenia.StyleController = this.layoutControl1;
             this.txtContrasenia.TabIndex = 5;
+            this.txtContrasenia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasenia_KeyDown);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(106, 12);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsuario.Location = new System.Drawing.Point(129, 16);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(158, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(223, 22);
             this.txtUsuario.StyleController = this.layoutControl1;
             this.txtUsuario.TabIndex = 4;
+            this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContrasenia_KeyDown);
             // 
             // layoutControlGroup1
             // 
@@ -125,7 +127,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(276, 269);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(368, 331);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -133,34 +135,34 @@
             this.layoutControlItem1.Control = this.txtUsuario;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(256, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(342, 28);
             this.layoutControlItem1.Text = "Nombre de usuario";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(90, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(109, 16);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtContrasenia;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(256, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(342, 28);
             this.layoutControlItem2.Text = "Contraseña";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(90, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(109, 16);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.simpleButton1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(256, 42);
+            this.layoutControlItem3.Size = new System.Drawing.Size(342, 46);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.pictureBox1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(47, 90);
+            this.layoutControlItem4.Location = new System.Drawing.Point(63, 102);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(163, 159);
+            this.layoutControlItem4.Size = new System.Drawing.Size(218, 203);
             this.layoutControlItem4.Text = " ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -168,26 +170,26 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(210, 90);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(281, 102);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(46, 159);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(61, 203);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 90);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 102);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(47, 159);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(63, 203);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 269);
+            this.ClientSize = new System.Drawing.Size(368, 331);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);

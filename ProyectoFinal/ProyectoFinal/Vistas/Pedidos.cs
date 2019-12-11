@@ -60,6 +60,8 @@ namespace ProyectoFinal.Vistas
                 DetallePedido.Rows.Add(row);
             }
 
+            GcDetallePedido.DataSource = DetallePedido;
+
             dtpFecha.ReadOnly = true;
             cmbIdCliente.ReadOnly = true;
             LciCliente.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
@@ -131,7 +133,6 @@ namespace ProyectoFinal.Vistas
 
         private void Pedidos_Load(object sender, EventArgs e)
         {
-            Limpiar();
             cargarInterfaz();
 
             CmbBase.DataSource = ctrlBases.GetBy("WHERE Tipo = " + (int)Material.TiposMateriales.Base);

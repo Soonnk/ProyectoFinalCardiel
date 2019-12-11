@@ -56,6 +56,12 @@ namespace ProyectoFinal.Vistas
             LciGuardar.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             LciFechaRecepcion.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
 
+
+            BtnGuardar.Enabled = false;
+            GvCompras.OptionsBehavior.Editable = false;
+            GvCompras.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.None;
+
+
             GvCompras.OptionsBehavior.Editable = false;
         }
 

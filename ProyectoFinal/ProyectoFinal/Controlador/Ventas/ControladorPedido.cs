@@ -221,6 +221,18 @@ namespace ProyectoFinal.Controlador.Ventas
                     p.Cliente = new Controlador.Ventas.ControladorCliente().GetById((int)reader["Cliente"]);
                     p.Vendedor = new Controlador.Usuarios.ControladorUsuario().GetById((int)reader["Vendedor"]);
                     p.FechaPedido = (DateTime)reader["FechaPedido"];
+
+                    p.DetallePedido = new List<DetallePedido>();
+
+                    reader.Close();
+                    cmd.CommandText = "SELECT IdDetalle FROM Ventas.DetallesPedido WHERE Pedido = @Pedido";
+                    cmd.Parameters.AddWithValue("@Pedido", p.IdPedido);
+
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                        p.DetallePedido.Add(new Controlador.Ventas.ControladorDetallePedido().GetById((int)reader["IdDetalle"]));
+
                 }
                 return p;
             }
