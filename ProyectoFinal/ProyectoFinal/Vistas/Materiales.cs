@@ -50,6 +50,7 @@ namespace ProyectoFinal.Vistas
         {
             cargarInterfaz();
             limpiar();
+            cargarMateriales();
         }
 
         private void limpiar()

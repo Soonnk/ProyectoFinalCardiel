@@ -57,6 +57,7 @@ namespace ProyectoFinal.Vistas
 
             cargarInterfaz();
             limpiar();
+            cargarUsuarios();
         }
         public void cargarInterfaz()
         {
