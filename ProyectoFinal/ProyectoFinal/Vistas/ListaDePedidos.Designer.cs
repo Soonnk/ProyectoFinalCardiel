@@ -48,7 +48,7 @@
             this.layoutControl1.Controls.Add(this.GcPedido);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(862, 555);
@@ -57,15 +57,16 @@
             // 
             // GcPedido
             // 
-            this.GcPedido.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GcPedido.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.GcPedido.Location = new System.Drawing.Point(12, 12);
             this.GcPedido.MainView = this.GvPedido;
-            this.GcPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GcPedido.Margin = new System.Windows.Forms.Padding(2);
             this.GcPedido.Name = "GcPedido";
             this.GcPedido.Size = new System.Drawing.Size(838, 521);
             this.GcPedido.TabIndex = 24;
             this.GcPedido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvPedido});
+            //this.GcPedido.Click += new System.EventHandler(this.GcPedido_Click);
             // 
             // GvPedido
             // 
@@ -109,7 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 555);
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListaDePedidos";
             this.Text = "ListaDePedidos";
             this.Load += new System.EventHandler(this.ListaDePedidos_Load);

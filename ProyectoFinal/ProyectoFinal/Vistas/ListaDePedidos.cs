@@ -20,6 +20,15 @@ namespace ProyectoFinal.Vistas
             ctrl = new Controlador.Ventas.ControladorPedido();
         }
 
+        private void MostrarDetallePedido(DataRow row)
+        {
+            Modelo.Ventas.Pedido p;
+
+            p = ctrl.getById((int)row["IdPedido"]);
+
+            ((Vistas.MDI)this.Parent.Parent).CargarFormulario(new Vistas.Pedidos(p));
+        }
+
         private void CargarPedidos()
         {
             GcPedido.DataSource = ctrl.GetAll();
@@ -29,5 +38,13 @@ namespace ProyectoFinal.Vistas
         {
             CargarPedidos();
         }
+
+        //private void GvPedidos_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        //{
+
+        //    DataRow row = GvPedido.GetDataRow(e.RowHandle);
+
+        //    MostrarDetallePedido(row);
+        //}
     }
 }

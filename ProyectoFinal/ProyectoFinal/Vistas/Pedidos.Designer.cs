@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.GcDetallePedido = new DevExpress.XtraGrid.GridControl();
             this.GvDetallePedido = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -49,16 +50,17 @@
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ColClienteNombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColClienteRfc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtpFecha = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.campoUsuario = new DevExpress.XtraLayout.LayoutControlItem();
-            this.LciCliente = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.LciCliente = new DevExpress.XtraLayout.LayoutControlItem();
             this.campoUsuario1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dtpFecha = new DevExpress.XtraEditors.DateEdit();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GcDetallePedido)).BeginInit();
@@ -70,17 +72,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIdPedido.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIdCliente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFecha.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LciCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoUsuario1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFecha.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFecha.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -133,6 +136,7 @@
             // 
             this.ColBase.Caption = "Base";
             this.ColBase.ColumnEdit = this.CmbBase;
+            this.ColBase.FieldName = "Material";
             this.ColBase.Name = "ColBase";
             this.ColBase.Visible = true;
             this.ColBase.VisibleIndex = 0;
@@ -183,6 +187,7 @@
             // 
             this.ColDesign.Caption = "Diseño";
             this.ColDesign.ColumnEdit = this.CmbDesign;
+            this.ColDesign.FieldName = "Design";
             this.ColDesign.Name = "ColDesign";
             this.ColDesign.Visible = true;
             this.ColDesign.VisibleIndex = 1;
@@ -208,6 +213,7 @@
             // 
             this.ColCantidad.Caption = "Cantidad";
             this.ColCantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.ColCantidad.FieldName = "Cantidad";
             this.ColCantidad.Name = "ColCantidad";
             this.ColCantidad.Visible = true;
             this.ColCantidad.VisibleIndex = 2;
@@ -216,6 +222,7 @@
             // 
             this.ColPrecio.Caption = "Precio";
             this.ColPrecio.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.ColPrecio.FieldName = "Precio";
             this.ColPrecio.Name = "ColPrecio";
             this.ColPrecio.Visible = true;
             this.ColPrecio.VisibleIndex = 3;
@@ -223,10 +230,10 @@
             // simpleButton5
             // 
             this.simpleButton5.ImageUri.Uri = "Clear;Office2013";
-            this.simpleButton5.Location = new System.Drawing.Point(318, 96);
+            this.simpleButton5.Location = new System.Drawing.Point(365, 96);
             this.simpleButton5.Margin = new System.Windows.Forms.Padding(2);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(562, 38);
+            this.simpleButton5.Size = new System.Drawing.Size(515, 38);
             this.simpleButton5.StyleController = this.layoutControl1;
             this.simpleButton5.TabIndex = 21;
             this.simpleButton5.Text = "Limpiar";
@@ -234,10 +241,10 @@
             // simpleButton4
             // 
             this.simpleButton4.ImageUri.Uri = "Cancel;Office2013";
-            this.simpleButton4.Location = new System.Drawing.Point(318, 54);
+            this.simpleButton4.Location = new System.Drawing.Point(365, 54);
             this.simpleButton4.Margin = new System.Windows.Forms.Padding(2);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(562, 38);
+            this.simpleButton4.Size = new System.Drawing.Size(515, 38);
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 20;
             this.simpleButton4.Text = "Eliminar";
@@ -246,10 +253,10 @@
             // 
             this.BtnGuardar.Image = global::ProyectoFinal.Properties.Resources.save_32x32;
             this.BtnGuardar.ImageUri.Uri = "Add;Size32x32;Office2013";
-            this.BtnGuardar.Location = new System.Drawing.Point(318, 12);
+            this.BtnGuardar.Location = new System.Drawing.Point(365, 12);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(562, 38);
+            this.BtnGuardar.Size = new System.Drawing.Size(515, 38);
             this.BtnGuardar.StyleController = this.layoutControl1;
             this.BtnGuardar.TabIndex = 18;
             this.BtnGuardar.Text = "Agregar";
@@ -261,7 +268,7 @@
             this.txtIdPedido.Location = new System.Drawing.Point(77, 12);
             this.txtIdPedido.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdPedido.Name = "txtIdPedido";
-            this.txtIdPedido.Size = new System.Drawing.Size(237, 20);
+            this.txtIdPedido.Size = new System.Drawing.Size(284, 20);
             this.txtIdPedido.StyleController = this.layoutControl1;
             this.txtIdPedido.TabIndex = 4;
             // 
@@ -276,7 +283,7 @@
             this.cmbIdCliente.Properties.NullText = "";
             this.cmbIdCliente.Properties.ValueMember = "IdCliente";
             this.cmbIdCliente.Properties.View = this.gridLookUpEdit1View;
-            this.cmbIdCliente.Size = new System.Drawing.Size(237, 20);
+            this.cmbIdCliente.Size = new System.Drawing.Size(284, 20);
             this.cmbIdCliente.StyleController = this.layoutControl1;
             this.cmbIdCliente.TabIndex = 5;
             // 
@@ -309,6 +316,26 @@
             this.ColClienteRfc.VisibleIndex = 1;
             this.ColClienteRfc.Width = 177;
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.EditValue = "";
+            this.dtpFecha.Location = new System.Drawing.Point(77, 60);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpFecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpFecha.Properties.DisplayFormat.FormatString = "";
+            this.dtpFecha.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpFecha.Properties.EditFormat.FormatString = "";
+            this.dtpFecha.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpFecha.Properties.Mask.EditMask = "";
+            this.dtpFecha.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.dtpFecha.Size = new System.Drawing.Size(284, 20);
+            this.dtpFecha.StyleController = this.layoutControl1;
+            this.dtpFecha.TabIndex = 4;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -335,26 +362,16 @@
             this.campoUsuario.CustomizationFormText = "ID de Usuario";
             this.campoUsuario.Location = new System.Drawing.Point(0, 0);
             this.campoUsuario.Name = "campoUsuario";
-            this.campoUsuario.Size = new System.Drawing.Size(306, 24);
+            this.campoUsuario.Size = new System.Drawing.Size(353, 24);
             this.campoUsuario.Text = "ID de Pedido";
             this.campoUsuario.TextSize = new System.Drawing.Size(61, 13);
-            // 
-            // LciCliente
-            // 
-            this.LciCliente.Control = this.cmbIdCliente;
-            this.LciCliente.CustomizationFormText = "Persona";
-            this.LciCliente.Location = new System.Drawing.Point(0, 24);
-            this.LciCliente.Name = "LciCliente";
-            this.LciCliente.Size = new System.Drawing.Size(306, 24);
-            this.LciCliente.Text = "Id Cliente";
-            this.LciCliente.TextSize = new System.Drawing.Size(61, 13);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.simpleButton5;
-            this.layoutControlItem1.Location = new System.Drawing.Point(306, 84);
+            this.layoutControlItem1.Location = new System.Drawing.Point(353, 84);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(566, 42);
+            this.layoutControlItem1.Size = new System.Drawing.Size(519, 42);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -370,18 +387,18 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.BtnGuardar;
-            this.layoutControlItem4.Location = new System.Drawing.Point(306, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(353, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(566, 42);
+            this.layoutControlItem4.Size = new System.Drawing.Size(519, 42);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.simpleButton4;
-            this.layoutControlItem2.Location = new System.Drawing.Point(306, 42);
+            this.layoutControlItem2.Location = new System.Drawing.Point(353, 42);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(566, 42);
+            this.layoutControlItem2.Size = new System.Drawing.Size(519, 42);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -390,8 +407,18 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 72);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(306, 54);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(353, 54);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // LciCliente
+            // 
+            this.LciCliente.Control = this.cmbIdCliente;
+            this.LciCliente.CustomizationFormText = "Persona";
+            this.LciCliente.Location = new System.Drawing.Point(0, 24);
+            this.LciCliente.Name = "LciCliente";
+            this.LciCliente.Size = new System.Drawing.Size(353, 24);
+            this.LciCliente.Text = "Id Cliente";
+            this.LciCliente.TextSize = new System.Drawing.Size(61, 13);
             // 
             // campoUsuario1
             // 
@@ -400,27 +427,9 @@
             this.campoUsuario1.CustomizationFormText = "ID de Usuario";
             this.campoUsuario1.Location = new System.Drawing.Point(0, 48);
             this.campoUsuario1.Name = "campoUsuario1";
-            this.campoUsuario1.Size = new System.Drawing.Size(306, 24);
+            this.campoUsuario1.Size = new System.Drawing.Size(353, 24);
             this.campoUsuario1.Text = "Fecha";
             this.campoUsuario1.TextSize = new System.Drawing.Size(61, 13);
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.EditValue = "";
-            this.dtpFecha.Location = new System.Drawing.Point(77, 60);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpFecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpFecha.Properties.DisplayFormat.FormatString = "";
-            this.dtpFecha.Properties.EditFormat.FormatString = "";
-            this.dtpFecha.Properties.Mask.EditMask = "";
-            this.dtpFecha.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dtpFecha.Size = new System.Drawing.Size(237, 20);
-            this.dtpFecha.StyleController = this.layoutControl1;
-            this.dtpFecha.TabIndex = 4;
             // 
             // Pedidos
             // 
@@ -443,17 +452,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIdPedido.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbIdCliente.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFecha.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LciCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LciCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campoUsuario1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFecha.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFecha.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,5 +501,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn ColBasePrecio;
         private DevExpress.XtraEditors.DateEdit dtpFecha;
         private DevExpress.XtraLayout.LayoutControlItem campoUsuario1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

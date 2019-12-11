@@ -46,5 +46,10 @@ namespace ProyectoFinal.Vistas
 
             MostrarDetalleCompra(row);
         }
+
+        private void GcCompras_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

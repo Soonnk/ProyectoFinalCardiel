@@ -20,7 +20,7 @@ namespace ProyectoFinal.Vistas
     public partial class Pedidos : Form
     {
         private Modelo.Ventas.Pedido CurrentPedido { get; set; }
-        private Controlador.Ventas.ControladorPedido ctrlPedido = new ControladorPedido();
+        private Controlador.Ventas.ControladorPedido ctrlPedido;
         private ControladorDesign ctrlDesigns;
         private ControladorMaterial ctrlBases;
         private Controlador.Ventas.ControladorCliente ctrlCliente;
@@ -30,8 +30,9 @@ namespace ProyectoFinal.Vistas
         public Pedidos()
         {
             InitializeComponent();
-            ctrlBases = new ControladorMaterial();
-            ctrlDesigns = new ControladorDesign();
+            ctrlPedido = new Controlador.Ventas.ControladorPedido();
+            ctrlBases = new Controlador.Produccion.ControladorMaterial();
+            ctrlDesigns = new Controlador.Produccion.ControladorDesign();
             ctrlCliente = new Controlador.Ventas.ControladorCliente();
 
             this.CurrentPedido = null;
@@ -47,6 +48,7 @@ namespace ProyectoFinal.Vistas
 
             txtIdPedido.EditValue = p.IdPedido;
             cmbIdCliente.EditValue = p.Cliente.IdCliente;
+
             dtpFecha.EditValue = p.FechaPedido;
             foreach (Modelo.Ventas.DetallePedido d in p.DetallePedido)
             {
@@ -60,7 +62,8 @@ namespace ProyectoFinal.Vistas
 
             dtpFecha.ReadOnly = true;
             cmbIdCliente.ReadOnly = true;
-            //LciCliente.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            LciCliente.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            GvDetallePedido.OptionsBehavior.Editable = false;
         }
 
         private void Limpiar()
