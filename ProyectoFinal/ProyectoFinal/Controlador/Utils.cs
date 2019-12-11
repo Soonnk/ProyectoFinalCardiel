@@ -78,5 +78,60 @@ namespace ProyectoFinal.Controlador
             foreach (IDataParameter p in Parameters)
                 if (p.Value == null) p.Value = DBNull.Value;
         }
+
+
+        public static DataTable CargarProductividad() {
+            AccesoDatos.ConexionSQL conector = null;
+            SqlConnection connection = null;
+            SqlDataAdapter adapter = null;
+
+            DataTable dt = new DataTable();
+            try
+            {
+                conector = new AccesoDatos.ConexionSQL() { NivelUsuario = Modelo.Usuarios.Usuario.NivelesUsuario.Visor };
+                connection = conector.GetConnection();
+                connection.Open();
+
+                SqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = @"SELECT 
+	*
+FROM Ventas.Pedidos p
+LEFT JOIN Ventas.DetallesPedido d
+	on p.IdPedido = d.Pedido
+LEFT JOIN Produccion.Materiales m
+	on m.IdMaterial = d.Base
+LEFT JOIN Produccion.Design de
+	on de.IdDesign = d.Design
+LEFT JOIN Produccion.LotesProduccion l
+	on l.DetalleAsociado = d.IdDetalle
+LEFT JOIN Produccion.LotesEtapas e
+	on e.Lote = l.IdLoteProduccion
+LEFT JOIN Produccion.GastosMaterial g
+	on g.LoteEtapa = e.IdLoteEtapa
+LEFT JOIN Produccion.c_EtapasProduccion ce
+	on ce.IdEtapaProduccion = e.Etapa
+LEFT JOIN Produccion.c_TipoGasto cg
+	on cg.IdTipoGasto = g.Tipo
+LEFT JOIN Produccion.c_TiposMateriales ct
+	on ct.IdTipoMaterial = m.Tipo
+";
+                adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
+            }
+        }
     }
 }

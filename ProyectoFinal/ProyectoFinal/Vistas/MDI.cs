@@ -193,5 +193,10 @@ namespace ProyectoFinal.Vistas
         {
             Application.Exit();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            CargarFormulario(new Vistas.ViewReporte());
+        }
     }
 }
