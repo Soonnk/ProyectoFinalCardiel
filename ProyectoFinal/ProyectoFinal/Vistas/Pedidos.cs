@@ -63,7 +63,7 @@ namespace ProyectoFinal.Vistas
             dtpFecha.ReadOnly = true;
             cmbIdCliente.ReadOnly = true;
             LciCliente.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-
+            
             GvDetallePedido.OptionsBehavior.Editable = false;
         }
 

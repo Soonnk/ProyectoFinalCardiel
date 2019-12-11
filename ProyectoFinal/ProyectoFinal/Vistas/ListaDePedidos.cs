@@ -40,17 +40,20 @@ namespace ProyectoFinal.Vistas
         }
 
 
-        private void GvPedidos_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        private void GvPedido_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-
             DataRow row = GvPedido.GetDataRow(e.RowHandle);
 
             MostrarDetallePedido(row);
         }
 
-        private void GcPedidos_Click(object sender, EventArgs e)
-        {
+        //private void GcPedidos_Click(object sender, EventArgs e)
+        //{
 
+        //}
+
+        private void GcPedido_Click(object sender, EventArgs e)
+        {
         }
     }
 }
