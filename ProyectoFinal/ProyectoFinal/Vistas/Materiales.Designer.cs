@@ -165,6 +165,7 @@
             this.txtIdMaterial.Size = new System.Drawing.Size(430, 22);
             this.txtIdMaterial.StyleController = this.layoutControl1;
             this.txtIdMaterial.TabIndex = 4;
+            this.txtIdMaterial.EditValueChanged += new System.EventHandler(this.txtIdMaterial_EditValueChanged);
             // 
             // txtDescripcion
             // 

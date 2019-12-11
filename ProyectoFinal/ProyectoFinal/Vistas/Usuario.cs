@@ -140,7 +140,7 @@ namespace ProyectoFinal.Vistas
 
         }*/
 
-        private Modelo.Usuarios.Usuario generarUsuario()
+        private Modelo.Usuarios.Usuario GenerarUsuario()
         {
             Modelo.Usuarios.Usuario u = new Modelo.Usuarios.Usuario()
             {
@@ -170,13 +170,13 @@ namespace ProyectoFinal.Vistas
 
         private void GuardarNuevo()
         {
-            Modelo.Usuarios.Usuario usuario = generarUsuario();
+            Modelo.Usuarios.Usuario usuario = GenerarUsuario();
             ctrlUsuarios.InsertarUsuario(usuario);
         }
 
         private void GuardarCambios(bool Estatus = true)
         {
-            Modelo.Usuarios.Usuario usuario = generarUsuario();
+            Modelo.Usuarios.Usuario usuario = GenerarUsuario();
             usuario.Estatus = Estatus;
             ctrlUsuarios.UpdateUsuario(usuario);
 

@@ -70,7 +70,7 @@ namespace ProyectoFinal.Vistas
 
         }
 
-        private Modelo.Produccion.Material generarMaterial()
+        private Modelo.Produccion.Material GenerarMaterial()
         {
             Modelo.Produccion.Material m = new Modelo.Produccion.Material()
             {
@@ -87,13 +87,13 @@ namespace ProyectoFinal.Vistas
 
         private void GuardarNuevo()
         {
-            Modelo.Produccion.Material material = generarMaterial();
+            Modelo.Produccion.Material material = GenerarMaterial();
             ctrlMaterial.InsertarMaterial(material);
         }
 
         private void GuardarCambios()
         {
-            Modelo.Produccion.Material material = generarMaterial();
+            Modelo.Produccion.Material material = GenerarMaterial();
             ctrlMaterial.UpdateMaterial(material);
 
             MessageBox.Show("Cambios Guardados con éxito");
@@ -137,6 +137,11 @@ namespace ProyectoFinal.Vistas
         {
             // btn Limpiar
             limpiar();
+        }
+
+        private void txtIdMaterial_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
