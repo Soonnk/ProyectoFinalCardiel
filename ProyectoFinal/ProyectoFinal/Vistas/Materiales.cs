@@ -72,19 +72,20 @@ namespace ProyectoFinal.Vistas
 
         private Modelo.Produccion.Material GenerarMaterial()
         {
-            Modelo.Produccion.Material m = new Modelo.Produccion.Material()
-            {
-                IdMaterial = this.IdMaterial,
-                Descripcion = (string)txtDescripcion.EditValue,
-                Costo = (double)txtCosto.EditValue,
-                Existencia = (double)txtExistencia.EditValue,
-                Tipo = (Modelo.Produccion.Material.TiposMateriales)cmbMaterial.EditValue
-            };
+            Modelo.Produccion.Material m = new Modelo.Produccion.Material();
+            
+
+                m.IdMaterial = this.IdMaterial;
+                m.Descripcion = (string)txtDescripcion.EditValue;
+                m.Costo = Double.Parse(txtCosto.Text);
+                m.Existencia = Double.Parse(txtExistencia.Text);
+                m.Tipo = (Modelo.Produccion.Material.TiposMateriales)cmbMaterial.EditValue;
+            
 
             return m;
 
         }
-
+        
         private void GuardarNuevo()
         {
             Modelo.Produccion.Material material = GenerarMaterial();
