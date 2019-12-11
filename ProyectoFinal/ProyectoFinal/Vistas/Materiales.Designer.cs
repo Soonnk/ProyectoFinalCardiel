@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcMaterial = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,6 +54,12 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.NivelUsuario = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcMaterial)).BeginInit();
@@ -75,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -99,6 +107,9 @@
             // 
             // gcMaterial
             // 
+            gridLevelNode1.RelationName = "Level1";
+            this.gcMaterial.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gcMaterial.Location = new System.Drawing.Point(16, 200);
             this.gcMaterial.MainView = this.gridView2;
             this.gcMaterial.Name = "gcMaterial";
@@ -109,16 +120,23 @@
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5});
             this.gridView2.GridControl = this.gcMaterial;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
             // 
             // simpleButton5
             // 
             this.simpleButton5.ImageUri.Uri = "Clear;Office2013";
-            this.simpleButton5.Location = new System.Drawing.Point(549, 154);
+            this.simpleButton5.Location = new System.Drawing.Point(558, 154);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(621, 40);
+            this.simpleButton5.Size = new System.Drawing.Size(612, 40);
             this.simpleButton5.StyleController = this.layoutControl1;
             this.simpleButton5.TabIndex = 21;
             this.simpleButton5.Text = "Limpiar";
@@ -127,9 +145,9 @@
             // simpleButton4
             // 
             this.simpleButton4.ImageUri.Uri = "Cancel;Office2013";
-            this.simpleButton4.Location = new System.Drawing.Point(549, 108);
+            this.simpleButton4.Location = new System.Drawing.Point(558, 108);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(621, 40);
+            this.simpleButton4.Size = new System.Drawing.Size(612, 40);
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 20;
             this.simpleButton4.Text = "Eliminar";
@@ -138,9 +156,9 @@
             // simpleButton2
             // 
             this.simpleButton2.ImageUri.Uri = "Redo;Office2013";
-            this.simpleButton2.Location = new System.Drawing.Point(549, 62);
+            this.simpleButton2.Location = new System.Drawing.Point(558, 62);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(621, 40);
+            this.simpleButton2.Size = new System.Drawing.Size(612, 40);
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 19;
             this.simpleButton2.Text = "Actualizar";
@@ -149,9 +167,9 @@
             // simpleButton1
             // 
             this.simpleButton1.ImageUri.Uri = "Add;Size32x32;Office2013";
-            this.simpleButton1.Location = new System.Drawing.Point(549, 16);
+            this.simpleButton1.Location = new System.Drawing.Point(558, 16);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(621, 40);
+            this.simpleButton1.Size = new System.Drawing.Size(612, 40);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 18;
             this.simpleButton1.Text = "Agregar";
@@ -162,7 +180,7 @@
             this.txtIdMaterial.EditValue = "";
             this.txtIdMaterial.Location = new System.Drawing.Point(113, 16);
             this.txtIdMaterial.Name = "txtIdMaterial";
-            this.txtIdMaterial.Size = new System.Drawing.Size(430, 22);
+            this.txtIdMaterial.Size = new System.Drawing.Size(429, 22);
             this.txtIdMaterial.StyleController = this.layoutControl1;
             this.txtIdMaterial.TabIndex = 4;
             this.txtIdMaterial.EditValueChanged += new System.EventHandler(this.txtIdMaterial_EditValueChanged);
@@ -171,7 +189,7 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(113, 44);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(430, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(429, 22);
             this.txtDescripcion.StyleController = this.layoutControl1;
             this.txtDescripcion.TabIndex = 5;
             // 
@@ -179,7 +197,7 @@
             // 
             this.txtCosto.Location = new System.Drawing.Point(113, 72);
             this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(430, 22);
+            this.txtCosto.Size = new System.Drawing.Size(429, 22);
             this.txtCosto.StyleController = this.layoutControl1;
             this.txtCosto.TabIndex = 6;
             // 
@@ -187,7 +205,7 @@
             // 
             this.txtExistencia.Location = new System.Drawing.Point(113, 100);
             this.txtExistencia.Name = "txtExistencia";
-            this.txtExistencia.Size = new System.Drawing.Size(430, 22);
+            this.txtExistencia.Size = new System.Drawing.Size(429, 22);
             this.txtExistencia.StyleController = this.layoutControl1;
             this.txtExistencia.TabIndex = 7;
             // 
@@ -200,7 +218,7 @@
             this.cmbMaterial.Properties.DisplayMember = "Descripcion";
             this.cmbMaterial.Properties.ValueMember = "IdTipoMaterial";
             this.cmbMaterial.Properties.View = this.gridView1;
-            this.cmbMaterial.Size = new System.Drawing.Size(430, 22);
+            this.cmbMaterial.Size = new System.Drawing.Size(429, 22);
             this.cmbMaterial.StyleController = this.layoutControl1;
             this.cmbMaterial.TabIndex = 17;
             this.cmbMaterial.EditValueChanged += new System.EventHandler(this.cmbMaterial_EditValueChanged);
@@ -227,7 +245,8 @@
             this.layoutControlItem2,
             this.layoutControlItem6,
             this.layoutControlItem1,
-            this.NivelUsuario});
+            this.NivelUsuario,
+            this.emptySpaceItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
@@ -241,7 +260,7 @@
             this.campoUsuario.CustomizationFormText = "ID de Usuario";
             this.campoUsuario.Location = new System.Drawing.Point(0, 0);
             this.campoUsuario.Name = "campoUsuario";
-            this.campoUsuario.Size = new System.Drawing.Size(533, 28);
+            this.campoUsuario.Size = new System.Drawing.Size(532, 28);
             this.campoUsuario.Text = "ID de Materiales";
             this.campoUsuario.TextSize = new System.Drawing.Size(93, 16);
             // 
@@ -251,7 +270,7 @@
             this.Persona.CustomizationFormText = "Persona";
             this.Persona.Location = new System.Drawing.Point(0, 28);
             this.Persona.Name = "Persona";
-            this.Persona.Size = new System.Drawing.Size(533, 28);
+            this.Persona.Size = new System.Drawing.Size(532, 28);
             this.Persona.Text = "Descripción";
             this.Persona.TextSize = new System.Drawing.Size(93, 16);
             // 
@@ -261,7 +280,7 @@
             this.Username.CustomizationFormText = "Username";
             this.Username.Location = new System.Drawing.Point(0, 56);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(533, 28);
+            this.Username.Size = new System.Drawing.Size(532, 28);
             this.Username.Text = "Costo";
             this.Username.TextSize = new System.Drawing.Size(93, 16);
             // 
@@ -271,7 +290,7 @@
             this.Contraseña.CustomizationFormText = "Contraseña";
             this.Contraseña.Location = new System.Drawing.Point(0, 84);
             this.Contraseña.Name = "Contraseña";
-            this.Contraseña.Size = new System.Drawing.Size(533, 28);
+            this.Contraseña.Size = new System.Drawing.Size(532, 28);
             this.Contraseña.Text = "Existencia";
             this.Contraseña.TextSize = new System.Drawing.Size(93, 16);
             // 
@@ -286,27 +305,27 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.simpleButton1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(533, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(542, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(627, 46);
+            this.layoutControlItem4.Size = new System.Drawing.Size(618, 46);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.simpleButton2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(533, 46);
+            this.layoutControlItem3.Location = new System.Drawing.Point(542, 46);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(627, 46);
+            this.layoutControlItem3.Size = new System.Drawing.Size(618, 46);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.simpleButton4;
-            this.layoutControlItem2.Location = new System.Drawing.Point(533, 92);
+            this.layoutControlItem2.Location = new System.Drawing.Point(542, 92);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(627, 46);
+            this.layoutControlItem2.Size = new System.Drawing.Size(618, 46);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -322,9 +341,9 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.simpleButton5;
-            this.layoutControlItem1.Location = new System.Drawing.Point(533, 138);
+            this.layoutControlItem1.Location = new System.Drawing.Point(542, 138);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(627, 46);
+            this.layoutControlItem1.Size = new System.Drawing.Size(618, 46);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -334,9 +353,57 @@
             this.NivelUsuario.CustomizationFormText = "NivelUsuario";
             this.NivelUsuario.Location = new System.Drawing.Point(0, 112);
             this.NivelUsuario.Name = "NivelUsuario";
-            this.NivelUsuario.Size = new System.Drawing.Size(533, 72);
+            this.NivelUsuario.Size = new System.Drawing.Size(532, 72);
             this.NivelUsuario.Text = "Tipo";
             this.NivelUsuario.TextSize = new System.Drawing.Size(93, 16);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(532, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(10, 184);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Id";
+            this.gridColumn1.FieldName = "variableA";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Descripción";
+            this.gridColumn2.FieldName = "variableB";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Costo";
+            this.gridColumn3.FieldName = "VariableC";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Existencia";
+            this.gridColumn4.FieldName = "variableD";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Tipo";
+            this.gridColumn5.FieldName = "variableE";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
             // 
             // Materiales
             // 
@@ -369,6 +436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NivelUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +468,11 @@
         private DevExpress.XtraEditors.GridLookUpEdit cmbMaterial;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlItem NivelUsuario;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }
