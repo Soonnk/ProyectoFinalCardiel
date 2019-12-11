@@ -95,7 +95,7 @@ namespace ProyectoFinal.Vistas
             txtColonia.EditValue = "";
             txtUsername.EditValue = "";
             txtContrasenia.EditValue = "";
-            txtEstatus.EditValue = "";
+            txtEstatus.EditValue = false;
             cmbNivelUsuario.EditValue = "";
             cmbDepartamento.EditValue = "";
 
@@ -157,6 +157,7 @@ namespace ProyectoFinal.Vistas
                 IdUsuario = this.IdUsuario,
                 Username = (string)txtUsername.EditValue,
                 Password = (string)txtContrasenia.EditValue,
+                Estatus = (bool)txtEstatus.EditValue,
                 NivelUsuario = (Modelo.Usuarios.Usuario.NivelesUsuario)cmbNivelUsuario.EditValue,
                 Departamento = (Modelo.Usuarios.Usuario.Departamentos)cmbDepartamento.EditValue
 
@@ -173,10 +174,10 @@ namespace ProyectoFinal.Vistas
             ctrlUsuarios.InsertarUsuario(usuario);
         }
 
-        private void GuardarCambios()
+        private void GuardarCambios(bool Estatus = true)
         {
             Modelo.Usuarios.Usuario usuario = generarUsuario();
-            //usuario.Estatus = Estatus;
+            usuario.Estatus = Estatus;
             ctrlUsuarios.UpdateUsuario(usuario);
 
             MessageBox.Show("Cambios Guardados con éxito");
@@ -216,7 +217,7 @@ namespace ProyectoFinal.Vistas
             this.txtIdUsuario.EditValue = u.IdPersona;
             this.txtUsername.EditValue = u.Username;
             this.txtContrasenia.EditValue = u.Password;
-            //this.txtEstatus.EditValue = u.Estatus;
+            this.txtEstatus.EditValue = u.Estatus;
             this.cmbNivelUsuario.EditValue = u.NivelUsuario;
             this.cmbDepartamento.EditValue = u.Departamento;
             
