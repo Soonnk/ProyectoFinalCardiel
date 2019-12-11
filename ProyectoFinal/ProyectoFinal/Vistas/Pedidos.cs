@@ -53,8 +53,8 @@ namespace ProyectoFinal.Vistas
             foreach (Modelo.Ventas.DetallePedido d in p.DetallePedido)
             {
                 DataRow row = DetallePedido.NewRow();
-                row["Base"] = d.Base.IdMaterial;
-                row["Diseño"] = d.Design.IdDesign;
+                row["Material"] = d.Base.IdMaterial;
+                row["Design"] = d.Design.IdDesign;
                 row["Cantidad"] = d.Cantidad;
                 row["Precio"] = d.Precio;
                 DetallePedido.Rows.Add(row);
@@ -63,6 +63,7 @@ namespace ProyectoFinal.Vistas
             dtpFecha.ReadOnly = true;
             cmbIdCliente.ReadOnly = true;
             LciCliente.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+
             GvDetallePedido.OptionsBehavior.Editable = false;
         }
 
@@ -74,6 +75,7 @@ namespace ProyectoFinal.Vistas
             cmbIdCliente.ReadOnly = false;
             dtpFecha.ReadOnly = false;
             dtpFecha.Properties.MinValue = DateTime.Today;
+            LciCliente.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
 
             dtpFecha.EditValue = DateTime.Today;
             InitGrid();
@@ -83,8 +85,8 @@ namespace ProyectoFinal.Vistas
         {
             DetallePedido = new DataTable();
 
-            DetallePedido.Columns.Add(new DataColumn("Base", typeof(int)));
-            DetallePedido.Columns.Add(new DataColumn("Diseño", typeof(int)));
+            DetallePedido.Columns.Add(new DataColumn("Material", typeof(int)));
+            DetallePedido.Columns.Add(new DataColumn("Design", typeof(int)));
             DetallePedido.Columns.Add(new DataColumn("Cantidad", typeof(int)));
             DetallePedido.Columns.Add(new DataColumn("Precio", typeof(double)));
 
@@ -103,8 +105,8 @@ namespace ProyectoFinal.Vistas
             foreach (DataRow row in DetallePedido.Rows)
             {
                 Modelo.Ventas.DetallePedido d = new Modelo.Ventas.DetallePedido();
-                d.Base = ctrlBases.GetById((int)row["Base"]);
-                d.Design = ctrlDesigns.GetById((int)row["Diseño"]);
+                d.Base = ctrlBases.GetById((int)row["Material"]);
+                d.Design = ctrlDesigns.GetById((int)row["Design"]);
                 d.Cantidad = (double)(int)row["Cantidad"];
                 d.Precio = (double)row["Precio"];
 

@@ -34,6 +34,11 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ColIdCompra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColMaterial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesign = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GcPedido)).BeginInit();
@@ -66,10 +71,15 @@
             this.GcPedido.TabIndex = 24;
             this.GcPedido.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GvPedido});
-            //this.GcPedido.Click += new System.EventHandler(this.GcPedido_Click);
             // 
             // GvPedido
             // 
+            this.GvPedido.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ColIdCompra,
+            this.ColMaterial,
+            this.colDesign,
+            this.colCantidad,
+            this.colPrecio});
             this.GvPedido.GridControl = this.GcPedido;
             this.GvPedido.Name = "GvPedido";
             this.GvPedido.OptionsView.ShowGroupPanel = false;
@@ -104,6 +114,46 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // ColIdCompra
+            // 
+            this.ColIdCompra.Caption = "Numero de Pedido";
+            this.ColIdCompra.FieldName = "IdPedido";
+            this.ColIdCompra.Name = "ColIdCompra";
+            this.ColIdCompra.Visible = true;
+            this.ColIdCompra.VisibleIndex = 0;
+            // 
+            // ColMaterial
+            // 
+            this.ColMaterial.Caption = "Material";
+            this.ColMaterial.FieldName = "Descripcion";
+            this.ColMaterial.Name = "ColMaterial";
+            this.ColMaterial.Visible = true;
+            this.ColMaterial.VisibleIndex = 1;
+            // 
+            // colDesign
+            // 
+            this.colDesign.Caption = "Design";
+            this.colDesign.FieldName = "Descripcion";
+            this.colDesign.Name = "colDesign";
+            this.colDesign.Visible = true;
+            this.colDesign.VisibleIndex = 2;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.Caption = "Cantidad";
+            this.colCantidad.FieldName = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.Visible = true;
+            this.colCantidad.VisibleIndex = 3;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.Caption = "Precio";
+            this.colPrecio.FieldName = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.Visible = true;
+            this.colPrecio.VisibleIndex = 4;
+            // 
             // ListaDePedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,5 +183,10 @@
         private DevExpress.XtraGrid.GridControl GcPedido;
         private DevExpress.XtraGrid.Views.Grid.GridView GvPedido;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn ColIdCompra;
+        private DevExpress.XtraGrid.Columns.GridColumn ColMaterial;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesign;
+        private DevExpress.XtraGrid.Columns.GridColumn colCantidad;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrecio;
     }
 }

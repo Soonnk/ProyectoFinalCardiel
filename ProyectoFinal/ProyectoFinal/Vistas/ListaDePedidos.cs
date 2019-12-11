@@ -39,12 +39,18 @@ namespace ProyectoFinal.Vistas
             CargarPedidos();
         }
 
-        //private void GvPedidos_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        //{
 
-        //    DataRow row = GvPedido.GetDataRow(e.RowHandle);
+        private void GvPedidos_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
 
-        //    MostrarDetallePedido(row);
-        //}
+            DataRow row = GvPedido.GetDataRow(e.RowHandle);
+
+            MostrarDetallePedido(row);
+        }
+
+        private void GcPedidos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
