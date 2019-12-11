@@ -126,9 +126,16 @@ namespace ProyectoFinal.Controlador.Ventas
                 cmd.Parameters.AddWithValue("@Estatus", c.Estatus);
                 cmd.Parameters.AddWithValue("@RegimenFiscal", c.RegimenFiscal);
                 cmd.Parameters.AddWithValue("@RFC", c.RFC);
-                cmd.Parameters.AddWithValue("@IdProveedor", c.IdCliente);
+                cmd.Parameters.AddWithValue("@IdCliente", c.IdCliente);
 
+                Utils.ClearNullParameterValues(cmd.Parameters);
                 cmd.ExecuteNonQuery();
+
+                foreach (Modelo.Contacto cont in c.ListaContactos)
+                    if (cont.IdContacto == 0)
+                        new ControladorContacto().InsertarContacto(cont, c.ListaContactos.IdListaContactos);
+                    else
+                        new ControladorContacto().UpdateContacto(cont);
             }
             catch (Exception ex)
             {

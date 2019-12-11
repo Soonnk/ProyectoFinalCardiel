@@ -86,6 +86,7 @@ namespace ProyectoFinal.Controlador
                 cmd.Parameters.AddWithValue("@Numero", c.Numero);
                 cmd.Parameters.AddWithValue("@Colonia", c.Colonia);
 
+                Utils.ClearNullParameterValues(cmd.Parameters);
                 int idPersona = (int)cmd.ExecuteScalar();
 
                 insertContacto = "INSERT INTO Contactos VALUES (@IdPersona)" + Environment.NewLine +
@@ -107,6 +108,7 @@ namespace ProyectoFinal.Controlador
                 cmd.Parameters.AddWithValue("@IdLista", Lista);
                 cmd.Parameters.AddWithValue("@IdContacto", idContacto);
 
+                Utils.ClearNullParameterValues(cmd.Parameters);
                 cmd.ExecuteNonQuery();
 
                 transaction.Commit();

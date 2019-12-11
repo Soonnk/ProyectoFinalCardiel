@@ -99,7 +99,8 @@ namespace ProyectoFinal.Vistas
             {
                 Cliente = ctrlCliente.GetById((int)cmbIdCliente.EditValue),
                 Vendedor = Session.UsuarioEnCurso,
-                DetallePedido = new List<Modelo.Ventas.DetallePedido>()
+                DetallePedido = new List<Modelo.Ventas.DetallePedido>(),
+                FechaPedido = DateTime.Today
             };
 
             foreach (DataRow row in DetallePedido.Rows)

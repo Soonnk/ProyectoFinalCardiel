@@ -36,7 +36,8 @@ namespace ProyectoFinal.Controlador.Ventas
                 cmdDetallePedido.Transaction = transaction;
 
                 string InsertPedido = "INSERT INTO [Ventas].[Pedidos](Cliente, Vendedor, FechaPedido) " +
-            "VALUES (@IdPedido, @Cliente, @Vendedor, @FechaPedido)";
+            "VALUES (@Cliente, @Vendedor, @FechaPedido)" +Environment.NewLine +
+            "SELECT CAST(SCOPE_IDENTITY() as int)";
 
                 string InsertDetallePedido = "INSERT INTO [Ventas].[DetallesPedido](Pedido, Base, Design, Cantidad, Precio) " +
             "VALUES (@Pedido, @Base, @Design, @Cantidad, @Precio)";
@@ -51,7 +52,10 @@ namespace ProyectoFinal.Controlador.Ventas
                 cmdPedido.Parameters.AddWithValue("@Cliente", c.IdCliente);
                 cmdPedido.Parameters.AddWithValue("@Vendedor", u.IdUsuario);
                 cmdPedido.Parameters.AddWithValue("@FechaPedido", p.FechaPedido);
-                
+
+                Utils.ClearNullParameterValues(cmdPedido.Parameters);
+                p.IdPedido = (int)cmdPedido.ExecuteScalar();
+
                 foreach(DetallePedido d in p.DetallePedido)
                 {
                     Modelo.Produccion.Material b = new Modelo.Produccion.Material();
@@ -68,6 +72,8 @@ namespace ProyectoFinal.Controlador.Ventas
                     cmdDetallePedido.Parameters.AddWithValue("@Cantidad", d.Cantidad);
                     cmdDetallePedido.Parameters.AddWithValue("@Precio", d.Precio);
 
+                    Utils.ClearNullParameterValues(cmdDetallePedido.Parameters);
+                    cmdDetallePedido.ExecuteNonQuery();
                 }
 
                 transaction.Commit();
